@@ -1,4 +1,4 @@
-package com.alyxia.gdos_portal_app.ui.theme
+package dev.alyxia.portal_app.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
@@ -11,7 +11,9 @@ val Typography = Typography(
     body1 = TextStyle(
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Normal,
-        fontSize = 16.sp
+        fontSize = 16.sp,
+        lineHeight = 24.sp,
+        letterSpacing = 0.5.sp
     )
     /* Other default text styles to override
     button = TextStyle(

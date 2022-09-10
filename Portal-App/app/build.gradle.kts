@@ -6,12 +6,12 @@ plugins {
 val compose_version = "1.0.1"
 
 android {
-    compileSdk = 31
+    compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.alyxia.gdos_portal_app"
+        applicationId = "dev.alyxia.portal_app"
         minSdk = 21
-        targetSdk = 31
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
 

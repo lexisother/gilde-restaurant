@@ -1,4 +1,4 @@
-package com.alyxia.gdos_portal_app.ui.theme
+package dev.alyxia.portal_app.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
@@ -28,9 +28,9 @@ private val LightColorPalette = lightColors(
 )
 
 @Composable
-fun GDOSPortalAppTheme(
+fun PortalAppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    content: @Composable() () -> Unit
+    content: @Composable () -> Unit
 ) {
     val colors = if (darkTheme) {
         DarkColorPalette
