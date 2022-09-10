@@ -28,5 +28,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VERSION: 'dev-app'
-          NAME: 'GDOS Portal App Dev'
+          NAME: 'Portal App Dev'
           FILES: app/build/outputs/apk/debug/app-debug.apk
