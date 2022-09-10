@@ -1,14 +1,13 @@
-name: Build APK and make dev release
+name: Build all projects
 
-on:
-  push:
-    branches:
-      - master
-  workflow_dispatch:
+on: [push, workflow_dispatch]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Portal-App
     steps:
       - uses: actions/checkout@v1
       - name: set up JDK 11
@@ -24,10 +23,10 @@ jobs:
 
       - name: Create release
         run: |
-          gh release delete ${{ env.VERSION }} -y
+          gh release delete ${{ env.VERSION }} -y || true
           gh release create ${{ env.VERSION }} -p -t "${{ env.NAME }}" -n "${{ github.event.head_commit.message }}" ${{ env.FILES }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VERSION: 'dev'
+          VERSION: 'dev-app'
           NAME: 'GDOS Portal App Dev'
           FILES: app/build/outputs/apk/debug/app-debug.apk
