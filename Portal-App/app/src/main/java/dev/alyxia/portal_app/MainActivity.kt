@@ -15,10 +15,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.beust.klaxon.JsonObject
 import com.beust.klaxon.Klaxon
-import dev.alyxia.portal_app.structures.TodoDB
-import dev.alyxia.portal_app.structures.TodoDBItem
+import dev.alyxia.portal_app.structures.Health
 import dev.alyxia.portal_app.ui.theme.PortalAppTheme
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -30,24 +28,22 @@ import okhttp3.Request
  */
 class EpicViewModel : ViewModel() {
     private val client = OkHttpClient()
-    var result by mutableStateOf<TodoDB?>(null)
+    var result by mutableStateOf<Health?>(null)
         private set
 
     init {
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 val builtReq =
-                    Request.Builder().url("https://nova-vps.ml/~alyxia/api/todo.json").build()
+                    Request.Builder().url("https://gdos.alyxia.dev/api/health").build()
                 val request = client.newCall(builtReq).execute()?.body()?.string()
                 if (request != null) {
                     result = with(Klaxon()) {
-                        parse<Map<String, JsonObject>>(request)?.mapValues {
-                            parseFromJsonObject<TodoDBItem>(it.value)!!
-                        }
+                        parse<Health>(request)
                     }
                 }
-            } catch(e: Exception) {
-                result = mapOf("0" to TodoDBItem(name="Error",content="Something went wrong."))
+            } catch (e: Exception) {
+                result = Health(ok = false)
             }
         }
     }
@@ -64,9 +60,11 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colors.background
                 ) {
                     val viewModel: EpicViewModel by viewModels()
-                    val items = viewModel.result
-                    println(items)
-                    items?.get("0")?.let { Greeting(it.name) }
+                    val apiHealth = viewModel.result
+                    println("API is ok: $apiHealth")
+                    if (apiHealth != null) {
+                        Greeting(apiHealth.ok.toString())
+                    }
                 }
             }
         }
