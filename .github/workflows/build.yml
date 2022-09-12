@@ -3,7 +3,8 @@ name: Build all projects
 on: [push, workflow_dispatch]
 
 jobs:
-  build:
+  build-app:
+    name: Build Portal app
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -30,3 +31,35 @@ jobs:
           VERSION: 'dev-app'
           NAME: 'Portal App Dev'
           FILES: app/build/outputs/apk/debug/app-debug.apk
+
+  lint-api:
+    name: Lint API
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: API
+
+    container:
+      image: php:8.0
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install dependencies
+        run: apt-get update -yqq && apt-get install git wget libzip-dev unzip -yqq
+      - name: Install php extensions
+        run: docker-php-ext-install zip
+
+      - name: Install composer
+        run: |
+          wget https://composer.github.io/installer.sig -O - -q | tr -d '\n' > installer.sig
+          php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+          php -r "if (hash_file('SHA384', 'composer-setup.php') === file_get_contents('installer.sig')) { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+          php composer-setup.php
+          php -r "unlink('composer-setup.php'); unlink('installer.sig');"
+
+      - name: Install composer dependencies
+        run: php composer.phar install
+
+      - name: Lint
+        run: php composer.phar run lint
+
