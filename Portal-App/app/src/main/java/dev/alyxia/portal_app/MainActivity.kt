@@ -35,15 +35,19 @@ class EpicViewModel : ViewModel() {
 
     init {
         viewModelScope.launch(Dispatchers.IO) {
-            val builtReq =
-                Request.Builder().url("https://nova-vps.ml/~alyxia/api/todo.json").build()
-            val request = client.newCall(builtReq).execute()?.body()?.string()
-            if (request != null) {
-                result = with(Klaxon()) {
-                    parse<Map<String, JsonObject>>(request)?.mapValues {
-                        parseFromJsonObject<TodoDBItem>(it.value)!!
+            try {
+                val builtReq =
+                    Request.Builder().url("https://nova-vps.ml/~alyxia/api/todo.json").build()
+                val request = client.newCall(builtReq).execute()?.body()?.string()
+                if (request != null) {
+                    result = with(Klaxon()) {
+                        parse<Map<String, JsonObject>>(request)?.mapValues {
+                            parseFromJsonObject<TodoDBItem>(it.value)!!
+                        }
                     }
                 }
+            } catch(e: Exception) {
+                result = mapOf("0" to TodoDBItem(name="Error",content="Something went wrong."))
             }
         }
     }
