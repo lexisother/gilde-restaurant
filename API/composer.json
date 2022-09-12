@@ -1,0 +1,8 @@
+{
+  "require": {
+    "bramus/router": "^1.6.1",
+    "scssphp/scssphp": "^1.11.0",
+    "filp/whoops": "^2.14.5",
+    "tightenco/tlint": "^6.3.0"
+  }
+}
