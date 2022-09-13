@@ -7,3 +7,4 @@ class HealthController {
         echo '{"ok": true}';
     }
 }
+
