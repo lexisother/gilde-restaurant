@@ -11,11 +11,8 @@ $whoops->register();
 
 header("Content-Type: application/json");
 $router = new Router();
+$router->setNamespace("\App\Controllers");
 
-$router->mount("/api", function () use ($router) {
-    $router->all("/health", function () {
-        echo '{"ok": true}';
-    });
-});
+$router->all("/health", 'HealthController@getHealth');
 
 $router->run();

@@ -7,5 +7,10 @@
   },
   "scripts": {
     "lint": "tlint lint"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
   }
 }
