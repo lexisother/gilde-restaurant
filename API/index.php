@@ -2,6 +2,9 @@
 require __DIR__ . "/vendor/autoload.php";
 
 use Bramus\Router\Router;
+use Illuminate\Container\Container;
+use Illuminate\Database\Capsule\Manager as Capsule;
+use Illuminate\Events\Dispatcher;
 use Whoops\Handler\JsonResponseHandler;
 use Whoops\Run;
 
@@ -13,7 +16,24 @@ $whoops = new Run();
 $whoops->pushHandler(new JsonResponseHandler());
 $whoops->register();
 
-header("Content-Type: application/json");
+#region Illuminate setup {{{
+$capsule = new Capsule();
+$capsule->addConnection([
+    'driver' => 'mysql',
+    'host' => getenv('GITHUB_API_URL') ? 'mariadb' : 'localhost',
+    'database' => 'GDOS_Restaurant',
+    'username' => 'root',
+    'password' => 'root',
+    'charset' => 'utf8',
+    'collation' => 'utf8_unicode_ci',
+]);
+$capsule->setEventDispatcher(new Dispatcher(new Container()));
+$capsule->setAsGlobal();
+$capsule->bootEloquent();
+#endregion }}}
+
+$container = app();
+
 $router = new Router();
 $router->setNamespace("\App\Controllers");
 
