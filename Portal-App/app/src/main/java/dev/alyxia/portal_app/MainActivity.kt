@@ -15,7 +15,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import dev.alyxia.portal_app.structures.Health
+import dev.alyxia.portal_app.rest.dto.ApiHealth
+import dev.alyxia.portal_app.rest.service.APIHealthService
+import dev.alyxia.portal_app.rest.service.APIHealthServiceImpl
 import dev.alyxia.portal_app.ui.theme.PortalAppTheme
 import io.ktor.client.*
 import io.ktor.client.call.*
@@ -38,12 +40,12 @@ class EpicViewModel : ViewModel() {
             })
         }
     }
-    var result by mutableStateOf<Health?>(null)
+    var result by mutableStateOf<ApiHealth?>(null)
         private set
 
     init {
         viewModelScope.launch(Dispatchers.IO) {
-            result = client.get("https://gdos.alyxia.dev/api/health").body<Health>()
+            result = APIHealthServiceImpl(client).checkHealth()
         }
     }
 }

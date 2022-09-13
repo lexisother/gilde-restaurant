@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("kotlin-android")
+    kotlin("plugin.serialization") version "1.7.10"
 }
 
 val compose_version = "1.2.0"
@@ -14,6 +15,8 @@ android {
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
+
+        buildConfigField("String", "BASE_URL", "\"https://gdos.alyxia.dev/api\"")
 
         vectorDrawables {
             useSupportLibrary = true

@@ -1,8 +1,8 @@
-package dev.alyxia.portal_app.structures
+package dev.alyxia.portal_app.rest.dto;
 
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Health(
+data class ApiHealth(
     val ok: Boolean
 )
