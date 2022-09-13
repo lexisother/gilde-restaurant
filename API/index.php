@@ -39,4 +39,7 @@ $router->setNamespace("\App\Controllers");
 
 $router->all("/health", 'HealthController@getHealth');
 
+$router->get("/products", 'ProductsController@fetchProduct');
+// $router->post("/products", 'ProductsController@fetchProduct');
+
 $router->run();
