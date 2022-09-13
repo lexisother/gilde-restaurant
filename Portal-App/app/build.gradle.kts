@@ -47,6 +47,8 @@ android {
     }
 }
 
+val ktor_version = "2.1.1"
+
 dependencies {
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.5.1")
@@ -59,7 +61,12 @@ dependencies {
     implementation("com.google.accompanist:accompanist-systemuicontroller:0.18.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
     implementation("androidx.activity:activity-compose:1.5.1")
-    implementation("com.squareup.okhttp3:okhttp:3.10.0")
-    implementation("com.beust:klaxon:5.5")
+
+    // jesus christ ktor has like a million libraries
+    implementation("io.ktor:ktor-client-core:$ktor_version")
+    implementation("io.ktor:ktor-client-android:$ktor_version")
+    implementation("io.ktor:ktor-client-content-negotiation:$ktor_version")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:$ktor_version")
+
     debugImplementation("androidx.compose.ui:ui-tooling:$compose_version")
 }

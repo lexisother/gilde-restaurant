@@ -15,36 +15,35 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.beust.klaxon.Klaxon
 import dev.alyxia.portal_app.structures.Health
 import dev.alyxia.portal_app.ui.theme.PortalAppTheme
+import io.ktor.client.*
+import io.ktor.client.call.*
+import io.ktor.client.engine.android.*
+import io.ktor.client.plugins.contentnegotiation.*
+import io.ktor.client.request.*
+import io.ktor.serialization.kotlinx.json.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import okhttp3.OkHttpClient
-import okhttp3.Request
+import kotlinx.serialization.json.Json
 
 /**
  * @author X1nto
  */
 class EpicViewModel : ViewModel() {
-    private val client = OkHttpClient()
+    private val client = HttpClient(Android) {
+        install(ContentNegotiation) {
+            json(Json {
+                ignoreUnknownKeys = true
+            })
+        }
+    }
     var result by mutableStateOf<Health?>(null)
         private set
 
     init {
         viewModelScope.launch(Dispatchers.IO) {
-            try {
-                val builtReq =
-                    Request.Builder().url("https://gdos.alyxia.dev/api/health").build()
-                val request = client.newCall(builtReq).execute()?.body()?.string()
-                if (request != null) {
-                    result = with(Klaxon()) {
-                        parse<Health>(request)
-                    }
-                }
-            } catch (e: Exception) {
-                result = Health(ok = false)
-            }
+            result = client.get("https://gdos.alyxia.dev/api/health").body<Health>()
         }
     }
 }
