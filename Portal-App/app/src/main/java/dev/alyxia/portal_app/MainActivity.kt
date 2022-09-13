@@ -16,14 +16,11 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dev.alyxia.portal_app.rest.dto.ApiHealth
-import dev.alyxia.portal_app.rest.service.APIHealthService
 import dev.alyxia.portal_app.rest.service.APIHealthServiceImpl
 import dev.alyxia.portal_app.ui.theme.PortalAppTheme
 import io.ktor.client.*
-import io.ktor.client.call.*
 import io.ktor.client.engine.android.*
 import io.ktor.client.plugins.contentnegotiation.*
-import io.ktor.client.request.*
 import io.ktor.serialization.kotlinx.json.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

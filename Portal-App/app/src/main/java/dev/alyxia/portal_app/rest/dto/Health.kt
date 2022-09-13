@@ -1,4 +1,4 @@
-package dev.alyxia.portal_app.rest.dto;
+package dev.alyxia.portal_app.rest.dto
 
 import kotlinx.serialization.Serializable
 
