@@ -5,40 +5,40 @@ variables:
   ANDROID_BUILD_TOOLS: '33.0.0'
   ANDROID_SDK_TOOLS: '8512546'
 
-before_script:
-  - apt-get --quiet update --yes
-  - apt-get --quiet install --yes wget tar unzip lib32stdc++6 lib32z1
-  - wget --quiet --output-document=android-sdk.zip https://dl.google.com/android/repository/commandlinetools-linux-${ANDROID_SDK_TOOLS}_latest.zip
-  - unzip -d android-sdk-linux android-sdk.zip
-  - echo y | android-sdk-linux/cmdline-tools/bin/sdkmanager --sdk_root=. "platforms;android-${ANDROID_COMPILE_SDK}" >/dev/null
-  - echo y | android-sdk-linux/cmdline-tools/bin/sdkmanager --sdk_root=. "platform-tools" >/dev/null
-  - echo y | android-sdk-linux/cmdline-tools/bin/sdkmanager --sdk_root=. "build-tools;${ANDROID_BUILD_TOOLS}" >/dev/null
-  - export ANDROID_SDK_ROOT=$PWD
-  - export PATH=$PATH:$PWD/platform-tools/
-  - chmod +x ./Portal-App/gradlew
-  # temporarily disable checking for EPIPE error and use yes to accept all licenses
-  - set +o pipefail
-  - yes | android-sdk-linux/cmdline-tools/bin/sdkmanager --sdk_root=. --licenses
-  - set -o pipefail
-
 stages:
-  - build
-  - test
+  - app
+  # - api
 
-lintDebug:
-  stage: build
+buildLintApp:
+  image: openjdk:11-jdk
+  stage: app
+  cache:
+    paths:
+      - Portal-App/.gradle/wrapper
+      - Portal-App/.gradle/caches
+
+  before_script:
+    - apt-get --quiet update --yes
+    - apt-get --quiet install --yes wget tar unzip lib32stdc++6 lib32z1
+    - wget --quiet --output-document=android-sdk.zip https://dl.google.com/android/repository/commandlinetools-linux-${ANDROID_SDK_TOOLS}_latest.zip
+    - unzip -d android-sdk-linux android-sdk.zip
+    - echo y | android-sdk-linux/cmdline-tools/bin/sdkmanager --sdk_root=. "platforms;android-${ANDROID_COMPILE_SDK}" >/dev/null
+    - echo y | android-sdk-linux/cmdline-tools/bin/sdkmanager --sdk_root=. "platform-tools" >/dev/null
+    - echo y | android-sdk-linux/cmdline-tools/bin/sdkmanager --sdk_root=. "build-tools;${ANDROID_BUILD_TOOLS}" >/dev/null
+    - export ANDROID_SDK_ROOT=$PWD
+    - export PATH=$PATH:$PWD/platform-tools/
+    - chmod +x ./Portal-App/gradlew
+    # temporarily disable checking for EPIPE error and use yes to accept all licenses
+    - set +o pipefail
+    - yes | android-sdk-linux/cmdline-tools/bin/sdkmanager --sdk_root=. --licenses
+    - set -o pipefail
+
   script:
     - cd Portal-App
     - ./gradlew -Pci --console=plain :app:lintDebug -PbuildDir=lint
-  artifacts:
-    paths:
-      - Portal-App/app/lint/reports/lint-results-debug.html
-
-assembleDebug:
-  stage: build
-  script:
-    - cd Portal-App
     - ./gradlew assembleDebug
+
   artifacts:
     paths:
       - Portal-App/app/build/outputs/apk/debug/app-debug.apk
+      - Portal-App/app/lint/reports/lint-results-debug.html
