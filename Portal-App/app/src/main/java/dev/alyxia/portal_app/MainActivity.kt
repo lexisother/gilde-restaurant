@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -16,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dev.alyxia.portal_app.rest.dto.ApiHealth
+import dev.alyxia.portal_app.rest.dto.ApiResponse
 import dev.alyxia.portal_app.rest.service.APIHealthServiceImpl
 import dev.alyxia.portal_app.ui.theme.PortalAppTheme
 import io.ktor.client.*
@@ -37,7 +39,7 @@ class EpicViewModel : ViewModel() {
             })
         }
     }
-    var result by mutableStateOf<ApiHealth?>(null)
+    var result by mutableStateOf<ApiResponse<ApiHealth>?>(null)
         private set
 
     init {
@@ -58,18 +60,24 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colors.background
                 ) {
                     val viewModel: EpicViewModel by viewModels()
-                    val apiHealth = viewModel.result
-                    println("API is ok: $apiHealth")
-                    if (apiHealth != null) {
-                        Greeting(apiHealth.ok.toString())
+
+                    val res: Boolean?
+                    var err: String? = null
+                    when (val result = viewModel.result) {
+                        is ApiResponse.Success -> res = result.data.ok
+                        is ApiResponse.Error -> {
+                            err = result.error.error.type
+                            res = false
+                        }
+                        else -> res = false
+                    }
+
+                    Column {
+                        Text(text = "API is ok: $res")
+                        if (err !== null) Text(text = err)
                     }
                 }
             }
         }
     }
-}
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
 }
