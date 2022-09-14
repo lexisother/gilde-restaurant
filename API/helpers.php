@@ -1,5 +1,6 @@
 <?php
 
+use App\Lib\stdObject;
 use Illuminate\Container\Container;
 
 function app($abstract = null, array $parameters = [])
@@ -9,4 +10,8 @@ function app($abstract = null, array $parameters = [])
     }
 
     return Container::getInstance()->make($abstract, $parameters);
+}
+
+function jsonError(string $message) {
+    echo json_encode(new stdObject(["error" => $message]));
 }
