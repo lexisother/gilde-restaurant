@@ -7,19 +7,19 @@ variables:
 
 stages:
   - app
-  # - api
+  - api
 
 buildLintApp:
   image: openjdk:11-jdk
   stage: app
   cache:
     paths:
-      - Portal-App/.gradle/wrapper
-      - Portal-App/.gradle/caches
+      - .gradle/wrapper
+      - .gradle/caches
 
   before_script:
-    - apt-get --quiet update --yes
-    - apt-get --quiet install --yes wget tar unzip lib32stdc++6 lib32z1
+    - apt-get update --yes
+    - apt-get install --yes wget tar unzip lib32stdc++6 lib32z1
     - wget --quiet --output-document=android-sdk.zip https://dl.google.com/android/repository/commandlinetools-linux-${ANDROID_SDK_TOOLS}_latest.zip
     - unzip -d android-sdk-linux android-sdk.zip
     - echo y | android-sdk-linux/cmdline-tools/bin/sdkmanager --sdk_root=. "platforms;android-${ANDROID_COMPILE_SDK}" >/dev/null
@@ -42,3 +42,24 @@ buildLintApp:
     paths:
       - Portal-App/app/build/outputs/apk/debug/app-debug.apk
       - Portal-App/app/lint/reports/lint-results-debug.html
+
+lintApi:
+  image: php:8.1
+  stage: api
+  cache:
+    paths:
+      - API/vendor
+
+  before_script:
+    - apt-get update -yqq
+    - apt-get install git wget libzip-dev unzip -yqq
+    - docker-php-ext-install zip
+    - wget https://composer.github.io/installer.sig -O - -q | tr -d '\n' > installer.sig
+    - php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+    - php -r "if (hash_file('SHA384', 'composer-setup.php') === file_get_contents('installer.sig')) { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+    - php composer-setup.php
+    - php -r "unlink('composer-setup.php'); unlink('installer.sig');"
+    - php composer.phar install
+
+  script:
+    - php composer.phar run lint
