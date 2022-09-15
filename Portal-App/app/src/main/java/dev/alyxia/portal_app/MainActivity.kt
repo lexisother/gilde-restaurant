@@ -4,8 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.*
+import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -13,7 +13,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dev.alyxia.portal_app.rest.dto.ApiHealth
@@ -61,20 +63,36 @@ class MainActivity : ComponentActivity() {
                 ) {
                     val viewModel: EpicViewModel by viewModels()
 
-                    val res: Boolean?
-                    var err: String? = null
-                    when (val result = viewModel.result) {
-                        is ApiResponse.Success -> res = result.data.ok
-                        is ApiResponse.Error -> {
-                            err = result.error.error.type
-                            res = false
+                    if (viewModel.result == null) {
+                        Column(
+                            modifier = Modifier
+                                .wrapContentHeight()
+                                .fillMaxWidth(),
+                            verticalArrangement = Arrangement.spacedBy(10.dp)
+                        ) {
+                            CircularProgressIndicator(
+                                modifier = Modifier
+                                    .wrapContentSize()
+                                    .align(Alignment.CenterHorizontally)
+                            )
+                            Text(modifier = Modifier.align(Alignment.CenterHorizontally), text = "Loading...")
                         }
-                        else -> res = false
-                    }
+                    } else {
+                        val res: Boolean?
+                        var err: String? = null
+                        when (val result = viewModel.result) {
+                            is ApiResponse.Success -> res = result.data.ok
+                            is ApiResponse.Error -> {
+                                err = result.error.error.type
+                                res = false
+                            }
+                            else -> res = false
+                        }
 
-                    Column {
-                        Text(text = "API is ok: $res")
-                        if (err !== null) Text(text = err)
+                        Column {
+                            Text(text = "API is ok: $res")
+                            if (err !== null) Text(text = err)
+                        }
                     }
                 }
             }
