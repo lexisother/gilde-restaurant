@@ -9,8 +9,8 @@ buildLintApp:
   image: openjdk:11-jdk
   cache:
     paths:
-      - .gradle/wrapper
-      - .gradle/caches
+      - Portal-App/.gradle/wrapper
+      - Portal-App/.gradle/caches
 
   before_script:
     - apt-get update --yes
@@ -32,6 +32,9 @@ buildLintApp:
     - cd Portal-App
     - ./gradlew -Pci --console=plain :app:lintDebug -PbuildDir=lint
     - ./gradlew assembleDebug
+    - ls -a
+    - ls -a ../
+    - ls -r .gradle
 
   artifacts:
     paths:
