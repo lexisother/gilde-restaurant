@@ -1,0 +1,119 @@
+package dev.alyxia.portal_app.composables
+
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.material.Card
+import androidx.compose.material.CircularProgressIndicator
+import androidx.compose.material.Surface
+import androidx.compose.material.Text
+import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
+import dev.alyxia.portal_app.rest.body.ProductBody
+import dev.alyxia.portal_app.rest.dto.ApiProduct
+import dev.alyxia.portal_app.rest.dto.ApiResponse
+import dev.alyxia.portal_app.rest.dto.ProductList
+import dev.alyxia.portal_app.rest.service.APIProductServiceImpl
+import io.ktor.client.*
+import io.ktor.client.engine.android.*
+import io.ktor.client.plugins.contentnegotiation.*
+import io.ktor.serialization.kotlinx.json.*
+import kotlinx.coroutines.launch
+import kotlinx.serialization.json.Json
+
+open class HttpViewModel<T> : ViewModel() {
+    val client = HttpClient(Android) {
+        install(ContentNegotiation) {
+            json(Json {
+                ignoreUnknownKeys = true
+            })
+        }
+    }
+    var result by mutableStateOf<ApiResponse<T>?>(null)
+}
+
+class MenuViewModel : HttpViewModel<ProductList>() {
+    init {
+        viewModelScope.launch {
+            result = APIProductServiceImpl(client).fetchAll()
+        }
+    }
+
+    fun fetch(name: String) {
+        viewModelScope.launch {
+            result = APIProductServiceImpl(client).fetch(
+                ProductBody(name)
+            )
+        }
+    }
+}
+
+@Composable
+fun MenuCard(navController: NavController, viewModel: MenuViewModel = viewModel()) {
+    Surface(modifier = Modifier.fillMaxSize()) {
+        if (viewModel.result == null) {
+            Column(
+                modifier = Modifier
+                    .wrapContentHeight()
+                    .fillMaxWidth(),
+                verticalArrangement = Arrangement.spacedBy(10.dp)
+            ) {
+                CircularProgressIndicator(
+                    modifier = Modifier
+                        .wrapContentSize()
+                        .align(Alignment.CenterHorizontally)
+                )
+                Text(
+                    modifier = Modifier.align(Alignment.CenterHorizontally),
+                    text = "Loading..."
+                )
+            }
+        } else {
+            var res: List<ApiProduct>? = null
+            var err: String? = null
+            when (val result = viewModel.result) {
+                is ApiResponse.Success -> res = result.data
+                is ApiResponse.Error -> {
+                    err = result.error.error.type
+                    res = null
+                }
+                else -> false
+            }
+
+            LazyColumn(
+                modifier = Modifier.padding(10.dp),
+                verticalArrangement = Arrangement.spacedBy(10.dp)
+            ) {
+                res?.let { products ->
+                    items(products.map { it }) { product ->
+                        ListItem(product)
+                    }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun ListItem(product: ApiProduct) {
+    var isDialogVisible by remember { mutableStateOf(false) }
+
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable { isDialogVisible = true },
+        elevation = 10.dp
+    ) {
+        Column(modifier = Modifier.padding(15.dp)) {
+            Text(product.name)
+            Text(product.description)
+        }
+    }
+}

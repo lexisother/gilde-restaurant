@@ -82,6 +82,9 @@ fun Main(
 
             Column {
                 Text(text = "API is ok: $res")
+                Button(onClick = { navController.navigate("menu") }) {
+
+                }
                 if (err !== null) {
                     var isDialogVisible by remember { mutableStateOf(false) }
                     LaunchedEffect(scaffoldState.snackbarHostState) {
