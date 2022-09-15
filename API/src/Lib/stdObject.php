@@ -23,7 +23,8 @@ class stdObject {
         if (isset($this->{$method}) && is_callable($this->{$method})) {
             return call_user_func_array($this->{$method}, $arguments);
         } else {
-            throw new Exception("Fatal error: Call to undefined method stdObject::$method()");
+            throw new Exception("Fatal error: Call to undefined method stdObject::{$method}()");
         }
     }
 }
+
