@@ -57,6 +57,13 @@ class ProductsController
         }
     }
 
+    public function editProduct($id)
+    {
+        $item = Product::findOrFail($id);
+        $data = json_decode(file_get_contents("php://input"));
+        $item->update((array)$data);
+    }
+
     public function deleteProduct($id)
     {
         $item = Product::findOrFail($id);

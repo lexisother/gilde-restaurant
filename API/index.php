@@ -41,7 +41,7 @@ $router->all("/health", 'HealthController@getHealth');
 
 $router->get("/products", 'ProductsController@fetchProduct');
 $router->post("/products", 'ProductsController@createProduct');
-//$router->post("/products/(\d+)/edit", 'ProductsController@editProduct');
+$router->patch("/products/(\d+)", 'ProductsController@editProduct');
 $router->delete("/products/(\d+)", 'ProductsController@deleteProduct');
 
 $router->run();
