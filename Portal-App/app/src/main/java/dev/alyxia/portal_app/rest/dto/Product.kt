@@ -9,7 +9,6 @@ import kotlinx.serialization.descriptors.SerialDescriptor
 import kotlinx.serialization.encoding.Decoder
 import kotlinx.serialization.encoding.Encoder
 import java.time.Instant
-import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.util.*
 
@@ -38,7 +37,6 @@ data class ApiProduct(
     val created_at: Date,
     @Serializable(with = DateSerializer::class)
     val updated_at: Date,
-
     val name: String,
     val description: String,
     val price: Double
