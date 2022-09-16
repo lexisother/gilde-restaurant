@@ -3,6 +3,9 @@ package dev.alyxia.portal_app.composables
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Card
 import androidx.compose.material.CircularProgressIndicator
@@ -87,12 +90,12 @@ fun MenuCard(navController: NavController, viewModel: MenuViewModel = viewModel(
                 else -> false
             }
 
-            LazyColumn(
-                modifier = Modifier.padding(10.dp),
-                verticalArrangement = Arrangement.spacedBy(10.dp)
+            LazyVerticalGrid(
+                modifier = Modifier.padding(8.dp),
+                columns = GridCells.Fixed(4)
             ) {
                 res?.let { products ->
-                    items(products.map { it }) { product ->
+                    items(products) { product ->
                         ListItem(product)
                     }
                 }
