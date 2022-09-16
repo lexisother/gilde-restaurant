@@ -11,6 +11,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import dev.alyxia.portal_app.composables.Main
+import dev.alyxia.portal_app.composables.MenuCard
 import dev.alyxia.portal_app.ui.theme.PortalAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -26,6 +27,7 @@ class MainActivity : ComponentActivity() {
                     val navController = rememberNavController()
                     NavHost(navController = navController, startDestination = "main") {
                         composable("main") { Main(navController) }
+                        composable("menu") { MenuCard(navController) }
                     }
                 }
             }
