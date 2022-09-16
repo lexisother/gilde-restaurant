@@ -8,30 +8,36 @@ import kotlinx.serialization.descriptors.PrimitiveSerialDescriptor
 import kotlinx.serialization.descriptors.SerialDescriptor
 import kotlinx.serialization.encoding.Decoder
 import kotlinx.serialization.encoding.Encoder
+import java.time.Instant
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
+import java.util.*
 
-object LocalDateSerializer : KSerializer<LocalDate> {
+object DateSerializer : KSerializer<Date> {
     override val descriptor: SerialDescriptor =
-        PrimitiveSerialDescriptor("LocalDateSerializer", PrimitiveKind.STRING)
+        PrimitiveSerialDescriptor("DateSerializer", PrimitiveKind.STRING)
 
-    override fun serialize(encoder: Encoder, value: LocalDate) {
-        encoder.encodeString(DateTimeFormatter.ISO_DATE.format(value))
+    override fun serialize(encoder: Encoder, value: Date) {
+        val timeFormatter: DateTimeFormatter = DateTimeFormatter.ISO_DATE_TIME
+        val accessor = timeFormatter.parse(value.toString())
+        encoder.encodeString(Date.from(Instant.from(accessor)).toString())
     }
 
-    override fun deserialize(decoder: Decoder): LocalDate =
-        LocalDate.parse(decoder.decodeString())
+    override fun deserialize(decoder: Decoder): Date {
+        val timeFormatter: DateTimeFormatter = DateTimeFormatter.ISO_DATE_TIME
+        val accessor = timeFormatter.parse(decoder.decodeString())
+        return Date.from(Instant.from(accessor))
+    }
 }
 
-//typealias ProductList = Map<String, ApiProduct>
 typealias ProductList = List<ApiProduct>
 
 @Serializable
 data class ApiProduct(
-    @Serializable(with = LocalDateSerializer::class)
-    val created_at: LocalDate,
-    @Serializable(with = LocalDateSerializer::class)
-    val updated_at: LocalDate,
+    @Serializable(with = DateSerializer::class)
+    val created_at: Date,
+    @Serializable(with = DateSerializer::class)
+    val updated_at: Date,
 
     val name: String,
     val description: String,
