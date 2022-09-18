@@ -1,8 +1,9 @@
 package dev.alyxia.portal_app.rest.dto
 
-
+import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.Serializer
 import kotlinx.serialization.descriptors.PrimitiveKind
 import kotlinx.serialization.descriptors.PrimitiveSerialDescriptor
 import kotlinx.serialization.descriptors.SerialDescriptor
@@ -12,6 +13,8 @@ import java.time.Instant
 import java.time.format.DateTimeFormatter
 import java.util.*
 
+@OptIn(ExperimentalSerializationApi::class)
+@Serializer(forClass = Date::class)
 object DateSerializer : KSerializer<Date> {
     override val descriptor: SerialDescriptor =
         PrimitiveSerialDescriptor("DateSerializer", PrimitiveKind.STRING)
@@ -37,7 +40,8 @@ data class ApiProduct(
     val created_at: Date,
     @Serializable(with = DateSerializer::class)
     val updated_at: Date,
+    val id: Int,
     val name: String,
     val description: String,
-    val price: Double
+    val price: Int
 )

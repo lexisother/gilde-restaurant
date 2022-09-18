@@ -10,6 +10,7 @@ import io.ktor.client.request.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
+
 interface APIProductService {
     suspend fun fetchAll(): ApiResponse<ProductList>
     suspend fun fetch(body: ProductBody): ApiResponse<ProductList>

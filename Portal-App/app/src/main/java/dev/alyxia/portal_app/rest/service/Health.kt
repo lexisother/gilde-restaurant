@@ -1,8 +1,8 @@
 package dev.alyxia.portal_app.rest.service
 
-import dev.alyxia.portal_app.rest.dto.ApiHealth
 import dev.alyxia.portal_app.BuildConfig
 import dev.alyxia.portal_app.lib.bodyAsApiResponse
+import dev.alyxia.portal_app.rest.dto.ApiHealth
 import dev.alyxia.portal_app.rest.dto.ApiResponse
 import io.ktor.client.*
 import io.ktor.client.request.*
@@ -15,7 +15,7 @@ interface APIHealthService {
 
 class APIHealthServiceImpl(
     private val client: HttpClient
-): APIHealthService {
+) : APIHealthService {
 
     override suspend fun checkHealth(): ApiResponse<ApiHealth> {
         val url = getHealthUrl()

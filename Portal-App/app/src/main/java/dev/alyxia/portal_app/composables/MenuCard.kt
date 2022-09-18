@@ -26,6 +26,7 @@ import io.ktor.client.*
 import io.ktor.client.engine.android.*
 import io.ktor.client.plugins.contentnegotiation.*
 import io.ktor.serialization.kotlinx.json.*
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.serialization.json.Json
 
@@ -42,7 +43,7 @@ open class HttpViewModel<T> : ViewModel() {
 
 class MenuViewModel : HttpViewModel<ProductList>() {
     init {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             result = APIProductServiceImpl(client).fetchAll()
         }
     }
