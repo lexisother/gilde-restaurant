@@ -13,33 +13,17 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
+import dev.alyxia.portal_app.lib.HttpViewModel
 import dev.alyxia.portal_app.rest.body.ProductBody
 import dev.alyxia.portal_app.rest.dto.ApiProduct
 import dev.alyxia.portal_app.rest.dto.ApiResponse
 import dev.alyxia.portal_app.rest.dto.ProductList
 import dev.alyxia.portal_app.rest.service.APIProductServiceImpl
-import io.ktor.client.*
-import io.ktor.client.engine.android.*
-import io.ktor.client.plugins.contentnegotiation.*
-import io.ktor.serialization.kotlinx.json.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.serialization.json.Json
-
-open class HttpViewModel<T> : ViewModel() {
-    val client = HttpClient(Android) {
-        install(ContentNegotiation) {
-            json(Json {
-                ignoreUnknownKeys = true
-            })
-        }
-    }
-    var result by mutableStateOf<ApiResponse<T>?>(null)
-}
 
 class MenuViewModel : HttpViewModel<ProductList>() {
     init {
