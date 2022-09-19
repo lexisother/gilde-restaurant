@@ -1,0 +1,65 @@
+
+body {
+    margin: 0;
+    background-color: rgba(255, 255, 220, 0.4)
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 1%;
+    background-color: #161616;
+    opacity: calc(90%);
+    position: fixed;
+    z-index: 2;
+    width: 98%;
+    
+}
+
+li, a {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 18px;
+    color: azure;
+    text-decoration: none;
+}
+
+button {
+    color: white;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 9px 25px;
+    background-color: #ff8000e9;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+button:hover {
+    background-color: rgba(255, 119, 1, 0.6);
+
+}
+
+
+.nav_links {
+    list-style: none;
+}
+
+.nav_links li {
+    display: inline-block;  
+    padding: 0px 20px;
+}
+
+.nav_links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.nav_links li a:hover {
+    color:  rgba(255, 128, 0, 0.915);
+}
+
+.guac-logo {
+    max-height: 5%;
+    max-width:5%;
+    cursor: pointer;   
+}
