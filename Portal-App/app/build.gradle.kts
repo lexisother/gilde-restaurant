@@ -53,26 +53,16 @@ android {
     }
 }
 
-val ktor_version = "2.1.1"
-
 dependencies {
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.appcompat:appcompat:1.5.1")
-    implementation("com.google.android.material:material:1.6.1")
-    implementation("androidx.compose.ui:ui:$compose_version")
-    implementation("androidx.compose.material:material:$compose_version")
-    implementation("androidx.compose.ui:ui-tooling-preview:$compose_version")
-    implementation("androidx.compose.material:material-icons-extended:$compose_version")
-    implementation("androidx.navigation:navigation-compose:2.6.0-alpha01")
-    implementation("com.google.accompanist:accompanist-systemuicontroller:0.25.1")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
-    implementation("androidx.activity:activity-compose:1.5.1")
+    Dependencies.AndroidxCore(this)
+    Dependencies.Compose(this)
+    Dependencies.Ktor(this)
 
-    // jesus christ ktor has like a million libraries
-    implementation("io.ktor:ktor-client-core:$ktor_version")
-    implementation("io.ktor:ktor-client-android:$ktor_version")
-    implementation("io.ktor:ktor-client-content-negotiation:$ktor_version")
-    implementation("io.ktor:ktor-serialization-kotlinx-json:$ktor_version")
+    // NOTE: Old deps, not needed?
+    // implementation("androidx.appcompat:appcompat:1.5.1")
+    // implementation("com.google.android.material:material:1.6.1")
+    // implementation("com.google.accompanist:accompanist-systemuicontroller:0.25.1")
+    // implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
 
     debugImplementation("androidx.compose.ui:ui-tooling:$compose_version")
 }
