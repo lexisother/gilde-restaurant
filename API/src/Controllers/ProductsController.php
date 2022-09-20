@@ -6,7 +6,7 @@ use App\DTO\Product as DTOProduct;
 use App\Models\Product;
 use Exception;
 
-class ProductsController
+class ProductsController extends Controller
 {
     /**
      * @throws Exception
