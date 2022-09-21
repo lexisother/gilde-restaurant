@@ -2,7 +2,8 @@
 
 namespace App\Controllers;
 
-abstract class Controller {
+abstract class Controller
+{
     private function __name()
     {
         return (new ReflectionClass($this))->getShortName();
