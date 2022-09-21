@@ -9,6 +9,6 @@ class UserController extends Controller
 
     public function loginUser()
     {
-
+        TODO();
     }
 }
