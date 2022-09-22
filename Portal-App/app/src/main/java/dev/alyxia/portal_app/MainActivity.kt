@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import dev.alyxia.portal_app.composables.LoginScreen
 import dev.alyxia.portal_app.composables.Main
 import dev.alyxia.portal_app.composables.MenuCard
 import dev.alyxia.portal_app.ui.theme.PortalAppTheme
@@ -25,7 +26,8 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colors.background
                 ) {
                     val navController = rememberNavController()
-                    NavHost(navController = navController, startDestination = "main") {
+                    NavHost(navController = navController, startDestination = "loginscreen") {
+                        composable("loginscreen") { LoginScreen(navController) }
                         composable("main") { Main(navController) }
                         composable("menu") { MenuCard(navController) }
                     }

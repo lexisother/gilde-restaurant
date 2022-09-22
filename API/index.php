@@ -44,4 +44,7 @@ $router->post("/products", 'ProductsController@createProduct');
 $router->patch("/products/(\d+)", 'ProductsController@editProduct');
 $router->delete("/products/(\d+)", 'ProductsController@deleteProduct');
 
+$router->post("/auth/register", "UserController@registerUser");
+$router->post("/auth/login", "UserController@loginUser");
+
 $router->run();
