@@ -30,7 +30,11 @@
 
 
 <div class="menu-image">
-
+<button class="menukaart">BEKIJK DE MENUKAART</button>
+<h3>VOLOP KEUS VOOR GROOT EN KLEIN!</h3>
+<h4>De menukaart van Holy Guacamoley! Ons Restaurant is zeer gevarieerd. <br>
+    Met onder meer panini's, broodjes, verse pasta's, gegrilde kip, vis, steak<br> 
+    en de onvervalste hamburgers van de lavaplaat. <br></h4>
 
 </div>
 
