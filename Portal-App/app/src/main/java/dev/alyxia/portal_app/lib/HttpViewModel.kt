@@ -7,12 +7,18 @@ import androidx.lifecycle.ViewModel
 import dev.alyxia.portal_app.rest.dto.ApiResponse
 import io.ktor.client.*
 import io.ktor.client.engine.android.*
+import io.ktor.client.plugins.*
 import io.ktor.client.plugins.contentnegotiation.*
+import io.ktor.client.request.*
+import io.ktor.http.*
 import io.ktor.serialization.kotlinx.json.*
 import kotlinx.serialization.json.Json
 
 open class HttpViewModel<T> : ViewModel() {
     val client = HttpClient(Android) {
+        defaultRequest {
+            header(HttpHeaders.ContentType, ContentType.Application.Json.toString())
+        }
         install(ContentNegotiation) {
             json(Json {
                 ignoreUnknownKeys = true
