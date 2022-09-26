@@ -58,6 +58,10 @@ class UserController extends Controller
 
     public function loginUser()
     {
-        TODO();
+        $data = json_decode(file_get_contents("php://input"));
+        $user = User::where('email', $data->email)->where('password', md5($data->password));
+        if ($user->exists()) {
+            echo json_encode($user->first());
+        }
     }
 }
