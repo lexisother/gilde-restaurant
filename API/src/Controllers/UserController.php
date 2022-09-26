@@ -9,8 +9,8 @@ use Exception;
 class UserController extends Controller
 {
     private function checkRegData($data) {
-        if (empty($data->username)) {
-            throw new Exception("Username is required.");
+        if (empty($data->name)) {
+            throw new Exception("Name is required.");
         }
 
         if (empty($data->email)) {

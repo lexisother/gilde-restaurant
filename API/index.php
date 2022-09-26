@@ -19,7 +19,7 @@ $whoops->register();
 #region Illuminate setup {{{
 $capsule = new Capsule();
 $capsule->addConnection([
-    'driver' => 'mysql',
+    'driver' => 'pgsql',
     'host' => getenv('GITHUB_API_URL') ? 'mariadb' : 'localhost',
     'database' => 'GDOS_Restaurant',
     'username' => 'root',
