@@ -16,10 +16,30 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
+import dev.alyxia.portal_app.lib.HttpViewModel
+import dev.alyxia.portal_app.rest.body.UserBody
+import dev.alyxia.portal_app.rest.dto.ApiResponse
+import dev.alyxia.portal_app.rest.dto.ApiUser
+import dev.alyxia.portal_app.rest.service.APIUserServiceImpl
+import kotlinx.coroutines.launch
+
+class LoginViewModel : HttpViewModel<ApiUser>() {
+    fun login(email: String, password: String) {
+        viewModelScope.launch {
+            result = APIUserServiceImpl(client).login(
+                UserBody(email, password)
+            )
+        }
+    }
+}
 
 @Composable
-fun LoginScreen(navController: NavController) {
+fun LoginScreen(navController: NavController, viewModel: LoginViewModel = viewModel()) {
+    val scaffoldState = rememberScaffoldState()
+
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
         Column {
             Text(
@@ -90,6 +110,14 @@ fun LoginScreen(navController: NavController) {
 //                colors = ButtonDefaults.buttonColors(backgroundColor = )
                 onClick = {
                     if (emailState.text.isNotEmpty() && !isErrorred && passState.text.isNotEmpty()) {
+                        viewModel.login(emailState.text, passState.text)
+                        when (val result = viewModel.result) {
+                            is ApiResponse.Success -> navController.navigate("main")
+                            is ApiResponse.Error -> {
+                                TODO("Handle the error")
+                            }
+                            else -> {}
+                        }
                         navController.navigate("main")
                     }
                 }
