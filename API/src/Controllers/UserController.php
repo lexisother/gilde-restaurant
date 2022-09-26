@@ -59,9 +59,15 @@ class UserController extends Controller
     public function loginUser()
     {
         $data = json_decode(file_get_contents("php://input"));
-        $user = User::where('email', $data->email)->where('password', md5($data->password));
-        if ($user->exists()) {
-            echo json_encode($user->first());
+        $user = User::where('email', $data->email)->first();
+        if (!empty($user)) {
+            if (md5($data->password) == $user->password) {
+                echo json_encode($user->first());
+            } else {
+                throw new Exception("Password doesn't match!");
+            }
+        } else {
+            throw new Exception("User not found!");
         }
     }
 }
