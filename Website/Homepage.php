@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Homepage.css">
+    <link rel="stylesheet" href="homepage.css">
     <a href="images"></a>
     <title>Holly Guacamoley</title>
 </head>
@@ -10,7 +10,7 @@
 
 <body>
 <?php 
-    include 'header/header.php'; 
+    include 'header.php'; 
 ?> 
 
 
@@ -32,7 +32,6 @@
     Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper.<br>
 </p>
 
-
 <div class="container-mini">
     <p class="menuboard-text">Bij Holly Guacamoley kun je:</p>
 </div>
@@ -43,7 +42,7 @@
 <div class="menu-image">
 <button class="menukaart">BEKIJK DE MENUKAART</button>
     <h3>VOLOP KEUS VOOR GROOT EN KLEIN!</h3>
-    <h4>De menukaart van Holy Guacamoley! Ons Restaurant is zeer gevarieerd. <br>
+    <h4>De menukaart van Holly Guacamoley! Ons Restaurant is zeer gevarieerd. <br>
         Met onder andere: panini's, broodjes, verse pasta's, gegrilde kip, vis en heerlijke steak. <br></h4>
 </div>
 
@@ -53,11 +52,9 @@
     <p class="reservering-text">Reserveer snel en gemakkelijk.</p>
 </div>
 
-<div class="contact-image">
-<div class="contact-container">
-</div>
-
-<p class="bottom-text">©2022 Restaurant - Holly Guacamoley!</p>
+<?php
+    include 'footer.php'; 
+?>
 </body>
 </html>
     

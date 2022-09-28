@@ -1,0 +1,37 @@
+.contact-image{
+    position: relative;
+    top: 110%;
+    background-size: cover;
+    background-size: 100%;
+    width: 100%;
+    height: 550px;
+    background-image: url("https://cdn.discordapp.com/attachments/1017696900184555522/1021709868710768680/black-stones-wall-textures-backgrounds-1266872.jpg");
+}
+
+.contact-container{
+    position: relative;
+    background-color: black;
+    opacity: calc(70%);
+    width: 100%;
+    height: 550px;
+    z-index: 1;
+}
+
+.bottom-text{
+    position: relative;
+    bottom: 10px;
+    color: black;
+    top: 10px;
+    left: 100px;
+    max-width: 50%;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 17px;
+    letter-spacing: .2rem;
+}
+
+.contact-title{
+    position: relative;
+    font-weight: bold;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
