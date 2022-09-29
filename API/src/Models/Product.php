@@ -29,5 +29,9 @@ class Product extends Model
         'name',
         'description',
         'price',
+        'spanish',
+        'warm',
+        'cold',
+        'vega'
     ];
 }
