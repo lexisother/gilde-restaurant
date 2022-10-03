@@ -10,8 +10,12 @@ class Product
     public string $name;
     public string $description;
     public float $price;
+    public bool $spanish;
+    public bool $warm;
+    public bool $cold;
+    public bool $vega;
 
-    public function __construct($id, $name, $description, $price)
+    public function __construct($id, $name, $description, $price, $spanish, $warm, $cold, $vega)
     {
         if (is_int($id)) {
             $this->id = $id;
@@ -35,6 +39,30 @@ class Product
             $this->price = $price;
         } else {
             throw new InvalidArgumentException('$price must be a float');
+        }
+
+        if (is_bool($spanish)) {
+            $this->spanish = $spanish;
+        } else {
+            throw new InvalidArgumentException('$spanish must be a boolean');
+        }
+
+        if (is_bool($warm)) {
+            $this->warm = $warm;
+        } else {
+            throw new InvalidArgumentException('$warm must be a boolean');
+        }
+
+        if (is_bool($cold)) {
+            $this->cold = $cold;
+        } else {
+            throw new InvalidArgumentException('$cold must be a boolean');
+        }
+
+        if (is_bool($vega)) {
+            $this->vega = $vega;
+        } else {
+            throw new InvalidArgumentException('$vega must be a boolean');
         }
     }
 }

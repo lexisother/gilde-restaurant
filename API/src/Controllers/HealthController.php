@@ -16,4 +16,3 @@ class HealthController extends Controller
         echo '{"ok": true}';
     }
 }
-

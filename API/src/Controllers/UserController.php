@@ -53,13 +53,22 @@ class UserController extends Controller
         }
     }
 
+    /**
+     * @throws Exception
+     */
     public function loginUser()
     {
         $data = json_decode(file_get_contents("php://input"));
+        $user = $this->login($data);
+        echo json_encode($user);
+    }
+
+    private function login($data)
+    {
         $user = User::where('email', $data->email)->first();
         if (!empty($user)) {
             if (md5($data->password) == $user->password) {
-                echo json_encode($user->first());
+                return $user->first();
             } else {
                 throw new Exception("Password doesn't match!");
             }
@@ -67,4 +76,15 @@ class UserController extends Controller
             throw new Exception("User not found!");
         }
     }
+
+    public function clockUser()
+    {
+        $data = json_decode(file_get_contents("php://input"));
+        $user = $this->login($data);
+        $user->update([
+            'clocked' => !$user->clocked
+        ]);
+        echo json_encode($user);
+    }
+
 }

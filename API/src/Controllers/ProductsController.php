@@ -44,7 +44,7 @@ class ProductsController extends Controller
         $data = json_decode(file_get_contents("php://input"));
 
         if (!empty((array)$data)) {
-            $prod = new DTOProduct(0, $data->name, $data->description, $data->price);
+            $prod = new DTOProduct(0, $data->name, $data->description, $data->price, $data->spanish, $data->warm, $data->cold, $data->vega);
             $res = new Product([
                 'name' => $prod->name,
                 'description' => $prod->description,

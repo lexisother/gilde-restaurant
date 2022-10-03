@@ -29,5 +29,6 @@ class User extends Model
         'name',
         'email',
         'password',
+        'clocked',
     ];
 }

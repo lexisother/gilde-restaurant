@@ -16,5 +16,9 @@ data class ApiProduct(
     val id: Int,
     val name: String,
     val description: String,
-    val price: Int
+    val price: Int,
+    val spanish: Boolean,
+    val warm: Boolean,
+    val cold: Boolean,
+    val vega: Boolean
 )

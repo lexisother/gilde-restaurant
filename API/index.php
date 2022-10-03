@@ -46,5 +46,6 @@ $router->delete("/products/(\d+)", 'ProductsController@deleteProduct');
 
 $router->post("/auth/register", "UserController@registerUser");
 $router->post("/auth/login", "UserController@loginUser");
+$router->post("/user/clock", "UserController@clockUser");
 
 $router->run();
