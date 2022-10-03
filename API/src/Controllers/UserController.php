@@ -76,4 +76,15 @@ class UserController extends Controller
             throw new Exception("User not found!");
         }
     }
+
+    public function clockUser()
+    {
+        $data = json_decode(file_get_contents("php://input"));
+        $user = $this->login($data);
+        $user->update([
+            'clocked' => !$user->clocked
+        ]);
+        echo json_encode($user);
+    }
+
 }
