@@ -2,9 +2,9 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="reserveren.css">
+    <link rel="stylesheet" href="menu.css">
     <a href="images"></a>
-    <title>Holly Guacamoley Reserveren</title>
+    <title>Holly Guacamoley Menu</title>
 </head>
 <body>
 <?php 
@@ -13,8 +13,8 @@
 <div class="black-header"></div>
 <div class="front-image"></div>
 <center>
-    <p class="front-title">Reserveren</p>
-    <p class="front-info">Kom je bij ons eten? Reserveer alvast je plaats!</p>
+    <p class="front-title">Menu Kaart</p>
+    <p class="front-info">Kom je bij ons eten? Bekijk alvast wat op het menu staat!</p>
 </center>
 
 
