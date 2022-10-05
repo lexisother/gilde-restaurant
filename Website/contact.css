@@ -224,14 +224,14 @@ img{
 
 .fourth-list{
     position: absolute;
-    font-size: 1.3em;
-    top: 22.5em;
-    left: 1em;
-    width: 30em;
+    font-size: 0.5em;
+    top: 60em;
+    left: 0.2em;
+    width: 70em;
     color: black;
 }
 
-li{
+.kleur{
     color: black;
 }
 

@@ -3,7 +3,6 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="contact.css">
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <title>Holly Guacamoley Contact</title>
 </head>
 
@@ -29,7 +28,11 @@
     <p class="third-text" >Wij zijn 7 dagen per week open!<br>Maandag t/m zondag vanaf 17:00u tot 00:00u.(Keuken is gesloten vanaf 10:00 behalve desserts en dranken).<br><br>Wil je er zeker van zijn dat je kunt dineren?<br>Bel: +31 6 00000000</p>
     <h1 class="fourth-header" >Bij Holly Guacamoley</h1>
     <ul class="fourth-list">
-        <li><a>Test</a></li>
+        <li class="kleur">is pinnen mogelijk</li>
+        <li class="kleur">kun je gratis parkeren</li>
+        <li class="kleur">kun je dineren</li>
+        <li class="kleur">heb je een uitgebreide keuze</li>
+        <li class="kleur">kun je eten en drinken met je hele gezin</li>
     </ul>
 </div>
 
