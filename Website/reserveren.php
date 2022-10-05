@@ -6,6 +6,7 @@
     <title>Holly Guacamoley Reserveren</title>
 </head>
 <body>
+    <div></div>
 <?php 
     include 'header.php'; 
 ?> 

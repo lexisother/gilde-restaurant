@@ -11,6 +11,7 @@
 ?> 
 <div class="black-header"></div>
 <div class="front-image"></div>
+<div></div>
 <center>
     <p class="front-title">Menukaart</p>
     <p class="front-info">Kom je bij ons eten? Bekijk alvast wat op het menu staat!</p>
