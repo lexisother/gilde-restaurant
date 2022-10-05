@@ -1,6 +1,7 @@
 body{
     height: 900px;
     max-width: 100%;
+
 }
 
 
@@ -26,32 +27,31 @@ img{
 }
 
 .main-text{
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: bold;
     color: white;
     font-size: 60px;
     height: 5em;
     position: relative;
     top: 150px;
     filter: drop-shadow(1px 1px 10px #00000075);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .text1{
-    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
     color: white;
     font-size: 40px;
     position: relative;
     top: 200px;
     filter: drop-shadow(1px 1px 10px #00000075);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .text2{
-    font-family: cursive;
     color: white;
     font-size: 20px;
     position: relative;
     top: 210px;
     filter: drop-shadow(1px 1px 10px #00000075);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .under-line{
@@ -74,6 +74,7 @@ img{
 /*Form CSS/On the right side of the line*/
 
 .form-text-1{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     position: absolute;
     top: 21.5em;
     left: 20em;
@@ -82,6 +83,7 @@ img{
 }
 
 .form-text-2{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     position: absolute;
     top: 47em;
     left: 40.2em;
@@ -90,6 +92,7 @@ img{
 }
 
 .form-naam {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     position: absolute;
     top: 65em;
     left: 50.2em;
@@ -103,6 +106,7 @@ img{
 }
 
 .form-email {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     position: absolute;
     top: 70em;
     left: 50.2em;
@@ -116,6 +120,7 @@ img{
 }
 
 .form-onderwerp {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     position: absolute;
     top: 75em;
     left: 50.2em;
@@ -129,6 +134,7 @@ img{
 }
 
 .form-vragen {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     position: absolute;
     top: 80em;
     left: 50.2em;
@@ -142,6 +148,7 @@ img{
 }
 
 .submit{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     position: absolute;
     top: 112.5em;
     left: 60.2em;
@@ -163,6 +170,7 @@ img{
 /*Text on the left side of the line*/
 
 .left-text{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     position: absolute;
     top: 48em;
 }
@@ -170,8 +178,8 @@ img{
 .left-header{
     position: absolute;
     font-size: 3em;
-    left: 2.25em;
-    width: 14em;
+    left: 1.3em;
+    width: 15em;
 }
 
 .header-text{
@@ -226,7 +234,7 @@ img{
     position: absolute;
     font-size: 0.5em;
     top: 60em;
-    left: 0.2em;
+    left: 0.25em;
     width: 70em;
     color: black;
 }
