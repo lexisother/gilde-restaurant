@@ -1,3 +1,6 @@
+
+@media only screen and (max-width: 600px) {}
+
 body{
     height: 900px;
     max-width: 100%;
@@ -154,16 +157,16 @@ img{
     height: 60px;
     width: 400px;
     box-sizing: border-box;
-    border: 2px solid #EE8133;
-    border-radius: 4px;
-    background-color: #EE8133;
+    border: 2px solid #fb9127;
+    background-color: #fb9127;
     color: white;
     transition: background-color 0.5s, color 0.5s;
 }
 
 .submit:hover{
-    background-color: white;
-    color: black;
+    border: 3px solid #fb9127;
+    color: #fb9127;
+    background-color: transparent;
 }
 
 /*Text on the left side of the line*/
@@ -301,5 +304,3 @@ img{
     letter-spacing: .2rem;
 }
 
-
-@media only screen and (max-width: 600px) {}

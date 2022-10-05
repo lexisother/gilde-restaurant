@@ -33,14 +33,14 @@
 </div>
 
 <div class="menu-image">
-<button href="menu.php" class="menukaart">BEKIJK DE MENUPAGINA</button>
+<a href="menu.php"><button class="menukaart">BEKIJK DE MENUPAGINA</button></a>
     <h3>VOLOP KEUS VOOR GROOT EN KLEIN!</h3>
     <h4>De menukaart van Holly Guacamoley! Ons Restaurant is zeer gevarieerd. <br>
         Met onder andere: panini's, broodjes, verse pasta's, gegrilde kip, vis en heerlijke steak. <br></h4>
 </div>
 
 <div class="reservering-image">
-<button href="reserveren.php" class="reservering">RESERVEREN</button>
+<a href="reserveren.php"><button class="reservering">RESERVEREN</button></a>
     <p class="reservering-kop">RESERVEER SNEL EN GEMAKKELIJK!</p>
     <p class="reservering-text">Reserveer snel en gemakkelijk.</p>
 </div>
