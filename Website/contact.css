@@ -1,0 +1,298 @@
+body{
+    height: 900px;
+    max-width: 100%;
+}
+
+
+.background-image{
+    position: absolute;
+    top: 97px;
+    z-index: -1;
+}
+
+img{
+    width: 1902px;
+    height: 580px;
+}
+
+.overlay {
+    position: absolute;
+    top: 97px;
+    height: 36.32em;
+    width: 100%;
+    background-color: black;
+    opacity: 50%;
+    z-index: 0;
+}
+
+.main-text{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 60px;
+    height: 5em;
+    position: relative;
+    top: 150px;
+    filter: drop-shadow(1px 1px 10px #00000075);
+}
+
+.text1{
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    color: white;
+    font-size: 40px;
+    position: relative;
+    top: 200px;
+    filter: drop-shadow(1px 1px 10px #00000075);
+}
+
+.text2{
+    font-family: cursive;
+    color: white;
+    font-size: 20px;
+    position: relative;
+    top: 210px;
+    filter: drop-shadow(1px 1px 10px #00000075);
+}
+
+.under-line{
+    background-color: gray;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    top: 45em;
+}
+
+.midlle-line{
+    background-color: gray;
+    width: 2px;
+    height: 45em;
+    position: absolute;
+    top: 55em;
+    left: 40%;
+}
+
+/*Form CSS/On the right side of the line*/
+
+.form-text-1{
+    position: absolute;
+    top: 21.5em;
+    left: 20em;
+    width: 500px;
+    font-size: 40px;
+}
+
+.form-text-2{
+    position: absolute;
+    top: 47em;
+    left: 40.2em;
+    width: 500px;
+    font-size: 20px;
+}
+
+.form-naam {
+    position: absolute;
+    top: 65em;
+    left: 50.2em;
+    height: 60px;
+    width: 800px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 12px 20px 12px 20px;
+}
+
+.form-email {
+    position: absolute;
+    top: 70em;
+    left: 50.2em;
+    height: 60px;
+    width: 800px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 12px 20px 12px 20px;
+}
+
+.form-onderwerp {
+    position: absolute;
+    top: 75em;
+    left: 50.2em;
+    height: 60px;
+    width: 800px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 12px 20px 12px 20px;
+}
+
+.form-vragen {
+    position: absolute;
+    top: 80em;
+    left: 50.2em;
+    height: 200px;
+    width: 800px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 12px 20px 12px 20px;
+}
+
+.submit{
+    position: absolute;
+    top: 112.5em;
+    left: 60.2em;
+    height: 60px;
+    width: 400px;
+    box-sizing: border-box;
+    border: 2px solid #EE8133;
+    border-radius: 4px;
+    background-color: #EE8133;
+    color: white;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.submit:hover{
+    background-color: white;
+    color: black;
+}
+
+/*Text on the left side of the line*/
+
+.left-text{
+    position: absolute;
+    top: 48em;
+}
+
+.left-header{
+    position: absolute;
+    font-size: 3em;
+    left: 2.25em;
+    width: 14em;
+}
+
+.header-text{
+    position: absolute;
+    font-size: 1.3em;
+    top: 4em;
+    left: 1em;
+    width: 30em;
+}
+
+.second-header{
+    position: absolute;
+    font-size: 2em;
+    top: 3.7em;
+    left: 0.6em;
+    width: 30em;
+}
+
+.second-text{
+    position: absolute;
+    font-size: 1.3em;
+    top: 8em;
+    left: 1em;
+    width: 30em;
+}
+
+.third-header{
+    position: absolute;
+    font-size: 2em;
+    top: 6.2em;
+    left: 0.6em;
+    width: 30em;
+}
+
+.third-text{
+    position: absolute;
+    font-size: 1.3em;
+    top: 12em;
+    left: 1em;
+    width: 30em;
+}
+
+.fourth-header{
+    position: absolute;
+    font-size: 2em;
+    top: 12.7em;
+    left: 0.6em;
+    width: 30em;
+}
+
+.fourth-list{
+    position: absolute;
+    font-size: 0.5em;
+    top: 60em;
+    left: 0.2em;
+    width: 70em;
+    color: black;
+}
+
+.kleur{
+    color: black;
+}
+
+/*Footer CSS*/
+.contact-image{
+    position: relative;
+    top: 80em;
+    background-size: cover;
+    background-size: 100%;
+    width: 100%;
+    height: 420px;
+    background-image: url("https://images.wallpaperscraft.com/image/single/texture_black_stone_154835_3840x2400.jpg");
+}
+
+.contact-title{
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    font-weight: bold;
+    font-size: 32px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    z-index: 1;
+    max-width: 50%;
+}
+
+
+.contact-info{
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    font-weight: 100;
+    font-size: 22px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    z-index: 1;
+    max-width: 30%;
+}
+
+.straatnaam{
+    position: absolute;
+    top: 30%;
+    left: 60%;
+    font-weight: 100;
+    font-size: 22px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    z-index: 1;
+    max-width: 30%;
+}
+
+.bottom-text{
+    position: relative;
+    top: 76em;
+    color: black;
+    left: 100px;
+    max-width: 50%;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 17px;
+    letter-spacing: .2rem;
+}
+
+
+@media only screen and (max-width: 600px) {}
