@@ -17,7 +17,7 @@
     <p class="front-info">Kom je bij ons eten? Bekijk alvast wat op het menu staat!</p>
    
 
-    <a href="menu.php"><button class="menukaart">Download de menukaart (PDF)</button></a>
+<button href="menu.php" class="menukaart">Download de menukaart (PDF)</button>
 </center>
 
 <p class="menu-title">Menukaart van Holly Guacamoley</p>
