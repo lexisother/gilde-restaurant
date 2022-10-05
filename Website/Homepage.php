@@ -3,7 +3,6 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="homepage.css">
-    <a href="images"></a>
     <title>Holly Guacamoley</title>
 </head>
 <body>
@@ -32,9 +31,6 @@
 <div class="container-mini">
     <p class="menuboard-text">Bij Holly Guacamoley kun je:</p>
 </div>
-
-
-
 
 <div class="menu-image">
 <a href="menu.php"><button class="menukaart">BEKIJK DE MENUPAGINA</button></a>
