@@ -19,24 +19,67 @@
 
 .front-title{
     position: relative;
-    top: -300px;
+    top: -280px;
     color: rgb(255, 255, 255);
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: bold;
     font-size: 50px;
     z-index: 1;
+    filter: drop-shadow(1px 1px 10px #00000075);
 }
 
 .front-info{
     position: relative;
     top: -300px;
     color: rgb(255, 255, 255);
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: cursive;
     font-size: 20px;
     z-index: 1;
+    filter: drop-shadow(1px 1px 10px #00000075);
 }
 
 center{
     position: relative;
     top: -350px;
+}
+
+.menukaart{
+    position: relative;
+    top: 70%;
+    left: 20%;
+    color: white;
+    font-weight: bold;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: .2rem;
+    padding: 9px 25px;
+    background-color: #fb9127;
+    height: 58px;
+    width: 280px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.menukaart:hover {
+    border: 3px solid #fb9127;
+    color: #fb9127;
+    background-color: transparent;
+}
+
+.menu-title{
+    position: relative;
+    left: 120px;
+    bottom: 500px;
+    font-size: 36px;
+    max-width: 50%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.menu-text{
+    position: relative;
+    font-size: 20px;
+    left: 120px;
+    bottom: 500px;
+    max-width: 50%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
