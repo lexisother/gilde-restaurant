@@ -180,7 +180,7 @@ for details on configuring this project to bundle and minify static web assets. 
     }
 }
 .navbar-heading {
-    font-family: var(--chakra-fonts-heading);
+    font-family: var(--chakra-fonts-body);
     font-weight: 500;
     line-height: 1;
     text-align: left;

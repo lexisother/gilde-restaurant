@@ -1005,7 +1005,7 @@ body {
  --chakra-blur-xl:24px;
  --chakra-blur-2xl:40px;
  --chakra-blur-3xl:64px;
-    
+
  --chakra-colors-chakra-body-text: var(--chakra-colors-whiteAlpha-900);
  --chakra-colors-chakra-body-bg: var(--chakra-colors-gray-800);
  --chakra-colors-chakra-border-color: var(--chakra-colors-whiteAlpha-300);
