@@ -3,7 +3,15 @@ body{
     max-width: 100%;
 }
 
+.black-header{
+    position: relative;
+    width: 100%;
+    height: 140px;
+    background-color:   black ;
+    z-index: 1;
+}
 
+/*Alle text in de afbeelding fader*/
 .front-text{
     position: relative;
     top: 200px;
@@ -35,14 +43,8 @@ body{
     filter: drop-shadow(1px 1px 10px #00000075);
 }
 
-.black-header{
-    position: relative;
-    width: 100%;
-    height: 140px;
-    background-color:   black ;
-    z-index: 1;
-}
 
+/*Container met image slider*/
 .container{
     position: relative;
     top: -300px;
@@ -60,6 +62,7 @@ body{
     box-shadow: inset 0px 0px 30px 0px;
 }
 
+/*Fade animation*/
 @keyframes fade{
     0%{background-image: url("https://c4.wallpaperflare.com/wallpaper/169/967/729/beef-steak-meat-food-wallpaper-preview.jpg");}
     35%{background-image: url("https://c4.wallpaperflare.com/wallpaper/858/692/1013/meat-chorizo-appetizer-charcuterie-wallpaper-preview.jpg");}
@@ -67,6 +70,7 @@ body{
     100%{background-image: url("https://c4.wallpaperflare.com/wallpaper/169/967/729/beef-steak-meat-food-wallpaper-preview.jpg");}
 }
 
+/*responsiveness en positioning voor het algemene info blokje*/
 .algemene-info-position{
     position: relative;
     max-width: 1300px;
@@ -75,6 +79,7 @@ body{
     left: 0%;
 }
 
+/*algemene info*/
 h1{
     position: relative;
     max-width: 50%;
@@ -100,6 +105,7 @@ h2{
     max-height: 0%;
 }
 
+/*krijtbordje naast de algemen info*/
 .container-mini{
     position: relative;
     top: 70%;
@@ -122,6 +128,7 @@ h2{
     font-size: 20px;
 }
 
+/*background image met van het menu blokje*/
 .menu-image{
     position: relative;
     top: 880px;
@@ -132,7 +139,7 @@ h2{
     height: 450px;
     background-image: url("https://images5.alphacoders.com/379/379572.png");
 }
-
+/*responsiveness en positioning van het menu blokje*/
 .menu-position{
     position: relative;
     max-width: 1300px;
@@ -140,6 +147,7 @@ h2{
     left: 0%;
 }
 
+/*menu button*/
 .menukaart{
     position: relative;
     color: white;
@@ -163,6 +171,7 @@ h2{
     background-color: transparent;
 }
 
+/* text in het menu blokje*/
 h3{
     position: relative;
     max-width: 50%;
@@ -184,6 +193,7 @@ h4{
 
 }
 
+/*volledige responsiveness en positioning van het reserverings blokje*/
 .reservering-position{
     position: relative;
     max-width: 1300px;
@@ -191,6 +201,7 @@ h4{
     left: 0%;
 }
 
+/*background image van het reserverings blokje*/
 .reservering-image{
     position: relative;
     top: 94%;
@@ -201,6 +212,7 @@ h4{
     background-image: url("https://images5.alphacoders.com/110/1107266.jpg");
 }
 
+/*button van het reserverings blokje*/
 .reservering{
     position: relative;
     top: 270px;
@@ -223,6 +235,7 @@ h4{
     background-color: white; 
 }
 
+/*alle text in het reserverings blokje*/
 .reservering-kop{
     position: relative;
     max-width: 50%;

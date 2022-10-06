@@ -13,7 +13,6 @@ body{
     z-index: -1;
 }
 
-
 img{
     width: 1902px;
     height: 580px;
@@ -162,6 +161,7 @@ img{
     background-color: #fb9127;
     color: white;
     transition: background-color 0.5s, color 0.5s;
+    cursor: pointer;
 }
 
 .submit:hover{

@@ -1,4 +1,5 @@
 
+/*Zwarte balk achter header*/
 .black-header{
     position: relative;
     width: 100%;
@@ -7,6 +8,7 @@
     z-index: 1;
 }
 
+/*Afbeelding bovenin de pagina*/
 .front-image{
     position: relative;
     top: -300px;
@@ -18,6 +20,8 @@
     background-image: url("https://media.discordapp.net/attachments/1017696900184555522/1019519714164228196/unknown.png?width=1440&height=425");
 }
 
+
+/*Alle text in de afbeelding*/
 .front-title{
     position: relative;
     top: -280px;
@@ -43,6 +47,9 @@ center{
     top: -350px;
 }
 
+
+
+/*PDF button*/
 .menukaart{
     position: relative;
     left: 60%;
@@ -58,6 +65,7 @@ center{
     border: none;
     cursor: pointer;
     transition: all 0.3s ease 0s;
+    z-index: 1;
     
 }
 
@@ -67,8 +75,7 @@ center{
     background-color: transparent;
 }
 
-
-
+/*Alle text naast de button*/
 .menu-title{
     position: relative;
     left: -80px;
