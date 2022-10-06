@@ -48,9 +48,11 @@
         <div class="dash-header">
             <h2 class="dash-header-text">@ViewData["HeaderText"]</h2>
         </div>
-        <div class="dash-content">
-            @RenderBody()
-        </div>
+        
+        @* The body is intentionally not wrapped here since
+        every page can have different styles for its wrapper.
+        (e.g. Index has spaced-evenly and another page does not) *@
+        @RenderBody()
     </div>
 </div>
 
