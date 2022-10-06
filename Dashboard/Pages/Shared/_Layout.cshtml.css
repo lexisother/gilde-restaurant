@@ -135,6 +135,21 @@ for details on configuring this project to bundle and minify static web assets. 
     width: var(--chakra-sizes-full);
     cursor: pointer;
 }
+.navbar-icon-selected {
+    width: 1.3em;
+    height: 1.3em;
+    display: inline-block;
+    line-height: 1em;
+    flex-shrink: 0;
+    color: currentColor;
+}
+@media screen and (min-width: 48em) {
+    .navbar-icon-selected {
+        width: 1.1em;
+        height: 1.1em;
+    }
+}
+
 .navbar-item {
     display: flex;
     flex-direction: row;
@@ -148,6 +163,34 @@ for details on configuring this project to bundle and minify static web assets. 
     gap: var(--chakra-space-2);
     width: var(--chakra-sizes-full);
     cursor: pointer;
+}
+.navbar-icon {
+    vertical-align: middle;
+    width: 1.3em;
+    height: 1.3em;
+    display: inline-block;
+    line-height: 1em;
+    flex-shrink: 0;
+    color: currentColor;
+}
+@media screen and (min-width: 48em) {
+    .navbar-icon {
+        width: 1.1em;
+        height: 1.1em;
+    }
+}
+.navbar-heading {
+    font-family: var(--chakra-fonts-heading);
+    font-weight: 500;
+    line-height: 1;
+    text-align: left;
+    user-select: none;
+}
+@media screen and (min-width: 48em) {
+    .navbar-heading {
+        font-size: var(--chakra-fontSizes-md);
+        line-height: 1.2;
+    }
 }
 /* }}} */
 
