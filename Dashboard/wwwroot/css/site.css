@@ -1005,34 +1005,10 @@ body {
  --chakra-blur-xl:24px;
  --chakra-blur-2xl:40px;
  --chakra-blur-3xl:64px;
+    
+ --chakra-colors-chakra-body-text: var(--chakra-colors-whiteAlpha-900);
+ --chakra-colors-chakra-body-bg: var(--chakra-colors-gray-800);
+ --chakra-colors-chakra-border-color: var(--chakra-colors-whiteAlpha-300);
+ --chakra-colors-chakra-placeholder-color: var(--chakra-colors-whiteAlpha-400);
 }
-.chakra-ui-light :host:not([data-theme]),
-.chakra-ui-light :root:not([data-theme]),
-.chakra-ui-light [data-theme]:not([data-theme]),
-[data-theme=light] :host:not([data-theme]),
-[data-theme=light] :root:not([data-theme]),
-[data-theme=light] [data-theme]:not([data-theme]),
-:host[data-theme=light],
-:root[data-theme=light],
-[data-theme][data-theme=light] {
- --chakra-colors-chakra-body-text:var(--chakra-colors-gray-800);
- --chakra-colors-chakra-body-bg:var(--chakra-colors-white);
- --chakra-colors-chakra-border-color:var(--chakra-colors-gray-200);
- --chakra-colors-chakra-placeholder-color:var(--chakra-colors-gray-500);
-}
-.chakra-ui-dark :host:not([data-theme]),
-.chakra-ui-dark :root:not([data-theme]),
-.chakra-ui-dark [data-theme]:not([data-theme]),
-[data-theme=dark] :host:not([data-theme]),
-[data-theme=dark] :root:not([data-theme]),
-[data-theme=dark] [data-theme]:not([data-theme]),
-:host[data-theme=dark],
-:root[data-theme=dark],
-[data-theme][data-theme=dark] {
- --chakra-colors-chakra-body-text:var(--chakra-colors-whiteAlpha-900);
- --chakra-colors-chakra-body-bg:var(--chakra-colors-gray-800);
- --chakra-colors-chakra-border-color:var(--chakra-colors-whiteAlpha-300);
- --chakra-colors-chakra-placeholder-color:var(--chakra-colors-whiteAlpha-400);
-}
-
 /* }}} */
