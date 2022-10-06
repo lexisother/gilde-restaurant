@@ -2,10 +2,10 @@
 
 namespace App\Lib;
 
-// A less bad stdClass.
 use Exception;
 use PhpParser\Node\Expr\Closure;
 
+// A less bad stdClass.
 class stdObject {
     public function __construct(array $arguments = array()) {
         if (!empty($arguments)) {

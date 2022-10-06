@@ -1,7 +1,9 @@
 ﻿@page
 @model PrivacyModel
 @{
+    string path = HttpContext.Request.Path;
     ViewData["Title"] = "Privacy Policy";
+    ViewData["path"] = path;
 }
 <h1>@ViewData["Title"]</h1>
 

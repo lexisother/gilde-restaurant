@@ -32,6 +32,6 @@ class Product extends Model
         'spanish',
         'warm',
         'cold',
-        'vega'
+        'vega',
     ];
 }

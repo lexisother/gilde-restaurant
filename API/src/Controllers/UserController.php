@@ -31,7 +31,7 @@ class UserController extends Controller
                 $user = new User([
                     'name' => $dtoUser->name,
                     'email' => $dtoUser->email,
-                    'password' => $dtoUser->password
+                    'password' => $dtoUser->password,
                 ]);
                 $user->save();
             } else {
@@ -82,7 +82,7 @@ class UserController extends Controller
         $data = json_decode(file_get_contents("php://input"));
         $user = $this->login($data);
         $user->update([
-            'clocked' => !$user->clocked
+            'clocked' => !$user->clocked,
         ]);
         echo json_encode($user);
     }
