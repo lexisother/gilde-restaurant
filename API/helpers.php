@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Container\Container;
-use Illuminate\Contracts\Container\BindingResolutionException;
 
 /**
  * @param $abstract
