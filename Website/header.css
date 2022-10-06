@@ -29,11 +29,14 @@ li, a {
     width: 60px;
     margin-right: 170px;
     margin-left: 200px ;
+    padding-left: 10px;
+   
 }
 
 
 .nav_links {
     list-style: none;
+    
 }
 
 .nav_links li {
