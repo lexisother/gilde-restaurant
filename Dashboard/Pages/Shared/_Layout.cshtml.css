@@ -165,4 +165,27 @@ for details on configuring this project to bundle and minify static web assets. 
     padding-bottom: var(--chakra-space-5);
     background-color: var(--chakra-colors-primary-dark);
 }
+
+.dash-header {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    flex-direction: row;
+    width: var(--chakra-sizes-full);
+    padding-bottom: var(--chakra-space-2);
+}
+@media screen and (min-width: 48em) {
+    .dash-header {
+        padding-bottom: var(--chakra-space-2);
+    }
+}
+
+.dash-header-text {
+    font-family: var(--chakra-fonts-heading);
+    font-weight: var(--chakra-fontWeights-bold);
+    font-size: var(--chakra-fontSizes-xl);
+    line-height: 1.2;
+}
 /* }}} */
