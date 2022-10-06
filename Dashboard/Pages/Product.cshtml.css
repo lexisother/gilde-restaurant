@@ -1,0 +1,17 @@
+/* TODO: product-meta */
+
+.product-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+    width: var(--chakra-sizes-full);
+    padding-top: var(--chakra-space-2);
+    padding-bottom: var(--chakra-space-2);
+    gap: var(--chakra-space-5);
+}
+@media screen and (min-width: 48em) {
+    .product-content {
+        flex-wrap: nowrap;
+    }
+}

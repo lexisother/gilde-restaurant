@@ -1,0 +1,36 @@
+@page "{id}"
+@using Dashboard.DTO
+@model ProductModel
+@{
+    string path = HttpContext.Request.Path;
+    var products = (List<Product>)ViewData["products"];
+    ViewData["Title"] = "Product Details";
+    ViewData["path"] = path;
+    ViewData["HeaderText"] = "Product Details";
+}
+
+<div class="product-meta">
+    <div class="product-meta-content">
+        <div class="product-meta-content-pre">
+            <div class="pre-holder">
+                <span class="pre-icon"></span>
+                <div class="pre-content">
+                    <div class="pre-content-title"></div>
+                    <div class="pre-content-sub"></div>
+                </div>
+            </div>
+        </div>
+        <div class="product-meta-content-items">
+            <div class="item">
+                <div class="item-title">
+                    <span class="item-title-text"></span>
+                </div>
+                <span class="item-desc"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="product-content">
+
+</div>
