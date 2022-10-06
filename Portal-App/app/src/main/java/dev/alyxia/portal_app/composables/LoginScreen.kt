@@ -20,7 +20,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import dev.alyxia.portal_app.lib.HttpViewModel
-import dev.alyxia.portal_app.rest.body.UserBody
+import dev.alyxia.portal_app.rest.body.UserAuthBody
 import dev.alyxia.portal_app.rest.dto.ApiResponse
 import dev.alyxia.portal_app.rest.dto.ApiUser
 import dev.alyxia.portal_app.rest.service.APIUserServiceImpl
@@ -30,7 +30,7 @@ class LoginViewModel : HttpViewModel<ApiUser>() {
     fun login(email: String, password: String) {
         viewModelScope.launch {
             result = APIUserServiceImpl(client).login(
-                UserBody(email, password)
+                UserAuthBody(email, password)
             )
         }
     }
