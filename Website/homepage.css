@@ -67,12 +67,18 @@ body{
     100%{background-image: url("https://c4.wallpaperflare.com/wallpaper/169/967/729/beef-steak-meat-food-wallpaper-preview.jpg");}
 }
 
+.algemene-info-position{
+    position: relative;
+    max-width: 1300px;
+    margin: 0 auto;
+    top: 900px;
+    left: 0%;
+}
 
 h1{
     position: relative;
     max-width: 50%;
     font-size: 20px;
-    left: 7%;
     top: 95%;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #ff8000e9;
@@ -82,26 +88,21 @@ h2{
     position: relative;
     max-width: 50%;
     font-size: 25px;
-    left: 7%;
-    top: 95%;
     font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
     font-weight: 400;
 }
 
 .algemene-info{
     position: relative;
-    left: 7%;
-    top: 95%;
     color: black;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     line-height: 25px;
     max-height: 0%;
-    max-width: 35%;
 }
 
 .container-mini{
     position: relative;
-    top: 80%;
+    top: 70%;
     left: 55%;
     border-radius: 20px;
     background-image: url("https://media.istockphoto.com/photos/blackboard-with-chalk-border-picture-id1132606352?k=20&m=1132606352&s=612x612&w=0&h=fCDUEg5MqYO8b9vAyPpThOREc9U7N1X2CsRLkTBHRO0=");
@@ -109,6 +110,7 @@ h2{
     width: 500px;
     height: 350px;
     z-index: 1;
+    
 }
 
 .menuboard-text{
@@ -131,10 +133,15 @@ h2{
     background-image: url("https://images5.alphacoders.com/379/379572.png");
 }
 
+.menu-position{
+    position: relative;
+    max-width: 1300px;
+    margin: 0 auto;
+    left: 0%;
+}
+
 .menukaart{
     position: relative;
-    top: 70%;
-    left: 7%;
     color: white;
     font-weight: bold;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -143,9 +150,11 @@ h2{
     background-color: #fb9127;
     height: 58px;
     width: 270px;
+    top: 300px;
     border: none;
     cursor: pointer;
     transition: all 0.3s ease 0s;
+    
 }
 
 .menukaart:hover {
@@ -157,7 +166,6 @@ h2{
 h3{
     position: relative;
     max-width: 50%;
-    left: 7%;
     color: white;
     font-weight: bold;
     font-size: 30px; 
@@ -168,14 +176,19 @@ h3{
 h4{
     position: relative;
     max-width: 90%;
-    top: 20px;
-    left: 7%;
     color: white;
     font-size: 20px; 
     font-weight: 300;
     letter-spacing: .1rem;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
+}
+
+.reservering-position{
+    position: relative;
+    max-width: 1300px;
+    margin: 0 auto;
+    left: 0%;
 }
 
 .reservering-image{
@@ -190,8 +203,7 @@ h4{
 
 .reservering{
     position: relative;
-    top: 70%;
-    left: 7%;
+    top: 270px;
     color: white;
     font-size: 20px;
     font-weight: bold;
@@ -215,7 +227,6 @@ h4{
     position: relative;
     max-width: 50%;
     top: 20px;
-    left: 7%;
     color: white;
     font-weight: bold;
     font-size: 30px; 
@@ -227,7 +238,6 @@ h4{
     position: relative;
     max-width: 60%;
     top: 20px;
-    left: 7%;
     color: white;
     font-size: 20px; 
     font-weight: 300;
