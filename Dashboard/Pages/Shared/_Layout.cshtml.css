@@ -1,48 +1,168 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+.main-container {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    min-height: 100vh;
+    width: var(--chakra-sizes-full);
+    background-color: var(--chakra-colors-secondary-dark);
+}
+.main-container > :not(style) ~ :not(style) {
+    margin-top: 0px;
+    margin-inline-end: 0px;
+    margin-bottom: 0px;
+    margin-inline-start: 0px;
+}
+@media screen and (min-width: 48em) {
+    .main-container > :not(style) ~ :not(style) {
+        margin-top: 0px;
+        margin-inline-end: 0px;
+        margin-bottom: 0px;
+        margin-inline-start: 0px;
+    }
+    .main-container {
+        flex-direction: row;
+    }
 }
 
-a {
-  color: #0077cc;
+/* Navbar styles {{{ */
+.dash-navbar {
+    display: block;
+    -mox-box-align: center;
+    align-items: center;
+    -mox-box-pazk: start;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: var(--chakra-sizes-full);
+    width: var(--chakra-sizes-full);
+    padding-bottom: 0px;
+    padding-right: 0px;
+    background-color: var(--chakra-colors-secondary-dark);
+}
+.dash-navbar > :not(style) ~ :not(style) {
+    margin-top: 0.5rem;
+    margin-inline-end: 0px;
+    margin-bottom: 0px;
+    margin-inline-start: 0px;
+}
+@media screen and (min-width: 48em) {
+    .dash-navbar {
+        width: auto;
+        padding-bottom: var(--chakra-space-4);
+        padding-right: var(--chakra-space-8);
+    }
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+.dash-navbar-logo {
+    display: flex;
+    -moz-box-align: center;
+    align-items: center;
+    -moz-box-pack: justify;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: var(--chakra-space-2) var(--chakra-space-4);
+    width: var(--chakra-sizes-full);
+}
+@media screen and (min-width: 48em) {
+    .dash-navbar-logo {
+        -moz-box-pack: start;
+        justify-content: flex-start;
+        padding-bottom: 0px;
+        padding-right: 0px;
+        padding-left: var(--chakra-space-3);
+    }
+}
+.logo-svg {
+    vertical-align: middle;
+    width: var(--chakra-sizes-full);
+    height: 2.5em;
+    display: inline-block;
+    line-height: 1em;
+    flex-shrink: 0;
+    color: currentcolor;
+    margin: var(--chakra-space-2);
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+.dash-navbar-content {
+    width: var(--chakra-sizes-full);
+    padding-right: var(--chakra-space-4);
+    padding-left: var(--chakra-space-4);
+    padding-top: var(--chakra-space-1);
+}
+@media screen and (min-width: 48em) {
+    .dash-navbar-content {
+        width: 25vh;
+        padding-right: 0px;
+        padding-left: var(--chakra-space-6);
+        padding-top: 0px;
+    }
 }
 
-.border-top {
-  border-top: 1px solid #e5e5e5;
+.dash-navbar-items {
+    display: flex;
+    align-items: flex-start;
+    -moz-box-pack: start;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding-left: var(--chakra-space-2);
+    width: var(--chakra-sizes-full);
 }
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+.dash-navbar-items > :not(style) ~ :not(style) {
+    margin-top: var(--chakra-space-3);
+    margin-inline-end: 0px;
+    margin-bottom: 0px;
+    margin-inline-start: 0px;
+}
+@media screen and (min-width: 48em) {
+    .dash-navbar-items {
+        padding-left: 0px;
+    }
 }
 
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+.navbar-item-selected {
+    display: flex;
+    flex-direction: row;
+    -moz-box-align: center;
+    align-items: center;
+    -moz-box-pack: start;
+    justify-content: flex-start;
+    margin: 0px;
+    padding: 0.25px;
+    opacity: 0.7;
+    gap: var(--chakra-space-2);
+    width: var(--chakra-sizes-full);
+    cursor: pointer;
 }
+.navbar-item {
+    display: flex;
+    flex-direction: row;
+    -moz-box-align: center;
+    align-items: center;
+    -moz-box-pack: start;
+    justify-content: flex-start;
+    margin: 0px;
+    padding: 0.25px;
+    opacity: 0.4;
+    gap: var(--chakra-space-2);
+    width: var(--chakra-sizes-full);
+    cursor: pointer;
+}
+/* }}} */
 
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+/* Content styles {{{ */
+.dash-main {
+    display: flex;
+    -moz-box-align: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    width: var(--chakra-sizes-full);
+    padding-inline-start: var(--chakra-space-6);
+    padding-inline-end: var(--chakra-space-6);
+    padding-top: var(--chakra-space-5);
+    padding-bottom: var(--chakra-space-5);
+    background-color: var(--chakra-colors-primary-dark);
 }
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px;
-}
+/* }}} */
