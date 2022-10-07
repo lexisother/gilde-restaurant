@@ -13,6 +13,7 @@
     
     // The meta items to show in the product header.
     string[] metaItemsToShow = { "id", "created_at" };
+    string[] editableItems = { "name", "description", "price", "spanish", "warm", "cold", "vega" };
 }
 
 <div class="product-meta">
@@ -56,5 +57,28 @@
 </div>
 
 <div class="product-content">
-
+    <div class="list">
+        <div class="list-header">
+            <h2 class="list-header-text">Product Data</h2>
+            <button type="button" class="edit-button">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" focusable="false" class="edit-button-icon" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a.996.996 0 000-1.41l-2.34-2.34a.996.996 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></svg>
+            </button>
+        </div>
+        <div class="list-content">
+            @foreach (var item in editableItems)
+            {
+                var value = product.GetType().GetProperty(item).GetValue(product, null);
+                <div class="list-item">
+                    <div class="list-item-content">
+                        <div class="list-item-kv">
+                            <span class="kv-text">@ProductModel.NormalizeKeyName(item)</span>
+                        </div>
+                        <div class="list-item-kv">
+                            <span class="kv-text">@value</span>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
 </div>
