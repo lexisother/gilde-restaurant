@@ -12,6 +12,7 @@
     include 'header.php'; 
 ?> 
 <div class="overlay"></div>
+<div class="black-header"></div>
 <div class="background-image"><img src="images/contacthead.png"></div>
 <center><div class="main-text">Vragen? Wij helpen graag!</div></center>
 <center><div class="text1">HOLLY GUACAMOLEY</div></center>
@@ -21,11 +22,11 @@
 
 <div class="left-text">
     <h1 class="left-header" >Contact met Holly Guacamoley!</h1>
-    <p class="header-text" >Henri Dunantstraat 40, 5807 ES Oostrum (limburg)</p>
+         <p class="header-text" >Henri Dunantstraat 40, 5807 ES Oostrum (limburg)</p>
     <h1 class="second-header" >Telefoonnummer</h1>
-    <p class="second-text" >+31 6 00000000</p>
+         <p class="second-text" >+31 6 00000000</p>
     <h1 class="third-header" >Openingstijden</h1>
-    <p class="third-text" >Wij zijn 7 dagen per week open!<br>Maandag t/m zondag vanaf 17:00u tot 00:00u.(Keuken is gesloten vanaf 10:00 behalve desserts en dranken).<br><br>Wil je er zeker van zijn dat je kunt dineren?<br>Bel: +31 6 00000000</p>
+         <p class="third-text" >Wij zijn 7 dagen per week open!<br>Maandag t/m zondag vanaf 17:00u tot 00:00u.(Keuken is gesloten vanaf 22:00 behalve desserts en dranken).<br><br>Wil je er zeker van zijn dat je kunt dineren?<br>Bel: +31 6 00000000</p>
     <h1 class="fourth-header" >Bij Holly Guacamoley</h1>
     <ul class="fourth-list">
         <li class="kleur">is pinnen mogelijk</li>
@@ -41,7 +42,7 @@
 <form method="post">
     <div>
         <p class="form-text-1">Contact Formulier</p>
-        <p class="form-text-2">Vul uw gegevens alsjeblieft zo volledig mogelijk in, zo kunnen we u beter helpen.</p>
+        <p class="form-text-2">Vul uw gegevens alstublieft zo volledig mogelijk in, zo kunnen we u beter helpen.</p>
     </div>
     <div class="form-main">
     <input type="text" class="form-naam" name="name" placeholder="Naam" required>
