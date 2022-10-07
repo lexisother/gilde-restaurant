@@ -2,31 +2,55 @@
 @using Dashboard.DTO
 @model ProductModel
 @{
+    // Page meta
     string path = HttpContext.Request.Path;
     var products = (List<Product>)ViewData["products"];
     ViewData["Title"] = "Product Details";
     ViewData["path"] = path;
     ViewData["HeaderText"] = "Product Details";
+
+    var product = products[Convert.ToInt32(RouteData.Values["id"]) - 1];
+    
+    // The meta items to show in the product header.
+    string[] metaItemsToShow = { "id", "created_at" };
 }
 
 <div class="product-meta">
     <div class="product-meta-content">
         <div class="product-meta-content-pre">
             <div class="pre-holder">
-                <span class="pre-icon"></span>
+                <span class="pre-icon-holder">
+                    <img
+                        src="https://patchcord.pw/icons/1015298503867367507/6d9e17.3e95964f73be8ddd8e751f2171923f65da3c779fcb6c44d7c3baf875b1778938.png"
+                        alt="food image"
+                        class="pre-icon"/>
+                </span>
                 <div class="pre-content">
-                    <div class="pre-content-title"></div>
-                    <div class="pre-content-sub"></div>
+                    <div class="pre-content-title-holder">
+                        <div class="pre-content-title">@product.name</div>
+                        <div class="pre-content-title-icon"></div>
+                    </div>
+                    <p class="pre-content-sub">€@product.price</p>
                 </div>
             </div>
         </div>
         <div class="product-meta-content-items">
-            <div class="item">
-                <div class="item-title">
-                    <span class="item-title-text"></span>
+            @* foreach is weird in Razor. When starting a foreach block, you can write
+               normal C# code and seamlessly switch to HTML without specifying. *@
+            @foreach (var item in metaItemsToShow)
+            {
+                /**
+                 * I would usually intricately explain my code here. However, RTFM:
+                 * @see https://learn.microsoft.com/en-us/dotnet/api/System.Object.GetType?view=net-6.0
+                 * @see https://learn.microsoft.com/en-us/dotnet/api/System.Type.GetProperty?view=net-6.0
+                 * @see https://learn.microsoft.com/en-us/dotnet/api/System.Reflection.PropertyInfo.GetValue?view=net-6.0
+                 */
+                var value = product.GetType().GetProperty(item).GetValue(product, null);
+                <div class="item">
+                    <span class="item-title">@item</span>
+                    <span class="item-desc">@value</span>
                 </div>
-                <span class="item-desc"></span>
-            </div>
+            }
         </div>
     </div>
 </div>
