@@ -9,8 +9,14 @@
     ViewData["path"] = path;
     ViewData["HeaderText"] = "Product Details";
 
-    var product = products[Convert.ToInt32(RouteData.Values["id"]) - 1];
-    
+    var productId = Convert.ToInt32(RouteData.Values["id"]);
+    var product = products.Find(p => p.id == productId);
+    if (product == null)
+    {
+        // await Response.WriteAsync($"Product with ID {productId} was not found.");
+        throw new Exception("hi");
+    }
+
     // The meta items to show in the product header.
     string[] metaItemsToShow = { "id", "created_at" };
     string[] editableItems = { "name", "description", "price", "spanish", "warm", "cold", "vega" };
@@ -56,6 +62,8 @@
     </div>
 </div>
 
+<div class="card cardDangerOutline"></div>
+
 <div class="product-content">
     <div class="list">
         <div class="list-header">
@@ -70,8 +78,8 @@
                 var value = product.GetType().GetProperty(item).GetValue(product, null);
                 <div class="list-item">
                     <div class="list-item-content">
-                        <div class="list-item-kv">
-                            <span class="kv-text">@ProductModel.NormalizeKeyName(item)</span>
+                        <div id="@item" class="list-item-kv">
+                            <span class="kv-text">@Model.NormalizeKeyName(item)</span>
                         </div>
                         <div class="list-item-kv">
                             <span class="kv-text">@value</span>

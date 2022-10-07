@@ -7,7 +7,7 @@ public class ProductModel : PageModel
 {
     private HttpClient _client = new();
 
-    public static string GetElementType(string key)
+    public string GetElementType(string key)
     {
         switch (key)
         {
@@ -30,7 +30,7 @@ public class ProductModel : PageModel
         }
     }
 
-    public static string NormalizeKeyName(string key)
+    public string NormalizeKeyName(string key)
     {
         switch (key)
         {
