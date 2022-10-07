@@ -1,19 +1,11 @@
-﻿using System.Net;
 using Dashboard.DTO;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Dashboard.Pages;
 
-public class IndexModel : PageModel
+public class ProductModel : PageModel
 {
-    private readonly ILogger<IndexModel> _logger;
     private HttpClient _client = new();
-
-    public IndexModel(ILogger<IndexModel> logger)
-    {
-        _logger = logger;
-    }
 
     public void OnGet()
     {
