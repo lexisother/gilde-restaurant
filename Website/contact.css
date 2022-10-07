@@ -407,8 +407,6 @@ img{
     }
 
     .form-text-1{
-        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        position: absolute;
         top: 5.5em;
         left: 2.7em;
         width: 500px;
@@ -416,8 +414,6 @@ img{
     }
 
     .form-text-2{
-        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        position: absolute;
         top: 15.5em;
         left: 3.4em;
         width: 340px;
@@ -425,74 +421,37 @@ img{
     }
 
     .form-naam {
-        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        position: absolute;
         top: 19em;
         left: 3.1em;
         height: 50px;
         width: 300px;
-        box-sizing: border-box;
-        border: 2px solid #ccc;
-        border-radius: 4px;
-        font-size: 16px;
-        padding: 12px 20px 12px 20px;
     }
 
     .form-email {
-        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        position: absolute;
         top: 23em;
         left: 3.1em;
         height: 50px;
         width: 300px;
-        box-sizing: border-box;
-        border: 2px solid #ccc;
-        border-radius: 4px;
-        font-size: 16px;
-        padding: 12px 20px 12px 20px;
     }
 
     .form-onderwerp {
-        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        position: absolute;
         top: 27em;
         left: 3.1em;
         height: 50px;
         width: 300px;
-        box-sizing: border-box;
-        border: 2px solid #ccc;
-        border-radius: 4px;
-        font-size: 16px;
-        padding: 12px 20px 12px 20px;
     }
 
     .form-vragen {
-        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        position: absolute;
         top: 31em;
         left: 3.1em;
         height: 80px;
         width: 300px;
-        box-sizing: border-box;
-        border: 2px solid #ccc;
-        border-radius: 4px;
-        font-size: 16px;
-        padding: 12px 20px 12px 20px;
     }
 
     .submit{
-        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        position: absolute;
         top: 44.5em;
         left: 3.7em;
         height: 50px;
         width: 300px;
-        box-sizing: border-box;
-        border: 2px solid #fb9127;
-        background-color: #fb9127;
-        color: white;
-        transition: background-color 0.5s, color 0.5s;
-        cursor: pointer;
-        border-radius: 8px;
     }
 }
