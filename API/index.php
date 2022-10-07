@@ -10,6 +10,11 @@ use Whoops\Run;
 
 // Make sure all data is sent as JSON.
 header("Content-Type: application/json");
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST, DELETE, OPTIONS");
+if ($_SERVER["REQUEST_METHOD"] === "OPTIONS") {
+    return 0;
+}
 
 // Set up the error handler
 $whoops = new Run();
