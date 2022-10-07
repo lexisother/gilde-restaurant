@@ -44,7 +44,6 @@ center{
 .main-text-left{
     position: relative;
     bottom: 450px;
-    left: 60px;
     max-width: 1300px;
     margin: 0 auto;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -55,7 +54,6 @@ center{
 .phone-text-left{
     position: relative;
     bottom: 420px;
-    left: 60px;
     max-width: 1300px;
     margin: 0 auto;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -67,7 +65,6 @@ center{
     max-width: 1300px;
     margin: 0 auto;
     bottom: 300px;
-    left: 60px;
 }
 
 .form-naam, .form-datum, .form-leeftijd ,.form-leeftijd-11{

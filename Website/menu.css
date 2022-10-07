@@ -77,7 +77,7 @@ center{
 /*Alle text naast de button*/
 .menu-title{
     position: relative;
-    left: -80px;
+    left: -95px;
     bottom: 500px;
     font-size: 36px;
     max-width: 50%;
@@ -90,7 +90,7 @@ center{
 .menu-text{
     position: relative;
     font-size: 20px;
-    left: -80px;
+    left: -95px;
     bottom: 450px;
     max-width: 1100px;
     margin: 0 auto;

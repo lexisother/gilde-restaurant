@@ -21,11 +21,11 @@
 
 .contact-title{
     position: relative;
-    top: 30px;
+    top: 50px;
     font-weight: 300;
     font-size: 32px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: white;   
+    color: #fb9127;   
     z-index: 1;
     max-width: 50%;
 }
