@@ -11,7 +11,6 @@ header {
     position: fixed;
     z-index: 2;
     width: 100%;
-    
 }
 
 li, a {
@@ -52,6 +51,10 @@ li, a {
 }
 
 @media only screen and (max-width: 420px){
+    nav{
+        height: 98px;
+    }
+
     .logo{
         position: relative;
         height: 60px;
