@@ -50,7 +50,7 @@
     <input type="email" class="form-email" name="email" placeholder="Email" required>
     <input type="text" class="form-onderwerp" name="onderwerp" placeholder="Onderwerp" required>
     <input type="text" class="form-vragen" name="vragen" placeholder="Vragen en opmerkingen" required>
-    <input type="submit" name="submit" class="submit">
+    <input type="submit" name="submit" class="submit" >
     </div>
 </form>
 
