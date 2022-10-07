@@ -30,7 +30,6 @@ li, a {
     margin-right: 170px;
     margin-left: 200px ;
     padding-left: 10px;
-   
 }
 
 
@@ -50,4 +49,19 @@ li, a {
 
 .nav_links li a:hover {
     color:  rgba(255, 128, 0, 0.915);
+}
+
+@media only screen and (max-width: 420px){
+    .logo{
+        position: relative;
+        height: 60px;
+        width: 60px;
+        margin-right: 0px;
+        margin-left: 0px ;
+        padding-left: 10px;
+    }
+
+    li, a {
+        display: none;
+    }
 }
