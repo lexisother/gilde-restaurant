@@ -131,6 +131,12 @@
     justify-content: flex-start;
     flex-direction: row;
 }
+.pre-content-title-holder > :not(style) ~ :not(style) {
+    margin-top: 0px;
+    margin-inline-end: 0px;
+    margin-bottom: 0px;
+    margin-inline-start: var(--chakra-space-1);
+}
 .pre-content-title {
     font-family: var(--chakra-fonts-normal);
     font-weight: 600;
@@ -140,6 +146,23 @@
         font-size: var(--chakra-fontSizes-md);
         line-height: 1.2;
     }
+}
+.pre-content-title-icon {
+    display: flex;
+    -moz-box-align: center;
+    align-items: center;
+    -moz-box-pack: start;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+.icon {
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    line-height: 1em;
+    flex-shrink: 0;
+    color: currentColor;
+    vertical-align: middle;
 }
 
 .pre-content-sub {
