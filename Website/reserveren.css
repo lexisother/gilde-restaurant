@@ -41,25 +41,58 @@ center{
     top: -350px;
 }
 
-.menukaart{
+.main-text-left{
     position: relative;
-    top: 70%;
-    left: 7%;
-    color: white;
-    font-weight: bold;
+    bottom: 450px;
+    left: 60px;
+    max-width: 1300px;
+    margin: 0 auto;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    letter-spacing: .2rem;
-    padding: 9px 25px;
-    background-color: #fb9127;
-    height: 58px;
-    width: 270px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
+    font-size: 26px;
+    font-weight: bold;
 }
 
-.menukaart:hover {
+.phone-text-left{
+    position: relative;
+    bottom: 420px;
+    left: 60px;
+    max-width: 1300px;
+    margin: 0 auto;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 22px;
+}
+
+.form-main{
+    position: relative;
+    max-width: 1300px;
+    margin: 0 auto;
+    bottom: 300px;
+    left: 60px;
+}
+
+.form-naam, .form-datum, .form-leeftijd ,.form-leeftijd-11{
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+    height: 60px;
+    width: 450px;
+    font-size: 18px
+}
+
+.submit{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: 60px;
+    width: 460px;
+    box-sizing: border-box;
+    border: 2px solid #fb9127;
+    background-color: #fb9127;
+    color: white;
+    cursor: pointer;
+}
+
+.submit:hover{
     border: 3px solid #fb9127;
     color: #fb9127;
     background-color: transparent;
 }
+
