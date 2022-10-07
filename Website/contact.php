@@ -3,6 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="contact.css">
+    <link rel="shortcut icon" href="..\Website\images\logopng.png"/> 
     <title>Holly Guacamoley Contact</title>
 </head>
 
@@ -40,6 +41,7 @@
 <div class="midlle-line"></div>
 
 <form method="post">
+    <div class="form-all">
     <div>
         <p class="form-text-1">Contact Formulier</p>
         <p class="form-text-2">Vul uw gegevens alstublieft zo volledig mogelijk in, zo kunnen we u beter helpen.</p>
@@ -49,7 +51,8 @@
     <input type="email" class="form-email" name="email" placeholder="Email" required>
     <input type="text" class="form-onderwerp" name="onderwerp" placeholder="Onderwerp" required>
     <input type="text" class="form-vragen" name="vragen" placeholder="Vragen en opmerkingen" required>
-    <input type="submit" name="submit" class="submit" >
+    <input type="submit" name="submit" class="submit">
+    </div>
 </form>
 
 <div class="contact-image">
