@@ -9,23 +9,30 @@
     background-image: url("https://i2.wp.com/www.creativesnapbacks.com/wp-content/uploads/2014/12/footer-background-01-noise.png?ssl=1");
 }
 
+.footer-left{
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.footer-right{
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
 .contact-title{
-    position: absolute;
-    top: 10%;
-    left: 25%;
+    position: relative;
+    top: 50px;
     font-weight: 300;
     font-size: 32px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: white;   
+    color: #fb9127;   
     z-index: 1;
     max-width: 50%;
 }
 
-
 .contact-info{
-    position: absolute;
-    top: 30%;
-    left: 25%;
+    position: relative;
+    top: 10px;
     font-weight: 100;
     font-size: 22px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -35,8 +42,8 @@
 }
 
 .straatnaam{
-    position: absolute;
-    top: 30%;
+    position: relative;
+    top: -220px;
     left: 60%;
     font-weight: 100;
     font-size: 22px;
