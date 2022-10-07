@@ -318,6 +318,10 @@ img{
 }
 
 @media only screen and (max-width: 420px) {
+    body{
+        height: 725px;
+    }
+
     img{
         position: relative;
         background-size: cover;
@@ -454,4 +458,59 @@ img{
         height: 50px;
         width: 300px;
     }
+
+    /*Footer CSS*/
+    .contact-image{
+        position: relative;
+        top: 700px;
+        background-size: cover;
+        background-size: 100%;
+        width: 100%;
+        height: 600px;
+        background-image: url("https://i2.wp.com/www.creativesnapbacks.com/wp-content/uploads/2014/12/footer-background-01-noise.png?ssl=1");
+    }
+
+    .contact-title{
+        position: absolute;
+        top: 10px;
+        left: 2.5em;
+        font-weight: bold;
+        font-size: 32px;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        color: white;
+        z-index: 1;
+        max-width: 100%;
+    }
+
+
+    .contact-info{
+        position: absolute;
+        top: 100px;
+        left: 15px;
+        font-weight: 100;
+        font-size: 22px;
+        max-width: 18em;
+        text-align: center;
+    }
+
+    .straatnaam{
+        position: absolute;
+        top: 350px;
+        left: 15px;
+        font-weight: 100;
+        font-size: 22px;
+        max-width: 18em;
+        text-align: center;
+    }
+
+    .bottom-text{
+        position: relative;
+        top: 700px;
+        color: black;
+        left: 25px;
+        max-width: 100%;
+        font-size: 15px;
+        letter-spacing: .2rem;
+    }
+
 }
