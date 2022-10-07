@@ -48,7 +48,7 @@ center{
     max-width: 1300px;
     margin: 0 auto;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 26px;
+    font-size: 32px;
     font-weight: bold;
 }
 
@@ -59,7 +59,7 @@ center{
     max-width: 1300px;
     margin: 0 auto;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 22px;
+    font-size: 20px;
 }
 
 .form-main{
@@ -88,6 +88,7 @@ center{
     background-color: #fb9127;
     color: white;
     cursor: pointer;
+    transition: all 0.3s ease 0s;
 }
 
 .submit:hover{

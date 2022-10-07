@@ -9,6 +9,7 @@
 
 <body>
 <div class="contact-image">
+    <div class="footer-left">
 <p class="contact-title">Holly Guacamoley</p><br>
     <p class="contact-info">Holly Guacamoley is een restaurant<br>
                             in Oostrum, Limburg. Op zoek naar een<br>
@@ -18,13 +19,16 @@
                             <br>
                             info@hollyguacamoley.nl<br>
     </p>
+</div>
 
+<div class="footer-right">
 <p class="straatnaam">Henri Dunanstraat 40<br>
                       5807 ES Oostrum (Limburg)<br>
                       <br>
                       Maandag t/m zondag vanaf 17:00u<br>
                       tot 00:00u. (Keuken is gesloten vanaf<br>
                       22:00 behalve desserts en dranken).
+</div>
 </div>
 
 
