@@ -406,23 +406,3 @@
     background: var(--chakra-colors-transparent);
 }
 /* }}} */
-
-/* Misc components {{{ */
-.card {
-    position: relative;
-    margin: 15px 0 15px;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 14px;
-    line-height: 22px;
-}
-.cardDanger {
-    color: #f04747;
-    background: #fdecec;
-}
-.cardDangerOutline {
-    color: #f04747;
-    background: #fdecec;
-    border: 1px solid #f04747;
-}
-/* }}} */

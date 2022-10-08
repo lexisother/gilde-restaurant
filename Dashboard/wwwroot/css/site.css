@@ -25,6 +25,21 @@ a {
   }
 }
 
+/* Components {{{ */
+.dash-card {
+    margin: 15px 0 15px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+}
+.dash-card-danger {
+    background: rgba(237,66,69,.1);
+    border: 2px solid rgba(237,66,69,.5);
+}
+/* }}} */
+
 @font-face {
   font-family: Ginto Nord;
   font-weight: 500;

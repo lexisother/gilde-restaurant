@@ -7,8 +7,8 @@
     return attrs;
 }
 
-const card = $(".card");
-card.hide()
+const card = $(".dash-card");
+card.hide();
 
 // Product edit button code {{{
 const editButton = $(".edit-button");
@@ -35,7 +35,7 @@ editButton.one("click", function() {
 
     document.querySelector(".list").appendChild(form);
 
-    let kvs = document.querySelectorAll(".list-item-content")
+    let kvs = document.querySelectorAll(".list-item-content");
     for (let kv of kvs) {
         // Key item of the key-value pairs (used for name in input tag)
         let k = kv.children[0];
@@ -47,7 +47,7 @@ editButton.one("click", function() {
 
         if (val === "True" || val === "False") {
             val = $.parseJSON(val.toLowerCase());
-            v.innerHTML = `<input ${cssHash} ${val ? "checked" : ""} type="checkbox" name="${inputName}" aria-label="${inputName}">`
+            v.innerHTML = `<input ${cssHash} ${val ? "checked" : ""} type="checkbox" name="${inputName}" aria-label="${inputName}">`;
         } else {
             v.innerHTML = `<input ${cssHash} name="${inputName}" aria-label="${inputName}" placeholder="Unset" class="list-item-kv-input" value="${val}">`;
         }
@@ -58,7 +58,7 @@ editButton.one("click", function() {
     })
 
     editButton.one("click", (e) => {
-        e.preventDefault()
+        e.preventDefault();
 
         const data = {};
         $.each($("input"), (i, input) => {
@@ -86,13 +86,12 @@ editButton.one("click", function() {
         })
             .then(res => {
                 if (!res.ok) {
-                    console.error("cock")
                     card.show();
-                    card.textContent = "Er ging iets fout. Weet je zeker dat alle waardes correct zijn?"
+                    card[0].textContent = "Er ging iets fout. Weet je zeker dat alle waardes correct zijn?";
                 } else {
                     location.reload();
                 }
-            })
-    })
-})
+            });
+    });
+});
 // }}}
