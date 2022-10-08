@@ -1,4 +1,4 @@
-﻿function getAttributes($node) {
+function getAttributes($node) {
     var attrs = {};
     $.each($node[0].attributes, function (index, attribute) {
         attrs[attribute.name] = attribute.value;
@@ -16,6 +16,10 @@ const editButton = $(".edit-button");
 // Due to ASP.NET's wonderful scoped styles, we need to give every
 // element we edit/create the same hash that other elements have.
 const cssHash = Object.keys(getAttributes($(".list-header-text")))[0];
+for (let item of document.querySelectorAll("img.icon")) {
+    // Fix for ASP.NET not tacking the CSS hash onto img elements with a `~` src.
+    item.setAttribute(cssHash, "");
+}
 
 // Product ID for editing POST request
 const productId = $(".item-desc")[0].textContent;
