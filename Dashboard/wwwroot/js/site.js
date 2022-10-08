@@ -57,7 +57,7 @@ editButton.one("click", function() {
         this.value = this.checked;
     })
 
-    editButton.one("click", (e) => {
+    editButton.on("click", (e) => {
         e.preventDefault();
 
         const data = {};
