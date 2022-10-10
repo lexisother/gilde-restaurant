@@ -317,9 +317,9 @@ img{
     letter-spacing: .2rem;
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (min-width: 420px) and (max-width: 500px) {
     body{
-        height: 725px;
+        height: 100%;
     }
 
     img{
@@ -333,12 +333,220 @@ img{
         font-size: 30px;
         position: relative;
         top: -480px;
+        left: -25px;
     }
 
     .text2{
         font-size: 15px;
         position: relative;
         top: -455px;
+        left: -27px;
+    }
+
+    .under-line{
+        top: 52em;
+    }
+
+    .midlle-line{
+        display: none;
+    }
+
+    /*Eerste text*/
+    .left-text{
+        top: -20em;
+    }
+
+    .left-header{
+        font-size: 1.5em;
+        left: 0.5em;
+        width: 15em;
+    }
+
+    .header-text{
+        font-size: 1em;
+        top: 3em;
+        left: 0.9em;
+    }
+
+    .second-header{
+        font-size: 1.2em;
+        top: 4.5em;
+        left: 0.7em;
+    }
+
+    .second-text{
+        font-size: 1em;
+        top: 7.5em;
+        left: 0.9em;
+    }
+
+    .third-header{
+        font-size: 1.2em;
+        top: 8em;
+        left: 0.7em;
+    }
+
+    .third-text{
+        font-size: 1em;
+        top: 12em;
+        left: 0.9em;
+        width: 20em;
+    }
+
+    .fourth-header{
+        font-size: 1.2em;
+        top: 18em;
+        left: 0.7em;
+    }
+
+    li, .kleur{
+        font-size: 2em;
+        top: -6em;
+        left: 0em;
+        width: 70em;
+        color: black;
+        display: list-item;
+    }
+
+/*    Form*/
+    .form-all{
+        position: relative;
+    }
+
+    .form-text-1{
+        top: 5.5em;
+        left: 0.7em;
+        width: 500px;
+        font-size: 30px;
+    }
+
+    .form-text-2{
+        top: 15.5em;
+        left: 1.4em;
+        width: 340px;
+        font-size: 15px;
+    }
+
+    .form-naam {
+        top: 19em;
+        left: 1.5em;
+        height: 50px;
+        width: 300px;
+    }
+
+    .form-email {
+        top: 23em;
+        left: 1.5em;
+        height: 50px;
+        width: 300px;
+    }
+
+    .form-onderwerp {
+        top: 27em;
+        left: 1.5em;
+        height: 50px;
+        width: 300px;
+    }
+
+    .form-vragen {
+        top: 31em;
+        left: 1.5em;
+        height: 80px;
+        width: 300px;
+    }
+
+    .submit{
+        top: 44.5em;
+        left: 1.7em;
+        height: 50px;
+        width: 300px;
+    }
+
+    /*Footer CSS*/
+    .contact-image{
+        position: relative;
+        top: 700px;
+        background-size: cover;
+        background-size: 100%;
+        width: 100%;
+        height: 680px;
+        background-image: url("https://i2.wp.com/www.creativesnapbacks.com/wp-content/uploads/2014/12/footer-background-01-noise.png?ssl=1");
+    }
+
+    .contact-title{
+        position: absolute;
+        top: 10px;
+        left: 1.5em;
+        font-weight: bold;
+        font-size: 32px;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        color: white;
+        z-index: 1;
+        max-width: 100%;
+    }
+
+
+    .contact-info{
+        position: absolute;
+        top: 100px;
+        left: 15px;
+        font-weight: 100;
+        font-size: 22px;
+        max-width: 15em;
+        text-align: center;
+    }
+
+    .straatnaam{
+        position: absolute;
+        top: 410px;
+        left: 15px;
+        font-weight: 100;
+        font-size: 22px;
+        max-width: 15em;
+        text-align: center;
+    }
+
+    .bottom-text{
+        position: relative;
+        top: 700px;
+        color: black;
+        left: 25px;
+        max-width: 100%;
+        font-size: 15px;
+        letter-spacing: .2rem;
+    }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 419px) {
+    body{
+        height: 625px;
+    }
+
+    img{
+        position: relative;
+        background-size: cover;
+        width: 420px;
+        height: 200px;
+    }
+
+    .main-text{
+        top: -15em;
+    }
+
+    .text1{
+        font-size: 30px;
+        position: relative;
+        top: -480px;
+    }
+
+    .text2{
+        font-size: 15px;
+        position: relative;
+        top: -455px;
+    }
+
+    .third-text{
+        width: 20em;
     }
 
     .under-line{
@@ -392,69 +600,69 @@ img{
 
     .fourth-header{
         font-size: 1.2em;
-        top: 17em;
+        top: 18em;
         left: 0.7em;
     }
 
     li, .kleur{
         font-size: 2em;
-        top: -7em;
+        top: -6em;
         left: 0em;
         width: 70em;
         color: black;
         display: list-item;
     }
 
-/*    Form*/
+    /*    Form*/
     .form-all{
         position: relative;
     }
 
     .form-text-1{
         top: 5.5em;
-        left: 2.7em;
+        left: 0.6em;
         width: 500px;
         font-size: 30px;
     }
 
     .form-text-2{
         top: 15.5em;
-        left: 3.4em;
+        left: 1.4em;
         width: 340px;
         font-size: 15px;
     }
 
     .form-naam {
         top: 19em;
-        left: 3.1em;
+        left: 2em;
         height: 50px;
         width: 300px;
     }
 
     .form-email {
         top: 23em;
-        left: 3.1em;
+        left: 2em;
         height: 50px;
         width: 300px;
     }
 
     .form-onderwerp {
         top: 27em;
-        left: 3.1em;
+        left: 2em;
         height: 50px;
         width: 300px;
     }
 
     .form-vragen {
         top: 31em;
-        left: 3.1em;
+        left: 2em;
         height: 80px;
         width: 300px;
     }
 
     .submit{
         top: 44.5em;
-        left: 3.7em;
+        left: 2.5em;
         height: 50px;
         width: 300px;
     }
@@ -473,7 +681,7 @@ img{
     .contact-title{
         position: absolute;
         top: 10px;
-        left: 2.5em;
+        left: 1.5em;
         font-weight: bold;
         font-size: 32px;
         font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -486,7 +694,7 @@ img{
     .contact-info{
         position: absolute;
         top: 100px;
-        left: 15px;
+        left: 5px;
         font-weight: 100;
         font-size: 22px;
         max-width: 18em;
@@ -496,7 +704,7 @@ img{
     .straatnaam{
         position: absolute;
         top: 350px;
-        left: 15px;
+        left: 5px;
         font-weight: 100;
         font-size: 22px;
         max-width: 18em;
@@ -512,5 +720,212 @@ img{
         font-size: 15px;
         letter-spacing: .2rem;
     }
-
 }
+
+@media only screen and (min-width: 760px) and (max-width: 800px) {
+    body{
+        height: 100%;
+    }
+
+    img{
+        position: relative;
+        background-size: cover;
+        width: 420px;
+        height: 200px;
+    }
+
+    .text1{
+        font-size: 30px;
+        position: relative;
+        top: -480px;
+        left: -200px;
+    }
+
+    .text2{
+        font-size: 15px;
+        position: relative;
+        top: -455px;
+        left: -200px;
+    }
+
+    .under-line{
+        top: 35em;
+    }
+
+    .midlle-line{
+        display: none;
+    }
+
+    /*Eerste text*/
+    .left-text{
+        top: -20em;
+    }
+
+    .left-header{
+        font-size: 1em;
+        left: 0.5em;
+        top: -25px;
+        width: 15em;
+    }
+
+    .header-text{
+        font-size: 0.6em;
+        top: 0.3em;
+        left: 0.9em;
+    }
+
+    .second-header{
+        font-size: 1em;
+        top: 1em;
+        left: 0.5em;
+    }
+
+    .second-text{
+        font-size: 0.6em;
+        top: 4.5em;
+        left: 0.9em;
+    }
+
+    .third-header{
+        font-size: 1em;
+        top: 3.5em;
+        left: 0.5em;
+    }
+
+    .third-text{
+        font-size: 0.6em;
+        top: 9em;
+        left: 0.9em;
+        width: 30em;
+    }
+
+    .fourth-header{
+        font-size: 1em;
+        top: 10em;
+        left: 0.5em;
+    }
+
+    li, .kleur{
+        font-size: 1em;
+        top: -36em;
+        left: -2.5em;
+        width: 70em;
+        color: black;
+        display: list-item;
+    }
+
+    /*    Form*/
+    .form-all{
+        position: relative;
+    }
+
+    .form-text-1{
+        top: -2.5em;
+        left: 0.3em;
+        width: 500px;
+        font-size: 25px;
+    }
+
+    .form-text-2{
+        top: -1em;
+        left: 1em;
+        width: 340px;
+        font-size: 10px;
+    }
+
+    .form-naam {
+        top: 4em;
+        left: 1.5em;
+        height: 30px;
+        width: 330px;
+        font-size: 10px;
+    }
+
+    .form-email {
+        top: 8em;
+        left: 1.5em;
+        height: 30px;
+        width: 330px;
+        font-size: 10px;
+    }
+
+    .form-onderwerp {
+        top: 12em;
+        left: 1.5em;
+        height: 30px;
+        width: 330px;
+        font-size: 10px;
+    }
+
+    .form-vragen {
+        top: 16em;
+        left: 1.5em;
+        height: 30px;
+        width: 330px;
+        font-size: 10px;
+    }
+
+    .submit{
+        top: 20em;
+        left: 10em;
+        height: 30px;
+        width: 150px;
+        font-size: 10px;
+    }
+
+    /*Footer CSS*/
+    .contact-image{
+        position: relative;
+        top: 260px;
+        background-size: cover;
+        background-size: 100%;
+        width: 100%;
+        height: 560px;
+        background-image: url("https://i2.wp.com/www.creativesnapbacks.com/wp-content/uploads/2014/12/footer-background-01-noise.png?ssl=1");
+    }
+
+    .contact-title{
+        position: absolute;
+        top: 10px;
+        left: 3em;
+        font-weight: bold;
+        font-size: 25px;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        color: white;
+        z-index: 1;
+        max-width: 100%;
+    }
+
+
+    .contact-info{
+        position: absolute;
+        top: 70px;
+        left: 42px;
+        font-weight: 100;
+        font-size: 18px;
+        max-width: 15em;
+        text-align: center;
+    }
+
+    .straatnaam{
+        position: absolute;
+        top: 325px;
+        left: 40px;
+        font-weight: 100;
+        font-size: 18px;
+        max-width: 15em;
+        text-align: center;
+    }
+
+    .bottom-text{
+        position: relative;
+        top: 260px;
+        color: black;
+        left: 15px;
+        max-width: 100%;
+        font-size: 10px;
+        letter-spacing: .2rem;
+    }
+}
+
+/*TODO: add laptop @media (1000px)*/

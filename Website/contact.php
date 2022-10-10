@@ -23,7 +23,7 @@
 
 <div class="left-text">
     <h1 class="left-header" >Contact met Holly Guacamoley!</h1>
-         <p class="header-text" >Henri Dunantstraat 40, 5807 ES Oostrum (limburg)</p>
+         <p class="header-text" >Henri Dunantstraat 40, 5807 ES Oostrum</p>
     <h1 class="second-header" >Telefoonnummer</h1>
          <p class="second-text" >+31 6 00000000</p>
     <h1 class="third-header" >Openingstijden</h1>
