@@ -156,6 +156,9 @@ a {
  -webkit-text-decoration:inherit;
  text-decoration:inherit;
 }
+a:hover {
+    color: var(--chakra-colors-whiteAlpha-900);
+}
 abbr[title] {
  border-bottom:none;
  -webkit-text-decoration:underline;
