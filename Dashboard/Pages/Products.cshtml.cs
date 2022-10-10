@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Dashboard.Pages;
 
-public class ProductModel : PageModel
+public class ProductsModel : PageModel
 {
     private HttpClient _client = new();
 

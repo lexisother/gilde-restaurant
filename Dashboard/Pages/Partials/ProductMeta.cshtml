@@ -1,24 +1,6 @@
-@page "{id}"
-@using Dashboard.DTO
-@model ProductModel
+﻿@model Dashboard.DTO.ProductMetaProps
 @{
-    // Page meta
-    string path = HttpContext.Request.Path;
-    var products = (List<Product>)ViewData["products"];
-    ViewData["Title"] = "Product Details";
-    ViewData["path"] = path;
-    ViewData["HeaderText"] = "Product Details";
-
-    var productId = Convert.ToInt32(RouteData.Values["id"]);
-    var product = products.Find(p => p.id == productId);
-    if (product == null)
-    {
-        throw new Exception($"Product with ID {productId} was not found.");
-    }
-
-    // The meta items to show in the product header.
     string[] metaItemsToShow = { "id", "created_at" };
-    string[] editableItems = { "name", "description", "price", "spanish", "warm", "cold", "vega" };
 }
 
 <div class="product-meta">
@@ -33,33 +15,33 @@
                 </span>
                 <div class="pre-content">
                     <div class="pre-content-title-holder">
-                        <div class="pre-content-title">@product.name</div>
-                        @if (product.warm)
+                        <div class="pre-content-title">@Model.product.name</div>
+                        @if (Model.product.warm)
                         {
                             <div class="pre-content-title-icon">
                                 <svg class="icon" viewBox="0 0 100 100" xml:space="preserve"><path d="M24.6 79.4C21.4 74 20 67.2 21.8 61.1c1.7-5.6 5.5-10.4 9.3-14.7 4.2-4.9 8.9-9.6 11.5-15.6 3.2-7.4 2.7-16.3-1.3-23.3 2.2 2.1 5.2 3 7.9 4.3 5.7 2.7 10.5 7.5 12.8 13.4 2.3 5.9 2 12.8-1.2 18.3-3.6 6.3-11.1 10.2-12.3 17.8-.4 2.9.6 6.2 3.3 7.5.9.4 1.9.6 2.9.6 3.8-.1 7.3-2.6 9.5-5.8 3.8-5.3 3.8-10.9 2.9-17.1 1.7.4 3.6 2.8 4.7 4.1 5.2 5.9 8.9 15.4 6.5 23.2-1.6 5-5.1 9.3-9.3 12.4-8.5 6.3-20.1 8-30 4.4-6-2-11.2-5.9-14.4-11.2z" fill-rule="evenodd" clip-rule="evenodd" fill="#e15b64"/></svg>
                             </div>
                         }
-                        @if (product.cold)
+                        @if (Model.product.cold)
                         {
                             <div class="pre-content-title-icon">
                                 <svg class="icon" viewBox="0 0 100 100" xml:space="preserve"><path fill="#a0c8d7" d="M51.8 50V22.8l9.8-9.7-2.6-2.6-7.2 7.2V7.5h-3.6v10.2L41 10.5l-2.6 2.6 9.8 9.7v54.4l-9.8 9.7 2.6 2.6 7.2-7.2v10.2h3.6V82.3l7.2 7.2 2.6-2.6-9.8-9.7z"/><path fill="#a0c8d7" d="M88.7 61.9l-.9-3.5L74.4 62 50.9 48.4 27.4 34.8l-3.6-13.3-3.5.9 2.6 9.9-8.8-5.1-1.8 3.1 8.8 5.1-9.8 2.7.9 3.5L25.6 38l23.5 13.6 23.5 13.6 3.6 13.3 3.5-.9-2.6-9.9 8.8 5.1 1.8-3.1-8.8-5.1z"/><path fill="#a0c8d7" d="M88.7 38.1l-9.8-2.7 8.8-5.1-1.8-3.1-8.8 5.1 2.6-9.9-3.5-.9-3.6 13.3-23.5 13.6L25.6 62l-13.4-3.6-.9 3.5 9.8 2.7-8.8 5.1 1.8 3.1 8.8-5.1-2.6 9.9 3.5.9 3.6-13.3 23.5-13.6L74.4 38l13.4 3.6z"/></svg>
                             </div>
                         }
-                        @if (product.spanish)
+                        @if (Model.product.spanish)
                         {
                             <div class="pre-content-title-icon">
                                 <img class="icon" src="~/images/spain.png" />
                             </div>
                         }
-                        @if (product.vega)
+                        @if (Model.product.vega)
                         {
                             <div class="pre-content-title-icon">
                                 <img class="icon" src="~/images/vega.png" />
                             </div>
                         }
                     </div>
-                    <p class="pre-content-sub">€@product.price</p>
+                    <p class="pre-content-sub">€@Model.product.price</p>
                 </div>
             </div>
         </div>
@@ -74,39 +56,10 @@
                  * @see https://learn.microsoft.com/en-us/dotnet/api/System.Type.GetProperty?view=net-6.0
                  * @see https://learn.microsoft.com/en-us/dotnet/api/System.Reflection.PropertyInfo.GetValue?view=net-6.0
                  */
-                var value = product.GetType().GetProperty(item).GetValue(product, null);
+                var value = Model.product.GetType().GetProperty(item).GetValue(Model.product, null);
                 <div class="item">
                     <span class="item-title">@item</span>
                     <span class="item-desc">@value</span>
-                </div>
-            }
-        </div>
-    </div>
-</div>
-
-<div class="dash-card dash-card-danger"></div>
-
-<div class="product-content">
-    <div class="list">
-        <div class="list-header">
-            <h2 class="list-header-text">Product Data</h2>
-            <button type="button" class="edit-button">
-                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" focusable="false" class="edit-button-icon" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a.996.996 0 000-1.41l-2.34-2.34a.996.996 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></svg>
-            </button>
-        </div>
-        <div class="list-content">
-            @foreach (var item in editableItems)
-            {
-                var value = product.GetType().GetProperty(item).GetValue(product, null);
-                <div class="list-item">
-                    <div class="list-item-content">
-                        <div id="@item" class="list-item-kv">
-                            <span class="kv-text">@Model.NormalizeKeyName(item)</span>
-                        </div>
-                        <div class="list-item-kv">
-                            <span typeof="@Model.GetElementType(item)" class="kv-text">@value</span>
-                        </div>
-                    </div>
                 </div>
             }
         </div>
