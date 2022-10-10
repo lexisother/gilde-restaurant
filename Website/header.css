@@ -50,7 +50,7 @@ li, a {
     color:  rgba(255, 128, 0, 0.915);
 }
 
-@media only screen and (max-width: 420px){
+@media only screen and (min-width: 420px) and (max-width: 500px){
     nav{
         height: 98px;
     }
@@ -62,6 +62,35 @@ li, a {
         margin-right: 0px;
         margin-left: 0px ;
         padding-left: 10px;
+    }
+
+    li, a {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 419px) {
+    nav {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 760px) and (max-width: 800px) {
+    nav{
+        height: 60px;
+    }
+
+    .logo{
+        height: 30px;
+        width: 30px;
+        margin-right: 0px;
+        margin-left: 0px ;
+        padding-left: 10px;
+    }
+
+    .black-header {
+        height: 60px;
+        width: 100%;
     }
 
     li, a {
