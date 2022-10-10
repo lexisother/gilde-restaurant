@@ -7,13 +7,15 @@ card.hide();
 // Product edit button code {{{
 const editButton = $(".edit-button");
 
+for (let item of document.querySelectorAll("img.icon")) {
+    const hash = Object.keys(getAttributes($(item).parent()))[0];
+    // Fix for ASP.NET not tacking the CSS hash onto img elements with a `~` src.
+    item.setAttribute(hash, "");
+}
+
 // Due to ASP.NET's wonderful scoped styles, we need to give every
 // element we edit/create the same hash that other elements have.
 const cssHash = Object.keys(getAttributes($(".list-header-text")))[0];
-for (let item of document.querySelectorAll("img.icon")) {
-    // Fix for ASP.NET not tacking the CSS hash onto img elements with a `~` src.
-    item.setAttribute(cssHash, "");
-}
 
 // Product ID for editing POST request
 const productId = $(".item-desc")[0].textContent;
