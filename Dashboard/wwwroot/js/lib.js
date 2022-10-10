@@ -1,6 +1,7 @@
 export function getAttributes($node) {
     var attrs = {};
-    $.each($node[0].attributes, function (index, attribute) {
+    var iterOver = $node[0] ?? $node;
+    $.each(iterOver.attributes, function (index, attribute) {
         attrs[attribute.name] = attribute.value;
     });
 
