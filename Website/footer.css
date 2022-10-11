@@ -1,67 +1,81 @@
 
-.contact-image{
-    position: relative;
-    top: 105%;
-    background-size: cover;
-    background-size: 100%;
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+
+.footer{
+    position: absolute;
+    top: 2600px;
+    background-color:  #1b1b1b;
     width: 100%;
-    height: 420px;
-    background-repeat: no-repeat;
-    background-image: url("https://i2.wp.com/www.creativesnapbacks.com/wp-content/uploads/2014/12/footer-background-01-noise.png?ssl=1");
-}
-
-.footer-left{
-    max-width: 1300px;
+    padding-top: 40px;
+    color: white;
     margin: 0 auto;
 }
 
-.footer-right{
-    max-width: 1300px;
-    margin: 0 auto;
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
 }
 
-.contact-title{
+.footer-content h4{
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+
+.footer-content p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+}
+
+.socials{
     position: relative;
     top: 50px;
-    font-weight: 300;
-    font-size: 32px;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: #fb9127;   
-    z-index: 1;
-    max-width: 50%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+    
 }
 
-.contact-info{
-    position: relative;
-    top: 10px;
-    font-weight: 100;
-    font-size: 22px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.socials li{
+    margin: 0 10px;
+    
+}
+
+.socials a{
+    text-decoration: none;
     color: white;
-    z-index: 1;
-    max-width: 30%;
 }
 
-.straatnaam{
+.socials a i{
+    font-size: 1.1rem;
+    
+}
+
+.footer-bottom{
     position: relative;
-    top: -220px;
-    left: 60%;
-    font-weight: 100;
-    font-size: 22px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: white;
-    z-index: 1;
-    max-width: 30%;
+    top: 31px;
+    background-color: #0b0b0b;
+    padding: 20px 0;
+    margin-top: 61px;
+    text-align: center;
 }
 
-.bottom-text{
-    position: relative;
-    top: 110%;
-    color: black;
-    left: 100px;
-    max-width: 50%;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 17px;
-    letter-spacing: .2rem;
+.footer-bottom p{
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+    
 }
-

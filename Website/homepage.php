@@ -12,9 +12,9 @@
 ?> 
 
 <div class="front-text">
-   <center><div class="main-text">WELKOM!</div></center>
-   <center><div class="text1">HOLLY GUACAMOLEY</div></center>
-   <center><div class="text2">De lekkerste tapas en drankjes haal je bij ons!</div></center>
+   <div class="main-text">WELKOM!</div>
+ <div class="text1">HOLLY GUACAMOLEY</div>
+  <div class="text2">De lekkerste tapas en drankjes haal je bij ons!</div>
 </div>
 
 <div class="container">
@@ -33,8 +33,10 @@
     </p>
 </div>
 
+<div class="menuboard">
 <div class="container-mini">
     <p class="menuboard-text">Bij Holly Guacamoley kun je:</p>
+</div>
 </div>
 
 <div class="menu-image">
