@@ -6,6 +6,7 @@
     <link rel="shortcut icon" href="..\Website\images\logopng.png"/> 
     <title>Holly Guacamoley</title>
 </head>
+
 <body>
 <?php 
     include 'header.php'; 

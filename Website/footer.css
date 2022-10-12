@@ -1,27 +1,16 @@
-
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-
 .footer{
     position: absolute;
     top: 2600px;
     background-color:  #1b1b1b;
     width: 100%;
+    height: 385px;
     padding-top: 40px;
     color: white;
     margin: 0 auto;
 }
 
 .footer-content{
-    display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    text-align: center;
 }
 
 .footer-content h4{
@@ -40,7 +29,7 @@
 
 .socials{
     position: relative;
-    top: 50px;
+    top: -100px;
     list-style: none;
     display: flex;
     align-items: center;
@@ -66,16 +55,26 @@
 
 .footer-bottom{
     position: relative;
-    top: 31px;
+    top: -100px;
     background-color: #0b0b0b;
     padding: 20px 0;
-    margin-top: 61px;
     text-align: center;
 }
 
-.footer-bottom p{
-    font-size: 14px;
-    word-spacing: 2px;
-    text-transform: capitalize;
-    
+
+
+.footer-right{
+    position: relative;
+    left: 500px;
+    bottom: 178px;
+    max-width: 300px;
 }
+
+.left-text{
+    position: relative;
+    max-width: 300px;
+    left: -200px;
+    top: 50px;
+    margin: 0 auto;
+}
+
