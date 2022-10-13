@@ -1,4 +1,11 @@
 import {getAttributes} from "./lib.js";
+import {API_BASE, PRODUCT_EDITOR, USER_EDITOR} from "./site.js";
+
+// META VARS
+let apiLink = `${API_BASE}/products`;
+if (USER_EDITOR) {
+    apiLink = `${API_BASE}/user`;
+}
 
 // Instantly hide the error card
 const card = $(".dash-card");
@@ -70,7 +77,7 @@ editButton.one("click", function() {
 
             data[key] = val;
         });
-        fetch(`https://gdos-api.alyxia.dev/products/${productId}`, {
+        fetch(`${apiLink}/${productId}`, {
             method: "PATCH",
             body: JSON.stringify(data),
             headers: {
