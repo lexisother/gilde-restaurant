@@ -1,4 +1,4 @@
-﻿.product-meta {
+﻿.meta {
     display: flex;
     -webkit-box-pack: start;
     justify-content: flex-start;
@@ -8,13 +8,13 @@
     background-color: var(--chakra-colors-secondary-dark);
 }
 @media screen and (min-width: 48em) {
-    .product-meta {
+    .meta {
         padding: var(--chakra-space-4);
         min-width: var(--chakra-sizes-full);
     }
 }
 
-.product-meta-content {
+.meta-content {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -23,20 +23,20 @@
     flex-direction: column;
     gap: var(--chakra-space-2);
 }
-.product-meta-content > :not(style) ~ :not(style) {
+.meta-content > :not(style) ~ :not(style) {
     margin-top: 0px;
     margin-inline: 0px;
     margin-bottom: 0px;
 }
 @media screen and (min-width: 48em) {
-    .product-meta-content {
+    .meta-content {
         -webkit-box-pack: start;
         justify-content: flex-start;
         flex-direction: row;
     }
 }
 
-.product-meta-content-pre {
+.meta-content-pre {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -52,7 +52,7 @@
     gap: var(--chakra-space-2);
 }
 @media screen and (min-width: 48em) {
-    .product-meta-content-pre {
+    .meta-content-pre {
         border-right-width: 2px;
         border-bottom-width: 0px;
         padding-right: var(--chakra-space-4);
@@ -175,7 +175,7 @@
     }
 }
 
-.product-meta-content-items {
+.meta-content-items {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -186,7 +186,7 @@
     gap: var(--chakra-space-6);
 }
 @media screen and (min-width: 48em) {
-    .product-meta-content-items {
+    .meta-content-items {
         -webkit-box-pack: start;
         justify-content: flex-start;
         padding-left: var(--chakra-space-2);

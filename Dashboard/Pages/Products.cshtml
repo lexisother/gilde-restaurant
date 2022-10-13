@@ -29,7 +29,7 @@
             @foreach (var p in products)
             {
                 <a href="/Products/@p.id">
-                    @Html.Partial("Partials/ProductMeta", new ProductMetaProps { product = p })
+                    @Html.Partial("Partials/MetaHeader", new MetaProps { product = p })
                 </a>
             }
         </div>
@@ -37,7 +37,7 @@
 }
 else
 {
-    @Html.Partial("Partials/ProductMeta", new ProductMetaProps { product = product })
+    @Html.Partial("Partials/MetaHeader", new MetaProps { product = product })
 }
 
 @if (product != null)

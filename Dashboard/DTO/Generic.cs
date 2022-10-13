@@ -1,14 +1,23 @@
 ﻿namespace Dashboard.DTO;
 
-public struct ProductMetaProps
+public struct MetaProps
 {
+    public User user;
     public Product product;
 
-    public static implicit operator ProductMetaProps(Product product)
+    public static implicit operator MetaProps(Product product)
     {
-        return new ProductMetaProps
+        return new MetaProps
         {
             product = product
+        };
+    }
+
+    public static implicit operator MetaProps(User user)
+    {
+        return new MetaProps
+        {
+            user = user
         };
     }
 }
