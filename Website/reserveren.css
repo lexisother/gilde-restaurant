@@ -2,7 +2,7 @@
 .black-header{
     position: relative;
     width: 100%;
-    height: 100px;
+    height: 97px;
     background-color:   black ;
     z-index: 1;
 }
@@ -94,3 +94,21 @@ center{
     background-color: transparent;
 }
 
+@media screen and (max-width: 1300px) {
+    .black-header{
+        height: 98px;
+     }
+    }
+        
+
+@media screen and (max-width: 688px) {
+    .black-header{
+        height: 126px;
+    }
+} 
+
+@media screen and (max-width: 540px) {
+    .black-header{
+        height: 146px;
+    }     
+}

@@ -6,7 +6,7 @@ body{
 .black-header{
     position: relative;
     width: 100%;
-    height: 110px;
+    height: 141px;
     background-color:   black ;
     z-index: 1;
 }
@@ -63,6 +63,11 @@ body{
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     box-shadow: inset 0px 0px 30px 0px;
+}
+
+.footer-homepage{
+    position: relative;
+    top: 1000px;
 }
 
 /*Fade animation*/
@@ -151,7 +156,7 @@ h2{
     position: relative;
     max-width: 1300px;
     margin: 0 auto;
-    left: 0%;
+    right: 0%;
 }
 
 /*menu button*/
@@ -264,7 +269,7 @@ h4{
 
 }
 
-    @media screen and (max-width: 70em) {
+    @media screen and (max-width: 1300px) {
         .black-header{
             position: relative;
             width: 100%;
@@ -381,6 +386,7 @@ h4{
         
         .menuboard-text{
             position: relative;
+            max-width: 200px;
             top: 30px;
             left: 30px;
             color: white;
@@ -514,5 +520,32 @@ h4{
         font-weight: 300;
         letter-spacing: .1rem;
         font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+}
+
+
+
+@media screen and (max-width: 1300px) {
+    .black-header{
+        height: 128px;
+     }
+    }
+        
+
+@media screen and (max-width: 688px) {
+    .black-header{
+        height: 158px;
+    }
+} 
+
+@media screen and (max-width: 540px) {
+    .black-header{
+        height: 178px;
+    }     
+}
+
+@media screen and (max-width: 432px) {
+    .black-header{
+        height: 148px;
     }
 }

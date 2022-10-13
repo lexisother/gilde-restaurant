@@ -4,8 +4,7 @@ body {
 
 header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
     background-color: #161616;
     opacity: calc(90%);
     position: fixed;
@@ -26,19 +25,19 @@ li, a {
     position: relative;
     height: 60px;
     width: 60px;
-    margin-right: 170px;
-    margin-left: 200px ;
-    padding-left: 10px;
+    margin-right: 300px;
 }
 
 
 .nav_links {
     list-style: none;
+    
+
 }
 
 .nav_links li {
     display: inline-block;  
-    padding: 0px 20px;
+    margin-right: 40px;
 }
 
 .nav_links li a {
@@ -49,50 +48,124 @@ li, a {
     color:  rgba(255, 128, 0, 0.915);
 }
 
-@media only screen and (min-width: 420px) and (max-width: 500px){
-    nav{
-        height: 98px;
-    }
 
+@media screen and (max-width: 1400px) {
+    li, a {
+        position: relative;
+        display: flex;
+        bottom: 8px;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 25px;
+        color: azure;
+        text-decoration: none;
+        text-align: center;
+    }
+    
+    .logo{
+        position: relative;
+        height: 60px;
+        width: 60px;
+    }
+    
+    .nav_links {
+        list-style: none;
+        justify-content: center;
+    
+    
+    }
+    
+
+}
+
+@media screen and (max-width: 1000px) {
+    li, a {
+        position: relative;
+        display: flex;
+        bottom: 8px;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 25px;
+        color: azure;
+        text-decoration: none;
+        text-align: center;
+    }
+    
+    .logo{
+        position: relative;
+        height: 60px;
+        width: 60px;
+    }
+    
+    .nav_links {
+        list-style: none;
+        justify-content: center;
+    
+    }
+    
     .logo{
         position: relative;
         height: 60px;
         width: 60px;
         margin-right: 0px;
-        margin-left: 0px ;
-        padding-left: 10px;
     }
 
-    li, a {
-        display: none;
-    }
 }
 
-@media only screen and (min-width: 360px) and (max-width: 419px) {
-    nav {
-        width: 100%;
-    }
+
+@media screen and (max-width: 688px) {
+
+.contact{
+    position: relative;
+    left: 180px;
 }
 
-@media only screen and (min-width: 760px) and (max-width: 800px) {
-    nav{
-        height: 60px;
-    }
 
+}
+
+
+@media screen and (max-width: 540px) {
+
+     
     .logo{
-        height: 30px;
-        width: 30px;
-        margin-right: 0px;
-        margin-left: 0px ;
-        padding-left: 10px;
-    }
-
-    .black-header {
+        position: relative;
         height: 60px;
-        width: 100%;
+        width: 60px;
+        margin-right: 0px;
+        margin-bottom: 20px;
     }
 
-    li, a {
-        display: none;
+.contact{
+    position: relative;
+    left: 10px;
+}
+
+.reserveren{
+    position: relative;
+    right: -12px;
+}
+
+
+}
+
+@media screen and (max-width: 375px) {
+  
+    .logo{
+        position: relative;
+        height: 60px;
+        width: 60px;
+        margin-right: 0px;
+        margin-bottom: 20px;
     }
+
+.contact{
+    position: relative;
+    left: 200px;
+    bottom: 35px;
+}
+
+.reserveren{
+    position: relative;
+    right: -12px;
+}
+
+
 }

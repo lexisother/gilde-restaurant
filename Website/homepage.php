@@ -57,9 +57,11 @@
     </div>
 </div>
 
+<div class="footer-homepage">
 <?php
     include 'footer.php'; 
 ?>
+</div>
 </body>
 </html>
     

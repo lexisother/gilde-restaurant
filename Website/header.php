@@ -12,10 +12,10 @@
     <nav>
         <ul class="nav_links">
         <img class="logo" src="images\logopng.png">
-           <li><a href="homepage.php">WELKOM</a></li>
-           <li><a href="menu.php">MENU</a></li>
-           <li><a href="reserveren.php">RESERVERING</a></li>
-           <li><a href="contact.php">CONTACT</a></li>
+           <li class="home"><a href="homepage.php">WELKOM</a></li>
+           <li class="menu"><a href="menu.php">MENU</a></li>
+           <li class="reserveren"><a href="reserveren.php">RESERVERING</a></li>
+           <li class="contact"><a href="contact.php">CONTACT</a></li>
         </ul>
     </nav>
 </header>  
