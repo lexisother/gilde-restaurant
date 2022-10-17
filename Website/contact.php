@@ -19,16 +19,15 @@
 <center><div class="text1">HOLLY GUACAMOLEY</div></center>
 <center><div class="text2">De lekkerste tapas en drankjes haal je bij ons!</div></center>
 
-<div class="under-line"></div>
 
 <div class="left-text">
     <h1 class="left-header" >Contact met Holly Guacamoley!</h1>
          <p class="header-text" >Henri Dunantstraat 40, 5807 ES Oostrum</p>
     <h1 class="second-header" >Telefoonnummer</h1>
-         <p class="second-text" >+31 6 00000000</p>
-    <h1 class="third-header" >Openingstijden</h1>
-         <p class="third-text" >Wij zijn 7 dagen per week open!<br>Maandag t/m zondag vanaf 17:00u tot 00:00u.(Keuken is gesloten vanaf 22:00 behalve desserts en dranken).<br><br>Wil je er zeker van zijn dat je kunt dineren?<br>Bel: +31 6 00000000</p>
-    <h1 class="fourth-header" >Bij Holly Guacamoley</h1>
+       <a class="phone" href="tel:+31600000000">31 6 00000000</a>
+    <h1 class="third-header">Openingstijden</h1>
+         <p class="third-text">Wij zijn 7 dagen per week open!<br>Maandag t/m zondag vanaf 17:00 uur tot 00:00 uur(Keuken is gesloten vanaf 22:00 behalve desserts en dranken).<br><br>Wil je er zeker van zijn dat je kunt dineren?<br>Bel: +31 6 00000000</p>
+    <h1 class="fourth-header">Bij Holly Guacamoley</h1>
     <ul class="fourth-list">
         <li class="kleur">is pinnen mogelijk</li>
         <li class="kleur">kun je gratis parkeren</li>

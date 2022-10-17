@@ -1,3 +1,7 @@
+body{
+    background-color: #fb912727;
+}
+
 /*Zwarte balk achter header*/
 .black-header{
     position: relative;
@@ -34,7 +38,7 @@
     position: relative;
     top: -300px;
     color: rgb(255, 255, 255);
-    font-family: cursive;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 20px;
     z-index: 1;
     filter: drop-shadow(1px 1px 10px #00000075);
@@ -82,8 +86,7 @@ center{
     max-width: 50%;
     max-width: 1100px;
     margin: 0 auto;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .menu-text{
@@ -93,7 +96,7 @@ center{
     bottom: 450px;
     max-width: 1100px;
     margin: 0 auto;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 @media screen and (max-width: 1300px) {

@@ -19,7 +19,8 @@
 </center>
 
 <p class="main-text-left">Gemakkelijk en snel reserveren</p>
-<p class="phone-text-left">Plaatst u uw reservering het liefst telefonisch? <br> Dan kunt u ons bellen op: +31 6 00000000</p>
+<p class="phone-text-left">Plaatst u uw reservering het liefst telefonisch? <br> Dan kunt u ons bellen op: <a class="phone" href="tel:+31600000000">31 6 00000000</a>
+
 
 <form method="post">
     <div class="form-main">

@@ -1,12 +1,13 @@
 body{
     height: 1000px;
     max-width: 100%;
+    background-color: #fb912727;
 }
 
 .black-header{
     position: relative;
     width: 100%;
-    height: 141px;
+    height: 150px;
     background-color:   black ;
     z-index: 1;
 }
@@ -14,7 +15,7 @@ body{
 /*Alle text in de afbeelding fader*/
 .front-text{
     position: relative;
-    top: 200px;
+    top: 150px;
     z-index: 1;
     text-align: center;
 
@@ -31,7 +32,7 @@ body{
 }
 
 .text1{
-    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: white;
     font-size: 40px;
     bottom: 540px;
@@ -39,7 +40,7 @@ body{
 }
 
 .text2{
-    font-family: cursive;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
     font-size: 20px;
     bottom: 520px;
@@ -52,7 +53,7 @@ body{
     position: relative;
     top: -300px;
     width: 100%;
-    height: 940px;
+    height: 550px;
     background-size: cover;
     background-image: url("https://c4.wallpaperflare.com/wallpaper/395/483/643/salami-meat-appetizer-cold-cut-wallpaper-preview.jpg"); 
     filter: saturate(1.5);
@@ -83,14 +84,13 @@ body{
     position: relative;
     max-width: 1300px;
     margin: 0 auto;
-    top: 900px;
+    top: 500px;
     left: 0%;
 }
 
 /*algemene info*/
 h1{
     position: relative;
-    max-width: 50%;
     font-size: 20px;
     top: 95%;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -99,9 +99,8 @@ h1{
 
 h2{
     position: relative;
-    max-width: 50%;
     font-size: 25px;
-    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: 400;
 }
 
@@ -111,11 +110,12 @@ h2{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     line-height: 25px;
     max-height: 0%;
+    max-width: 700px;
 }
 
 .menuboard{
     position: relative;
-    top: 600px;
+    top: 100px;
 }
 
 /*krijtbordje naast de algemen info*/
@@ -143,12 +143,12 @@ h2{
 /*background image met van het menu blokje*/
 .menu-image{
     position: relative;
-    top: 880px;
+    top: 280px;
     background-size: cover;
     background-size: 100%;
     width: 100%;
     max-height: 50%;
-    height: 450px;
+    height: 100%;
     background-image: url("https://images5.alphacoders.com/379/379572.png");
 }
 /*responsiveness en positioning van het menu blokje*/
@@ -170,7 +170,7 @@ h2{
     background-color: #fb9127;
     height: 58px;
     width: 270px;
-    top: 300px;
+    top: 200px;
     border: none;
     cursor: pointer;
     transition: all 0.3s ease 0s;
@@ -190,6 +190,7 @@ h3{
     font-weight: bold;
     font-size: 30px; 
     letter-spacing: .2rem;
+    bottom: 40px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -200,7 +201,8 @@ h4{
     font-size: 20px; 
     font-weight: 300;
     letter-spacing: .1rem;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    bottom: 40px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 /*volledige responsiveness en positioning van het reserverings blokje*/
@@ -214,18 +216,42 @@ h4{
 /*background image van het reserverings blokje*/
 .reservering-image{
     position: relative;
-    top: 94%;
+    top: 300px;
     background-size: cover;
     background-size: 100%;
     width: 100%;
-    height: 45%;
+    height: 60%;
     background-image: url("https://images5.alphacoders.com/110/1107266.jpg");
 }
+
+/*alle text in het reserverings blokje*/
+.reservering-kop{
+    position: relative;
+    max-width: 50%;
+    top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px; 
+    letter-spacing: .2rem;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.reservering-text{
+    position: relative;
+    max-width: 60%;
+    top: -50px;
+    color: white;
+    font-size: 20px; 
+    font-weight: 300;
+    letter-spacing: .1rem;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 
 /*button van het reserverings blokje*/
 .reservering{
     position: relative;
-    top: 270px;
+    top: 250px;
     color: white;
     font-size: 20px;
     font-weight: bold;
@@ -243,30 +269,6 @@ h4{
 .reservering:hover {
     color: black;
     background-color: white; 
-}
-
-/*alle text in het reserverings blokje*/
-.reservering-kop{
-    position: relative;
-    max-width: 50%;
-    top: 20px;
-    color: white;
-    font-weight: bold;
-    font-size: 30px; 
-    letter-spacing: .2rem;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-.reservering-text{
-    position: relative;
-    max-width: 60%;
-    top: 20px;
-    color: white;
-    font-size: 20px; 
-    font-weight: 300;
-    letter-spacing: .1rem;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
 }
 
     @media screen and (max-width: 1300px) {
@@ -390,7 +392,6 @@ h4{
             top: 30px;
             left: 30px;
             color: white;
-            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             font-size: 13px;
         }
         
@@ -405,7 +406,6 @@ h4{
         height: 450px;
         background-image: url("https://images5.alphacoders.com/379/379572.png");
         background-repeat: no-repeat;
-
     }
     /*responsiveness en positioning van het menu blokje*/
     .menu-position{
@@ -420,7 +420,6 @@ h4{
         position: relative;
         color: white;
         font-weight: bold;
-        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         letter-spacing: .2rem;
         padding: 9px 25px;
         background-color: #fb9127;
@@ -441,7 +440,6 @@ h4{
         top: 20px;
         left: 20px;
         letter-spacing: .2rem;
-        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     }
     
     h4{
@@ -453,7 +451,6 @@ h4{
         font-size: 12px; 
         font-weight: 300;
         letter-spacing: .1rem;
-        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
       
     .reservering-position{
@@ -481,7 +478,6 @@ h4{
         color: white;
         font-size: 20px;
         font-weight: bold;
-        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         letter-spacing: .2rem;
         padding: 9px 25px;
         background-color: transparent;
@@ -507,7 +503,6 @@ h4{
         font-weight: bold;
         font-size: 20px; 
         letter-spacing: .2rem;
-        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     }
     
     .reservering-text{
@@ -519,7 +514,6 @@ h4{
         font-size: 20px; 
         font-weight: 300;
         letter-spacing: .1rem;
-        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 }
 
@@ -529,6 +523,120 @@ h4{
     .black-header{
         height: 128px;
      }
+     .menu-image{
+        position: relative;
+        top: 500px;
+        background-size: cover;
+        background-size: 100%;
+        width: 100%;
+        max-height: 50%;
+        height: 450px;
+        background-image: url("https://images5.alphacoders.com/379/379572.png");
+        background-repeat: no-repeat;
+    }
+    /*responsiveness en positioning van het menu blokje*/
+    .menu-position{
+        position: relative;
+        max-width: 1300px;
+        margin: 0 auto;
+        left: 0%;
+    }
+
+    h3{
+        position: relative;
+        max-width: 80%;
+        color: white;
+        font-weight: bold;
+        font-size: 20px; 
+        top: -50px;
+        left: 20px;
+        letter-spacing: .2rem;
+    }
+    
+    h4{
+        position: relative;
+        top: -50px;
+        left: 20px;
+        max-width: 90%;
+        color: white;
+        font-size: 12px; 
+        font-weight: 300;
+        letter-spacing: .1rem;
+    }
+
+     .menukaart{
+        position: relative;
+        color: white;
+        font-weight: bold;
+        letter-spacing: .2rem;
+        padding: 9px 25px;
+        background-color: #fb9127;
+        height: 48px;
+        width: 180px;
+        top: 180px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+        z-index: 3;
+        margin-left: 20px;
+    }
+
+    .reservering-image{
+        position: relative;
+        top: 105%;
+        background-size: cover;
+        background-size: 100%;
+        width: 100%;
+        height: 45%;
+        background-image: url("https://images5.alphacoders.com/110/1107266.jpg");
+    }
+    
+    /*button van het reserverings blokje*/
+    .reservering{
+        position: relative;
+        top: 150px;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: .2rem;
+        padding: 9px 25px;
+        background-color: transparent;
+        height: 48px;
+        width: 200px;
+        border: 3px solid #ffffff;
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+        z-index: 3;
+        margin-left: 20px;
+    }
+    
+    .reservering:hover {
+        color: black;
+        background-color: white; 
+    }
+    
+    /*alle text in het reserverings blokje*/
+    .reservering-kop{
+        position: relative;
+        max-width: 80%;
+        top: -50px;
+        left: 20px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px; 
+        letter-spacing: .2rem;
+    }
+    
+    .reservering-text{
+        position: relative;
+        max-width: 80%;
+        top: -50px;
+        left: 20px;
+        color: white;
+        font-size: 20px; 
+        font-weight: 300;
+        letter-spacing: .1rem;
+    }
     }
         
 
@@ -542,6 +650,7 @@ h4{
     .black-header{
         height: 178px;
     }     
+    
 }
 
 @media screen and (max-width: 432px) {

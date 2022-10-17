@@ -1,6 +1,7 @@
 body{
     height: 900px;
     max-width: 100%;
+    background-color: #fb912727;
 }
 
 .background-image{
@@ -204,6 +205,22 @@ img{
     width: 30em;
 }
 
+.phone{
+    position: relative;
+    color: rgb(56, 109, 255);
+    margin-left: 20px;
+    text-decoration: underline;
+    top: 200px;
+}
+
+.phone-number{
+    position: relative;
+    color: rgb(56, 109, 255);
+    margin-left: 20px;
+    text-decoration: underline;
+}
+
+
 .second-header{
     position: absolute;
     font-size: 2em;
@@ -212,21 +229,8 @@ img{
     width: 30em;
 }
 
-.second-text{
-    position: absolute;
-    font-size: 1.3em;
-    top: 8em;
-    left: 1em;
-    width: 30em;
-}
 
-.third-header{
-    position: absolute;
-    font-size: 2em;
-    top: 6.2em;
-    left: 0.6em;
-    width: 30em;
-}
+
 
 .third-text{
     position: absolute;

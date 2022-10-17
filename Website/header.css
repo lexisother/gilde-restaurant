@@ -89,12 +89,6 @@ li, a {
         text-align: center;
     }
     
-    .logo{
-        position: relative;
-        height: 60px;
-        width: 60px;
-    }
-    
     .nav_links {
         list-style: none;
         justify-content: center;
