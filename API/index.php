@@ -40,6 +40,8 @@ $capsule->bootEloquent();
 
 $container = app();
 
+$container->
+
 $router = new Router();
 $router->setNamespace("\App\Controllers");
 
