@@ -1,7 +1,7 @@
 ﻿import "./hashFix.js";
 
 // Constants {{{
-export const API_BASE = "https://gdos-api.alyxia.dev"
+export const API_BASE = document.querySelector("html").attributes["api-base"].textContent;
 
 // Metavariable fuckery. We love.
 // __ = Defined by user in file.
