@@ -6,6 +6,7 @@ env:
   CI: true
   API_HOST: http://localhost:1337/
   FORCE_COLOR: true
+  PGUSER: 'postgres'
   POSTGRES_HOST_AUTH_METHOD: 'trust'
 
 jobs:
@@ -24,7 +25,7 @@ jobs:
           POSTGRES_HOST_AUTH_METHOD: trust
         # Set health checks to wait until postgres has started
         options: >-
-          --health-cmd pg_isready
+          --health-cmd "pg_isready -U postgres"
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
@@ -34,8 +35,21 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
+
+      - name: Don't start servers during apt install
+        run: |
+          mkdir -p /usr/sbin/
+          cat <<EOF > /usr/sbin/policy-rc.d
+          #!/bin/sh
+          exit 101
+          EOF
+          chmod 755 /usr/sbin/policy-rc.d
+
       - name: Install packages
-        run: apt-get update -yqq && apt-get install git wget libonig-dev libpq-dev libzip-dev unzip postgresql -yqq
+        run: |
+          apt-get update -yqq && apt-get install git wget libonig-dev libpq-dev libzip-dev unzip postgresql -yqq
+          rm -rf /usr/sbin/policy-rc.d
+
       # - name: Setup dotnet
       #   uses: actions/setup-dotnet@v2
       #   with:
