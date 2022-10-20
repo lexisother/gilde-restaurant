@@ -39,15 +39,15 @@ jobs:
         run: |
           sudo apt-get update -yqq && sudo apt-get install php8.1 php8.1-mbstring php8.1-pgsql php8.1-zip git curl wget libonig-dev libpq-dev libzip-dev unzip postgresql -yqq
 
-      # - name: Setup dotnet
-      #   uses: actions/setup-dotnet@v2
-      #   with:
-      #     dotnet-version: '6.0.x'
-      #     include-prerelease: true
-      # - name: Setup node
-      #   uses: actions/setup-node@v1
-      #   with:
-      #     node-version: 18.7.0
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: '6.0.x'
+          include-prerelease: true
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18.7.0
 
       - name: '[API] Install composer and its deps'
         run: |
@@ -69,27 +69,27 @@ jobs:
           curl --retry 5 --retry-max-time 20 --retry-connrefused http://localhost:1337/health
           cat ~/php_errors.log
 
-      # - name: '[Dashboard] Build and run'
-      #   run: |
-      #     cd Dashboard
-      #     dotnet run &
-      #     cd ..
-      #
-      # - name: '[Dashboard] Set Test Variables'
-      #   run: |
-      #     if [[ "$GITHUB_REF" =~ ^refs/tags/v* ]]; then
-      #       echo "Using TAG mode: $GITHUB_REF_NAME"
-      #       echo "REL_VERSION_STRICT=${GITHUB_REF_NAME#?}" >> $GITHUB_ENV
-      #     else
-      #       echo "Using BRANCH mode: dev.$GITHUB_RUN_NUMBER"
-      #       echo "REL_VERSION_STRICT=dev.$GITHUB_RUN_NUMBER" >> $GITHUB_ENV
-      #     fi
-      # - name: '[Dashboard] Run tests'
-      #   env:
-      #     CYPRESS_KEY: ${{ secrets.CYPRESS_KEY }}
-      #   run: |
-      #     cd Dashboard
-      #     docker run --name cypress --ipc=host --shm-size 1G -v $GITHUB_WORKSPACE/Dashboard:/e2e -w /e2e cypress/included:4.9.0 --record --key "$CYPRESS_KEY" --headless --ci-build-id "$REL_VERSION_STRICT-run$GITHUB_RUN_NUMBER.$GITHUB_RUN_ATTEMPT" --tag "$REL_VERSION_STRICT" --config baseUrl=https://localhost:7184
+      - name: '[Dashboard] Build and run'
+        run: |
+          cd Dashboard
+          dotnet run &
+          cd ..
+
+      - name: '[Dashboard] Set Test Variables'
+        run: |
+          if [[ "$GITHUB_REF" =~ ^refs/tags/v* ]]; then
+            echo "Using TAG mode: $GITHUB_REF_NAME"
+            echo "REL_VERSION_STRICT=${GITHUB_REF_NAME#?}" >> $GITHUB_ENV
+          else
+            echo "Using BRANCH mode: dev.$GITHUB_RUN_NUMBER"
+            echo "REL_VERSION_STRICT=dev.$GITHUB_RUN_NUMBER" >> $GITHUB_ENV
+          fi
+      - name: '[Dashboard] Run tests'
+        env:
+          CYPRESS_KEY: ${{ secrets.CYPRESS_KEY }}
+        run: |
+          cd Dashboard
+          docker run --name cypress --ipc=host --shm-size 1G -v $GITHUB_WORKSPACE/Dashboard:/e2e -w /e2e cypress/included:4.9.0 --record --key "$CYPRESS_KEY" --headless --ci-build-id "$REL_VERSION_STRICT-run$GITHUB_RUN_NUMBER.$GITHUB_RUN_ATTEMPT" --tag "$REL_VERSION_STRICT" --config baseUrl=https://localhost:7184
 
   # build-app:
   #   name: Build Portal app
