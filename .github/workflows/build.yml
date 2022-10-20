@@ -72,7 +72,7 @@ jobs:
       - name: '[Dashboard] Build and run'
         run: |
           cd Dashboard
-          API_HOST=http://localhost:1337 dotnet run &
+          API_HOST=http://localhost:1337 dotnet run > /home/runner/dotnet.log 2>&1 &
           cd ..
 
       - name: '[Dashboard] Set Test Variables'
@@ -89,7 +89,10 @@ jobs:
           CYPRESS_KEY: ${{ secrets.CYPRESS_KEY }}
         run: |
           cd Dashboard
-          docker run --name cypress --ipc=host --net=host --shm-size 1G -v $GITHUB_WORKSPACE/Dashboard:/e2e -w /e2e cypress/included:4.9.0 --record --key "$CYPRESS_KEY" --headless --tag "$REL_VERSION_STRICT" --config baseUrl=https://localhost:7184
+          curl --retry 5 --retry-max-time 20 --retry-connrefused http://localhost:1337/
+          curl --retry 5 --retry-max-time 20 --retry-connrefused http://localhost:5275/
+          cat /home/runner/dotnet.log
+          docker run --name cypress --ipc=host --net=host --shm-size 1G -v $GITHUB_WORKSPACE/Dashboard:/e2e -w /e2e cypress/included:4.9.0 --record --key "$CYPRESS_KEY" --browser firefox --headless --tag "$REL_VERSION_STRICT" --config baseUrl=http://localhost:5275
 
   # build-app:
   #   name: Build Portal app

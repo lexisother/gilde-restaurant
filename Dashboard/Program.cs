@@ -1,3 +1,5 @@
+using Dashboard;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -21,5 +23,7 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
+
+app.Logger.LogInformation($"API root path: {Constants.API_BASE}");
 
 app.Run();
