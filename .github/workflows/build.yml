@@ -29,21 +29,9 @@ jobs:
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
-        ports:
-          # Maps tcp port 5432 on service container to the host
-          - 5432:5432
 
     steps:
       - uses: actions/checkout@v1
-
-      - name: Don't start servers during apt install
-        run: |
-          mkdir -p /usr/sbin/
-          cat <<EOF > /usr/sbin/policy-rc.d
-          #!/bin/sh
-          exit 101
-          EOF
-          chmod 755 /usr/sbin/policy-rc.d
 
       - name: Install packages
         run: |

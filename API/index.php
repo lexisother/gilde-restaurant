@@ -26,8 +26,7 @@ $whoops->register();
 $capsule = new Capsule();
 $capsule->addConnection([
     'driver'    => 'pgsql',
-    // 'host'      => getenv('CI') ? 'postgres' : 'localhost',
-    'host'      => 'localhost',
+    'host'      => getenv('CI') ? 'postgres' : 'localhost',
     'database'  => getenv('CI') ? 'postgres' : 'GDOS_Restaurant',
     'username'  => getenv('CI') ? 'postgres' : 'root',
     'password'  => getenv('CI') ? ''         : 'root',
