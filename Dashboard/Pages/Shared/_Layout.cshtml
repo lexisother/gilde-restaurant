@@ -1,12 +1,10 @@
 ﻿@using System.Text.RegularExpressions
 @{
     string path = ViewData["path"].ToString();
-    var API_HOST = Environment.GetEnvironmentVariable("API_HOST");
-    var API_BASE = API_HOST != null ? API_HOST : "https://gdos-api.alyxia.dev";
 }
 
 <!DOCTYPE html>
-<html api-base="@API_BASE" lang="en">
+<html api-base="@Constants.API_BASE" lang="en">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>

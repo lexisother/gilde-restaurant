@@ -72,7 +72,7 @@ jobs:
       - name: '[Dashboard] Build and run'
         run: |
           cd Dashboard
-          dotnet run &
+          API_HOST=http://localhost:1337 dotnet run &
           cd ..
 
       - name: '[Dashboard] Set Test Variables'
