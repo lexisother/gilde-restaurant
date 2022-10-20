@@ -25,12 +25,12 @@ $whoops->register();
 #region Illuminate setup {{{
 $capsule = new Capsule();
 $capsule->addConnection([
-    'driver' => 'pgsql',
-    'host' => getenv('GITHUB_API_URL') ? 'mariadb' : 'localhost',
-    'database' => 'GDOS_Restaurant',
-    'username' => 'root',
-    'password' => 'root',
-    'charset' => 'utf8',
+    'driver'    => 'pgsql',
+    'host'      => getenv('CI') ? 'postgres' : 'localhost',
+    'database'  => getenv('CI') ? 'postgres' : 'GDOS_Restaurant',
+    'username'  => getenv('CI') ? 'postgres' : 'root',
+    'password'  => getenv('CI') ? ''         : 'root',
+    'charset'   => 'utf8',
     'collation' => 'utf8_unicode_ci',
 ]);
 $capsule->setEventDispatcher(new Dispatcher(new Container()));
