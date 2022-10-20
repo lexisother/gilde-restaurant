@@ -6,6 +6,7 @@ env:
   CI: true
   API_HOST: http://localhost:1337/
   FORCE_COLOR: true
+  PGHOST: 'localhost'
   PGUSER: 'postgres'
   POSTGRES_HOST_AUTH_METHOD: 'trust'
 
@@ -28,6 +29,8 @@ jobs:
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
+        ports:
+          - 5432:5432
 
     steps:
       - uses: actions/checkout@v1
