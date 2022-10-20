@@ -4,6 +4,8 @@ require __DIR__ . "/vendor/autoload.php";
 use Bramus\Router\Router;
 use Illuminate\Container\Container;
 use Illuminate\Database\Capsule\Manager as Capsule;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Seeder;
 use Illuminate\Events\Dispatcher;
 use Whoops\Handler\JsonResponseHandler;
 use Whoops\Run;
@@ -35,6 +37,33 @@ $capsule->addConnection([
 ]);
 $capsule->setEventDispatcher(new Dispatcher(new Container()));
 $capsule->setAsGlobal();
+$Schema = $capsule->schema();
+
+// Table creations {{{
+if (!$Schema->hasTable('producten')) {
+    $Schema->create('producten', function (Blueprint $table) {
+        $table->id();
+        $table->string('name', 50)->unique();
+        $table->text('description');
+        $table->float('price');
+        $table->boolean('spanish')->nullable();
+        $table->boolean('warm')->nullable();
+        $table->boolean('cold')->nullable();
+        $table->boolean('vega')->nullable();
+        $table->timestamps();
+    });
+}
+if (!$Schema->hasTable('gebruikers')) {
+    $Schema->create('gebruikers', function (Blueprint $table) {
+        $table->id();
+        $table->string('name', 50);
+        $table->text('email')->unique();
+        $table->text('password');
+        $table->boolean('clocked')->default('FALSE');
+    });
+}
+// }}}
+
 $capsule->bootEloquent();
 #endregion }}}
 
