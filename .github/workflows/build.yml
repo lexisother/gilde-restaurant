@@ -13,7 +13,6 @@ jobs:
   test-dashboard:
     name: Build and test Dashboard+API
     runs-on: ubuntu-latest
-    container: php:8.1
 
     services:
       postgres:
@@ -35,8 +34,7 @@ jobs:
 
       - name: Install packages
         run: |
-          apt-get update -yqq && apt-get install git wget libonig-dev libpq-dev libzip-dev unzip postgresql -yqq
-          rm -rf /usr/sbin/policy-rc.d
+          sudo apt-get update -yqq && sudo apt-get install php8.1 php8.1-mbstring php8.1-pgsql php8.1-zip git curl wget libonig-dev libpq-dev libzip-dev unzip postgresql -yqq
 
       - name: Setup dotnet
         uses: actions/setup-dotnet@v2
@@ -47,8 +45,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 18.7.0
-      - name: Install php extensions
-        run: docker-php-ext-install mbstring pdo_pgsql pgsql zip
 
       - name: '[API] Install composer and its deps'
         run: |
@@ -66,7 +62,8 @@ jobs:
           cd API
           php -S localhost:1337 &
           cd ..
-          curl --retry 5 --retry-all-errors http://localhost:1337/health
+          curl --version
+          curl --retry 5 --retry-max-time 20 --retry-connrefused http://localhost:1337/health
 
       - name: '[Dashboard] Build and run'
         run: |
