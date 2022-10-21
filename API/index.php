@@ -47,10 +47,10 @@ if (!$Schema->hasTable('producten')) {
         $table->string('name', 50)->unique();
         $table->text('description');
         $table->float('price');
-        $table->boolean('spanish')->nullable();
-        $table->boolean('warm')->nullable();
-        $table->boolean('cold')->nullable();
-        $table->boolean('vega')->nullable();
+        $table->boolean('spanish')->default('FALSE');
+        $table->boolean('warm')->default('FALSE');
+        $table->boolean('cold')->default('FALSE');
+        $table->boolean('vega')->default('FALSE');
         $table->timestamps();
     });
 }
