@@ -91,10 +91,9 @@ jobs:
           cd Dashboard
           curl --retry 5 --retry-max-time 20 --retry-connrefused http://localhost:1337/
           curl --retry 5 --retry-max-time 20 --retry-connrefused http://localhost:5275/
-          curl --retry 5 --retry-max-time 20 --retry-connrefused https://localhost:7184
           cat /home/runner/dotnet.log
-          docker run --name cypress --ipc=host --net=host --shm-size 1G -v $GITHUB_WORKSPACE/Dashboard:/e2e -w /e2e cypress/included:4.9.0 --record --key "$CYPRESS_KEY" --browser chrome --headless --tag "$REL_VERSION_STRICT" --config baseUrl=https://localhost:7184
           cat /home/runner/php_errors.log
+          docker run --name cypress --ipc=host --net=host --shm-size 1G -v $GITHUB_WORKSPACE/Dashboard:/e2e -w /e2e cypress/included:4.9.0 --record --key "$CYPRESS_KEY" --browser chrome --headless --tag "$REL_VERSION_STRICT" --config baseUrl=https://localhost:5275
 
   # build-app:
   #   name: Build Portal app
