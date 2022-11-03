@@ -17,10 +17,14 @@
     <p class="front-info">Kom je bij ons eten? Bekijk alvast wat op het menu staat!</p>
 </center>
 
-<a href="menu.php"><button class="menukaart">DOWNLOAD DE MENUKAART (PDF)</button></a>
+
+
+<div class="menu-info">
 <p class="menu-title">Menukaart van Holly Guacamoley</p>
 <p class="menu-text">Geniet van pure, heerlijke gerechten die voor je ogen<br>
                      worden klaargemaakt met verse ingrediënten.</p>
+                     <a href="menu.php"><button class="menukaart">DOWNLOAD DE MENUKAART (PDF)</button></a>
+</div>
 
 
 
