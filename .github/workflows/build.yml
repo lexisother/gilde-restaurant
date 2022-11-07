@@ -4,33 +4,33 @@ on: [push, workflow_dispatch]
 
 env:
   CI: true
-  API_HOST: http://localhost:1337/
+  # API_HOST: http://localhost:1337/
   FORCE_COLOR: true
-  PGHOST: 'localhost'
-  PGUSER: 'postgres'
-  POSTGRES_HOST_AUTH_METHOD: 'trust'
+  # PGHOST: 'localhost'
+  # PGUSER: 'postgres'
+  # POSTGRES_HOST_AUTH_METHOD: 'trust'
 
 jobs:
   test-dashboard:
     name: Build and test Dashboard+API
     runs-on: ubuntu-latest
 
-    services:
-      postgres:
-        image: postgres:12.12
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: ''
-          POSTGRES_DB: postgres
-          POSTGRES_HOST_AUTH_METHOD: trust
-        # Set health checks to wait until postgres has started
-        options: >-
-          --health-cmd "pg_isready -U postgres"
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-        ports:
-          - 5432:5432
+    # services:
+    #   postgres:
+    #     image: postgres:12.12
+    #     env:
+    #       POSTGRES_USER: postgres
+    #       POSTGRES_PASSWORD: ''
+    #       POSTGRES_DB: postgres
+    #       POSTGRES_HOST_AUTH_METHOD: trust
+    #     # Set health checks to wait until postgres has started
+    #     options: >-
+    #       --health-cmd "pg_isready -U postgres"
+    #       --health-interval 10s
+    #       --health-timeout 5s
+    #       --health-retries 5
+    #     ports:
+    #       - 5432:5432
 
     steps:
       - uses: actions/checkout@v1
@@ -49,30 +49,32 @@ jobs:
         with:
           node-version: 18.7.0
 
-      - name: '[API] Install composer and its deps'
-        run: |
-          cd API
-          wget https://composer.github.io/installer.sig -O - -q | tr -d '\n' > installer.sig
-          php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-          php -r "if (hash_file('SHA384', 'composer-setup.php') === file_get_contents('installer.sig')) { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
-          php composer-setup.php
-          php -r "unlink('composer-setup.php'); unlink('installer.sig');"
-          php composer.phar install
-          cd ..
+      # - name: '[API] Install composer and its deps'
+      #   run: |
+      #     cd API
+      #     wget https://composer.github.io/installer.sig -O - -q | tr -d '\n' > installer.sig
+      #     php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+      #     php -r "if (hash_file('SHA384', 'composer-setup.php') === file_get_contents('installer.sig')) { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+      #     php composer-setup.php
+      #     php -r "unlink('composer-setup.php'); unlink('installer.sig');"
+      #     php composer.phar install
+      #     cd ..
 
-      - name: '[API] Start'
-        run: |
-          cd API
-          php -d log_errors=on -d error_reporting=E_ALL -d error_log=/home/runner/php_errors.log -S localhost:1337 2> /home/runner/php_errors.log &
-          cd ..
-          curl --version
-          curl --retry 5 --retry-max-time 20 --retry-connrefused http://localhost:1337/health
-          cat ~/php_errors.log
+      # - name: '[API] Start'
+      #   run: |
+      #     cd API
+      #     php -d log_errors=on -d error_reporting=E_ALL -d error_log=/home/runner/php_errors.log -S localhost:1337 2> /home/runner/php_errors.log &
+      #     cd ..
+      #     curl --version
+      #     curl --retry 5 --retry-max-time 20 --retry-connrefused http://localhost:1337/health
+      #     cat ~/php_errors.log
 
       - name: '[Dashboard] Build and run'
         run: |
           cd Dashboard
-          API_HOST=http://localhost:1337 dotnet run > /home/runner/dotnet.log 2>&1 &
+          # API_HOST=http://localhost:1337 dotnet run > /home/runner/dotnet.log 2>&1 &
+          dotnet dev-certs --trust
+          dotnet run > /home/runner/dotnet.log 2>&1 &
           cd ..
 
       - name: '[Dashboard] Set Test Variables'
@@ -89,11 +91,12 @@ jobs:
           CYPRESS_KEY: ${{ secrets.CYPRESS_KEY }}
         run: |
           cd Dashboard
-          curl --retry 5 --retry-max-time 20 --retry-connrefused http://localhost:1337/
-          curl --retry 5 --retry-max-time 20 --retry-connrefused http://localhost:5275/
+          # curl --retry 5 --retry-max-time 20 --retry-connrefused http://localhost:1337/
+          sleep 5
+          curl --retry 5 --retry-max-time 20 --retry-connrefused https://localhost:7184/
           cat /home/runner/dotnet.log
-          cat /home/runner/php_errors.log
-          docker run --name cypress --ipc=host --net=host --shm-size 1G -v $GITHUB_WORKSPACE/Dashboard:/e2e -w /e2e cypress/included:10.10.0 --record --key "$CYPRESS_KEY" --browser chrome --headless --tag "$REL_VERSION_STRICT" --config baseUrl=http://localhost:5275
+          # cat /home/runner/php_errors.log
+          docker run --name cypress --ipc=host --net=host --shm-size 1G -v $GITHUB_WORKSPACE/Dashboard:/e2e -w /e2e cypress/included:10.10.0 --record --key "$CYPRESS_KEY" --browser chrome --headless --tag "$REL_VERSION_STRICT" --config baseUrl=https://localhost:7184 #baseUrl=http://localhost:5275
 
   # build-app:
   #   name: Build Portal app
