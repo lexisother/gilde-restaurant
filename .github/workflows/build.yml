@@ -2,63 +2,155 @@ name: Build all projects
 
 on: [push, workflow_dispatch]
 
+env:
+  CI: true
+  API_HOST: http://localhost:1337/
+  FORCE_COLOR: true
+  PGHOST: 'localhost'
+  PGUSER: 'postgres'
+  POSTGRES_HOST_AUTH_METHOD: 'trust'
+
 jobs:
-  build-app:
-    name: Build Portal app
+  test-dashboard:
+    name: Build and test Dashboard+API
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: Portal-App
-    steps:
-      - uses: actions/checkout@v1
-      - name: set up JDK 11
-        uses: actions/setup-java@v1
-        with:
-          java-version: 11
 
-      - name: Grant rights
-        run: chmod +x ./gradlew
-
-      - name: Build Debug APK with Gradle
-        run: ./gradlew assembleDebug
-
-      - name: Create release
-        run: |
-          gh release delete ${{ env.VERSION }} -y || true
-          gh release create ${{ env.VERSION }} -p -t "${{ env.NAME }}" -n "${{ github.event.head_commit.message }}" ${{ env.FILES }}
+    services:
+      postgres:
+        image: postgres:12.12
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VERSION: 'dev-app'
-          NAME: 'Portal App Dev'
-          FILES: app/build/outputs/apk/debug/app-debug.apk
-
-  lint-api:
-    name: Lint API
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: API
-
-    container:
-      image: php:8.1
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: ''
+          POSTGRES_DB: postgres
+          POSTGRES_HOST_AUTH_METHOD: trust
+        # Set health checks to wait until postgres has started
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
 
     steps:
       - uses: actions/checkout@v1
-      - name: Install dependencies
-        run: apt-get update -yqq && apt-get install git wget libzip-dev unzip -yqq
-      - name: Install php extensions
-        run: docker-php-ext-install zip
 
-      - name: Install composer
+      - name: Install packages
         run: |
+          sudo apt-get update -yqq && sudo apt-get install php8.1 php8.1-mbstring php8.1-pgsql php8.1-zip git curl wget libonig-dev libpq-dev libzip-dev unzip postgresql -yqq
+
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: '6.0.x'
+          include-prerelease: true
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18.7.0
+
+      - name: '[API] Install composer and its deps'
+        run: |
+          cd API
           wget https://composer.github.io/installer.sig -O - -q | tr -d '\n' > installer.sig
           php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
           php -r "if (hash_file('SHA384', 'composer-setup.php') === file_get_contents('installer.sig')) { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
           php composer-setup.php
           php -r "unlink('composer-setup.php'); unlink('installer.sig');"
+          php composer.phar install
+          cd ..
 
-      - name: Install composer dependencies
-        run: php composer.phar install
+      - name: '[API] Start'
+        run: |
+          cd API
+          php -d log_errors=on -d error_reporting=E_ALL -d error_log=/home/runner/php_errors.log -S localhost:1337 2> /home/runner/php_errors.log &
+          cd ..
+          curl --version
+          curl --retry 5 --retry-max-time 20 --retry-connrefused http://localhost:1337/health
+          cat ~/php_errors.log
 
-      - name: Lint
-        run: php composer.phar run lint
+      - name: '[Dashboard] Build and run'
+        run: |
+          cd Dashboard
+          API_HOST=http://localhost:1337 dotnet run > /home/runner/dotnet.log 2>&1 &
+          cd ..
+
+      - name: '[Dashboard] Set Test Variables'
+        run: |
+          if [[ "$GITHUB_REF" =~ ^refs/tags/v* ]]; then
+            echo "Using TAG mode: $GITHUB_REF_NAME"
+            echo "REL_VERSION_STRICT=${GITHUB_REF_NAME#?}" >> $GITHUB_ENV
+          else
+            echo "Using BRANCH mode: dev.$GITHUB_RUN_NUMBER"
+            echo "REL_VERSION_STRICT=dev.$GITHUB_RUN_NUMBER" >> $GITHUB_ENV
+          fi
+      - name: '[Dashboard] Run tests'
+        env:
+          CYPRESS_KEY: ${{ secrets.CYPRESS_KEY }}
+        run: |
+          cd Dashboard
+          curl --retry 5 --retry-max-time 20 --retry-connrefused http://localhost:1337/
+          curl --retry 5 --retry-max-time 20 --retry-connrefused http://localhost:5275/
+          cat /home/runner/dotnet.log
+          cat /home/runner/php_errors.log
+          docker run --name cypress --ipc=host --net=host --shm-size 1G -v $GITHUB_WORKSPACE/Dashboard:/e2e -w /e2e cypress/included:10.10.0 --record --key "$CYPRESS_KEY" --browser chrome --headless --tag "$REL_VERSION_STRICT" --config baseUrl=http://localhost:5275
+
+  # build-app:
+  #   name: Build Portal app
+  #   runs-on: ubuntu-latest
+  #   defaults:
+  #     run:
+  #       working-directory: Portal-App
+  #   steps:
+  #     - uses: actions/checkout@v1
+  #     - name: set up JDK 11
+  #       uses: actions/setup-java@v1
+  #       with:
+  #         java-version: 11
+  #
+  #     - name: Grant rights
+  #       run: chmod +x ./gradlew
+  #
+  #     - name: Build Debug APK with Gradle
+  #       run: ./gradlew assembleDebug
+  #
+  #     - name: Create release
+  #       run: |
+  #         gh release delete ${{ env.VERSION }} -y || true
+  #         gh release create ${{ env.VERSION }} -p -t "${{ env.NAME }}" -n "${{ github.event.head_commit.message }}" ${{ env.FILES }}
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #         VERSION: 'dev-app'
+  #         NAME: 'Portal App Dev'
+  #         FILES: app/build/outputs/apk/debug/app-debug.apk
+  #
+  # lint-api:
+  #   name: Lint API
+  #   runs-on: ubuntu-latest
+  #   defaults:
+  #     run:
+  #       working-directory: API
+  #
+  #   container:
+  #     image: php:8.1
+  #
+  #   steps:
+  #     - uses: actions/checkout@v1
+  #     - name: Install dependencies
+  #       run: apt-get update -yqq && apt-get install git wget libzip-dev unzip -yqq
+  #     - name: Install php extensions
+  #       run: docker-php-ext-install zip
+  #
+  #     - name: Install composer
+  #       run: |
+  #         wget https://composer.github.io/installer.sig -O - -q | tr -d '\n' > installer.sig
+  #         php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+  #         php -r "if (hash_file('SHA384', 'composer-setup.php') === file_get_contents('installer.sig')) { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+  #         php composer-setup.php
+  #         php -r "unlink('composer-setup.php'); unlink('installer.sig');"
+  #
+  #     - name: Install composer dependencies
+  #       run: php composer.phar install
+  #
+  #     - name: Lint
+  #       run: php composer.phar run lint

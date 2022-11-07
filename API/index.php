@@ -4,6 +4,8 @@ require __DIR__ . "/vendor/autoload.php";
 use Bramus\Router\Router;
 use Illuminate\Container\Container;
 use Illuminate\Database\Capsule\Manager as Capsule;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Seeder;
 use Illuminate\Events\Dispatcher;
 use Whoops\Handler\JsonResponseHandler;
 use Whoops\Run;
@@ -25,16 +27,44 @@ $whoops->register();
 #region Illuminate setup {{{
 $capsule = new Capsule();
 $capsule->addConnection([
-    'driver' => 'pgsql',
-    'host' => getenv('GITHUB_API_URL') ? 'mariadb' : 'localhost',
-    'database' => 'GDOS_Restaurant',
-    'username' => 'root',
-    'password' => 'root',
-    'charset' => 'utf8',
+    'driver'    => 'pgsql',
+    // 'host'      => getenv('CI') ? 'postgres' : 'localhost',
+    'host'      => 'localhost',
+    'database'  => getenv('CI') ? 'postgres' : 'GDOS_Restaurant',
+    'username'  => getenv('CI') ? 'postgres' : 'root',
+    'password'  => getenv('CI') ? ''         : 'root',
+    'charset'   => 'utf8',
     'collation' => 'utf8_unicode_ci',
 ]);
 $capsule->setEventDispatcher(new Dispatcher(new Container()));
 $capsule->setAsGlobal();
+$Schema = $capsule->schema();
+
+// Table creations {{{
+if (!$Schema->hasTable('producten')) {
+    $Schema->create('producten', function (Blueprint $table) {
+        $table->id();
+        $table->string('name', 50)->unique();
+        $table->text('description');
+        $table->float('price');
+        $table->boolean('spanish')->default('FALSE');
+        $table->boolean('warm')->default('FALSE');
+        $table->boolean('cold')->default('FALSE');
+        $table->boolean('vega')->default('FALSE');
+        $table->timestamps();
+    });
+}
+if (!$Schema->hasTable('gebruikers')) {
+    $Schema->create('gebruikers', function (Blueprint $table) {
+        $table->id();
+        $table->string('name', 50);
+        $table->text('email')->unique();
+        $table->text('password');
+        $table->boolean('clocked')->default('FALSE');
+    });
+}
+// }}}
+
 $capsule->bootEloquent();
 #endregion }}}
 
