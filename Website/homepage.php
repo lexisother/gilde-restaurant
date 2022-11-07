@@ -41,7 +41,14 @@
 
 <div class="menuboard">
 <div class="container-mini">
-    <p class="menuboard-text">Bij Holly Guacamoley kun je:</p>
+    <p class="menuboard-text">Bij Holly Guacamoley:</p>
+    <ul class="lists">
+        <li class="list">Is pinnen mogelijk</li>
+        <li class="list">Kun je gratis parkeren</li>
+        <li class="list">Kun je dineren</li>
+        <li class="list">Heb je een uitgebreide keuze</li>
+        <li class="list">Kun je eten en drinken met je hele gezin</li>
+    </ul>
 </div>
 </div>
 

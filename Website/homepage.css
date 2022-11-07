@@ -68,7 +68,7 @@ body{
 
 .footer-homepage{
     position: relative;
-    top: 1000px;
+    top: 400px;
 }
 
 /*Fade animation*/
@@ -140,6 +140,15 @@ h2{
     font-size: 20px;
 }
 
+.list{
+    position: relative;
+    top: 30px;
+    left: 10px;
+    font-size: 18px;
+    color: white;
+    max-width: 300px;
+    text-align: left;
+}
 /*background image met van het menu blokje*/
 .menu-image{
     position: relative;
@@ -637,6 +646,12 @@ h4{
         font-weight: 300;
         letter-spacing: .1rem;
     }
+
+    
+.footer-homepage{
+    position: relative;
+    top: 600px;
+}
     }
         
 

@@ -19,62 +19,37 @@
 <center><div class="text1">HOLLY GUACAMOLEY</div></center>
 <center><div class="text2">De lekkerste tapas en drankjes haal je bij ons!</div></center>
 
-
-<div class="left-text">
-    <h1 class="left-header" >Contact met Holly Guacamoley!</h1>
-         <p class="header-text" >Henri Dunantstraat 40, 5807 ES Oostrum</p>
-    <h1 class="second-header" >Telefoonnummer</h1>
-       <a class="phone" href="tel:+31600000000">31 6 00000000</a>
-    <h1 class="third-header">Openingstijden</h1>
-         <p class="third-text">Wij zijn 7 dagen per week open!<br>Maandag t/m zondag vanaf 17:00 uur tot 00:00 uur(Keuken is gesloten vanaf 22:00 behalve desserts en dranken).<br><br>Wil je er zeker van zijn dat je kunt dineren?<br>Bel: +31 6 00000000</p>
-    <h1 class="fourth-header">Bij Holly Guacamoley</h1>
-    <ul class="fourth-list">
-        <li class="kleur">is pinnen mogelijk</li>
-        <li class="kleur">kun je gratis parkeren</li>
-        <li class="kleur">kun je dineren</li>
-        <li class="kleur">heb je een uitgebreide keuze</li>
-        <li class="kleur">kun je eten en drinken met je hele gezin</li>
+<div class="linker-text">
+    <p class="openingstijden">Openingstijden</p>
+    <p class="straat">Henri Dunanstraat 40, 5807 ES Oostrum</p>
+    <p class="telefoonnummer">Telefoonnummer</p>
+    <a class="phone" href="tel:+31600000000"><u>31 6 00000000</u></a>
+    <p class="kleine-info">Wij zijn 7 dagen per week open!<br> Maandag t/m zondag vanaf 17:00 uur tot 00:00 uur<br> Keuken is gesloten vanaf 22:00 uur behalve desserts en dranken).</p>
+    <p class="bij-holly">Bij Holly Guacamoley</p>
+    <ul class="lists">
+        <li class="list">Is pinnen mogelijk</li>
+        <li class="list">Kun je gratis parkeren</li>
+        <li class="list">Kun je dineren</li>
+        <li class="list">Heb je een uitgebreide keuze</li>
+        <li class="list">Kun je eten en drinken met je hele gezin</li>
     </ul>
 </div>
 
-<div class="midlle-line"></div>
-
+<div class="rechter-text">
 <form method="post">
-    <div class="form-all">
-    <div>
-        <p class="form-text-1">Contact Formulier</p>
-        <p class="form-text-2">Vul uw gegevens alstublieft zo volledig mogelijk in, zo kunnen we u beter helpen.</p>
-    </div>
     <div class="form-main">
-    <input type="text" class="form-naam" name="name" placeholder="Naam" required>
-    <input type="email" class="form-email" name="email" placeholder="Email" required>
-    <input type="text" class="form-onderwerp" name="onderwerp" placeholder="Onderwerp" required>
-    <input type="text" class="form-vragen" name="vragen" placeholder="Vragen en opmerkingen" required>
-    <input type="submit" name="submit" class="submit">
+        <input type="text" class="form-naam" name="name" placeholder="Naam" required>
+        <input type="email" class="form-datum" name="email" placeholder="Email" required>
+        <input type="text" class="form-leeftijd" name="onderwerp" placeholder="Onderwerp" required>
+        <input type="text" class="form-leeftijd-11" name="vragen" placeholder="Vragen en opmerkingen" required>
+        <input type="submit" name="submit" class="submit">
     </div>
 </form>
-
-<div class="contact-image">
-    <p class="contact-title">Holly Guacamoley</p><br>
-    <p class="contact-info">Holly Guacamoley is een restaurant<br>
-        in Oostrum, Limburg. Op zoek naar een<br>
-        restaurant om uit te eten in regio Venray?</br>
-        kom dan naar Holly Guacamoley!<br>
-        Reserveren kan telefonisch of via:<br>
-        <br>
-        info@hollyguacamoley.nl<br>
-    </p>
-
-    <p class="straatnaam">Henri Dunanstraat 40<br>
-        5807 ES Oostrum (Limburg)<br>
-        <br>
-        Maandag t/m zondag vanaf 17:00u<br>
-        tot 00:00u. (Keuken is gesloten vanaf<br>
-        22:00 behalve desserts en dranken).
 </div>
 
-
-<p class="bottom-text">©2022 Restaurant - Holly Guacamoley!</p>
+<?php
+    include 'footer.php'; 
+?>
 
 </body>
 </html>

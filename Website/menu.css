@@ -104,6 +104,11 @@ center{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+.footer{
+    position: relative;
+    top: 1000px;
+}
+
 @media screen and (max-width: 1300px) {
     .black-header{
         height: 98px;

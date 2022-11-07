@@ -107,6 +107,11 @@ center{
     background-color: transparent;
 }
 
+.footer{
+    position: relative;
+    top: 1300px;
+}
+
 @media screen and (max-width: 1300px) {
     .black-header{
         height: 98px;
@@ -236,5 +241,10 @@ center{
         transition: all 0.3s ease 0s;
         margin-left: 30px;
     }    
+
+    .footer{
+        position: relative;
+        top: 1400px;
+    }
 
 }
