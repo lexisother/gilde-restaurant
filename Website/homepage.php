@@ -56,8 +56,8 @@
     <div class="menu-position">
 <a href="menu.php"><button class="menukaart">BEKIJK DE MENUPAGINA</button></a>
     <h3>VOLOP KEUS VOOR GROOT EN KLEIN!</h3>
-    <h4>De menukaart van Holly Guacamoley! Ons Restaurant is zeer gevarieerd. <br>
-        Met onder andere: panini's, broodjes, verse pasta's, gegrilde kip, vis en heerlijke steak. <br></h4>
+    <h4>De menukaart van Holly Guacamoley! Ons Restaurant is zeer gevarieerd.<br>
+        Met onder andere: Sangria, Crostini met mozzerella, brushetta, albondigas en nog veel meer!<br></h4>
 </div>
 </div>
 
