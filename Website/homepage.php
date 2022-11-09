@@ -14,29 +14,41 @@
 
 <div class="front-text">
    <div class="main-text">WELKOM!</div>
- <div class="text1">HOLLY GUACAMOLEY</div>
-  <div class="text2">De lekkerste tapas en drankjes haal je bij ons!</div>
+   <div class="text1">HOLLY GUACAMOLEY</div>
+   <div class="text2">De lekkerste tapas en drankjes haal je bij ons!</div>
 </div>
 
 <div class="container">
 <div class="black-header"></div>
 
 <div class="algemene-info-position">
-    <h1>Holly Guacamoley</h1>
-    <h2>Kom gezellig naar Holly Guacamoley!</h2>
-    <p class="algemene-info"> Aenean ultricies mi vitae est. Mauris placerat eleifend leo. <br>
-        Quisque sit amet est et sapien ullamcorper  <br>
-        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. <br>
-        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. <br>
-        Pellentesque feugiat vitae, ultricies eget, tempor sit amet, ante.<br>
-        Donec eu libero sit amet quam egestas semper. <br>
-        Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper.<br>
+    <h1>WIEHOEW, JE BENT ER!</h1>
+    <h2>En daar zijn we onwijs blij mee: voel je welkom en neem plaats…</h2>
+    <p class="algemene-info"> Samen gaan we voor een geweldig gezellige avond. Samen zorgen we voor mooie herinneringen om nooit meer te vergeten!<br>
+    <br>
+        Voor jou zetten we graag wat stappen extra. Of doen we een pirouette, wat jij wilt. Want jouw wensen staan bij ons centraal.<br>
+        <br>
+        Tapas of à la carte, groot of klein, thuis of bij ons op de zaak.<br>
+        <br>
+        Met onze spannende smaakcombinaties en kwaliteitsingrediënten, kom je bij ons niets tekort en laten we je keer op keer versteld staan.<br>
+        <br>
+        Onze medewerkers maken daarin het verschil. We kiezen ervoor om enkel te werken met vrolijke mensen, die weten dat gezelligheid, gastvrijheid en hard werken samen gaan.<br>
+        <br>
+        Wij gaan voor een lach op jouw gezicht, pas dan zijn wij tevreden.<br>
+        Holly-Guacamoley Grenzeloos genieten!<br>
     </p>
 </div>
 
 <div class="menuboard">
 <div class="container-mini">
-    <p class="menuboard-text">Bij Holly Guacamoley kun je:</p>
+    <p class="menuboard-text">Bij Holly Guacamoley:</p>
+    <ul class="lists">
+        <li class="list">Is pinnen mogelijk</li>
+        <li class="list">Kun je gratis parkeren</li>
+        <li class="list">Kun je dineren</li>
+        <li class="list">Heb je een uitgebreide keuze</li>
+        <li class="list">Kun je eten en drinken met je hele gezin</li>
+    </ul>
 </div>
 </div>
 

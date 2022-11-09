@@ -1,3 +1,7 @@
+body{
+    background-color: #fb912727;
+}
+
 /*Zwarte balk achter header*/
 .black-header{
     position: relative;
@@ -34,7 +38,7 @@
     position: relative;
     top: -300px;
     color: rgb(255, 255, 255);
-    font-family: cursive;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 20px;
     z-index: 1;
     filter: drop-shadow(1px 1px 10px #00000075);
@@ -51,7 +55,7 @@ center{
 .menukaart{
     position: relative;
     left: 60%;
-    bottom: 300px;
+    top: -20px;
     color: white;
     font-weight: bold;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -73,35 +77,77 @@ center{
     background-color: transparent;
 }
 
+.menu-info{
+    position: relative;
+    bottom: 450px;
+}
+
+
 /*Alle text naast de button*/
 .menu-title{
     position: relative;
     left: -95px;
-    bottom: 500px;
     font-size: 36px;
     max-width: 50%;
     max-width: 1100px;
     margin: 0 auto;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .menu-text{
     position: relative;
     font-size: 20px;
     left: -95px;
-    bottom: 450px;
+    top: 40px;
     max-width: 1100px;
     margin: 0 auto;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.footer{
+    position: relative;
+    top: 1000px;
 }
 
 @media screen and (max-width: 1300px) {
     .black-header{
         height: 98px;
      }
+
+     .menu-title{
+        max-width: 100%;
+        left: 0px;
+        max-width: 600px;
+        text-align: center;
     }
-        
+
+    .menu-text{
+        position: relative;
+        left: 0px;
+        max-width: 600px;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .menukaart{
+        position: relative;
+        left: 0px;
+        top: 100px;
+        color: white;
+        font-weight: bold;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        letter-spacing: .2rem;
+        padding: 9px 25px;
+        background-color: #fb9127;
+        height: 60px;
+        width: 300px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+        z-index: 1;
+        margin: 0 auto;
+    }
+}
 
 @media screen and (max-width: 688px) {
     .black-header{

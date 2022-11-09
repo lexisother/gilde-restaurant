@@ -11,7 +11,7 @@
 <header>
     <nav>
         <ul class="nav_links">
-        <img class="logo" src="images\logopng.png">
+        <img class="logo" src="images\logoslogan.png">
            <li class="home"><a href="homepage.php">WELKOM</a></li>
            <li class="menu"><a href="menu.php">MENU</a></li>
            <li class="reserveren"><a href="reserveren.php">RESERVERING</a></li>

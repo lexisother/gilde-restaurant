@@ -1,6 +1,11 @@
+*{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 body{
     height: 900px;
     max-width: 100%;
+    background-color: #fb912727;
 }
 
 .background-image{
@@ -22,25 +27,16 @@ img{
     position: relative;
     background-size: cover;
     width: 100%;
-    height: 580px;
+    height: 400px;
 }
 
-.overlay {
-    position: absolute;
-    top: 97px;
-    height: 36.32em;
-    width: 100%;
-    background-color: black;
-    opacity: 0%;
-    z-index: 0;
-}
 
 .main-text{
     color: white;
     font-size: 60px;
     height: 5em;
     position: relative;
-    top: -400px;
+    top: -300px;
     filter: drop-shadow(1px 1px 10px #00000075);
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -63,116 +59,92 @@ img{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.under-line{
-    background-color: gray;
-    width: 100%;
-    height: 2px;
-    position: absolute;
-    top: 45em;
-}
-
-.midlle-line{
-    background-color: gray;
-    width: 2px;
-    height: 45em;
-    position: absolute;
-    top: 55em;
-    left: 40%;
-}
-
-/*Form CSS/On the right side of the line*/
-.form-all{
+.linker-text{
     position: relative;
+    right: 400px;
+    bottom: 330px;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
-.form-text-1{
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    position: absolute;
-    top: -5em;
-    left: 19.9em;
-    width: 500px;
-    font-size: 40px;
+.openingstijden{
+    font-size: 38px;
+    font-weight: bold;
 }
 
-.form-text-2{
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    position: absolute;
-    top: -6em;
-    left: 40em;
-    width: 500px;
+.straat{
     font-size: 20px;
 }
 
-.form-naam {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    position: absolute;
-    top: -2em;
-    left: 49.9em;
-    height: 60px;
-    width: 800px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    padding: 12px 20px 12px 20px;
+.telefoonnummer{
+    font-size: 24px;
+    font-weight: bold;
 }
 
-.form-email {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    position: absolute;
-    top: 3em;
-    left: 49.9em;
-    height: 60px;
-    width: 800px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    padding: 12px 20px 12px 20px;
+.kleine-info{
+    font-size: 20px;
+
 }
 
-.form-onderwerp {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    position: absolute;
-    top: 8em;
-    left: 49.9em;
-    height: 60px;
-    width: 800px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    padding: 12px 20px 12px 20px;
+.phone{
+    position: relative;
+    font-size: 20px;
+    color: rgb(0, 85, 255);
 }
 
-.form-vragen {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    position: absolute;
-    top: 13.5em;
-    left: 49.9em;
+.bij-holly{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.list{
+    position: relative;
+    font-size: 20px;
+    color: black;
+}
+
+.rechter-text{
+    position: relative;
+    bottom: 840px;
+    left: 300px;
+    max-width: 300px;
+    margin: 0 auto;
+
+}
+
+.form-main{
+    position: relative;
+    
+}
+
+.form-naam, .form-datum, .form-leeftijd{
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+    height: 40px;
+    width: 450px;
+    font-size: 18px;
+}
+
+.form-leeftijd-11{
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
     height: 200px;
-    width: 800px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    padding: 12px 20px 12px 20px;
+    width: 450px;
+    font-size: 18px;
 }
 
 .submit{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    position: absolute;
-    top: 33em;
-    left: 59.9em;
     height: 60px;
-    width: 400px;
+    width: 460px;
     box-sizing: border-box;
     border: 2px solid #fb9127;
     background-color: #fb9127;
     color: white;
-    transition: background-color 0.5s, color 0.5s;
     cursor: pointer;
-    border-radius: 8px;
+    transition: all 0.3s ease 0s;
 }
 
 .submit:hover{
@@ -181,748 +153,7 @@ img{
     background-color: transparent;
 }
 
-/*Text on the left side of the line*/
-
-.left-text{
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+.footer{
     position: relative;
-    top: -18em;
-}
-
-.left-header{
-    position: absolute;
-    font-size: 3em;
-    left: 1.3em;
-    width: 15em;
-}
-
-.header-text{
-    position: absolute;
-    font-size: 1.3em;
-    top: 4em;
-    left: 1em;
-    width: 30em;
-}
-
-.second-header{
-    position: absolute;
-    font-size: 2em;
-    top: 3.7em;
-    left: 0.6em;
-    width: 30em;
-}
-
-.second-text{
-    position: absolute;
-    font-size: 1.3em;
-    top: 8em;
-    left: 1em;
-    width: 30em;
-}
-
-.third-header{
-    position: absolute;
-    font-size: 2em;
-    top: 6.2em;
-    left: 0.6em;
-    width: 30em;
-}
-
-.third-text{
-    position: absolute;
-    font-size: 1.3em;
-    top: 12em;
-    left: 1em;
-    width: 30em;
-}
-
-.fourth-header{
-    position: absolute;
-    font-size: 2em;
-    top: 12.7em;
-    left: 0.6em;
-    width: 30em;
-}
-
-.fourth-list{
-    position: absolute;
-    font-size: 0.5em;
-    top: 60em;
-    left: 0.25em;
-    width: 70em;
-    color: black;
-}
-
-.kleur{
-    color: black;
-}
-
-/*Footer CSS*/
-.contact-image{
-    position: relative;
-    top: 700px;
-    background-size: cover;
-    background-size: 100%;
-    width: 100%;
-    height: 420px;
-    background-image: url("https://i2.wp.com/www.creativesnapbacks.com/wp-content/uploads/2014/12/footer-background-01-noise.png?ssl=1");
-}
-
-.contact-title{
-    position: absolute;
-    top: 10%;
-    left: 25%;
-    font-weight: bold;
-    font-size: 32px;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: white;
-    z-index: 1;
-    max-width: 50%;
-}
-
-
-.contact-info{
-    position: absolute;
-    top: 30%;
-    left: 25%;
-    font-weight: 100;
-    font-size: 22px;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: white;
-    z-index: 1;
-    max-width: 30%;
-}
-
-.straatnaam{
-    position: absolute;
-    top: 30%;
-    left: 60%;
-    font-weight: 100;
-    font-size: 22px;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: white;
-    z-index: 1;
-    max-width: 30%;
-}
-
-.bottom-text{
-    position: relative;
-    top: 700px;
-    color: black;
-    left: 100px;
-    max-width: 50%;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 17px;
-    letter-spacing: .2rem;
-}
-
-@media only screen and (min-width: 360px) and (max-width: 419px) {
-    body{
-        height: 625px;
-    }
-
-    img{
-        position: relative;
-        background-size: cover;
-        width: 420px;
-        height: 200px;
-    }
-
-    .main-text{
-        top: -15em;
-    }
-
-    .text1{
-        font-size: 30px;
-        position: relative;
-        top: -480px;
-    }
-
-    .text2{
-        font-size: 15px;
-        position: relative;
-        top: -455px;
-    }
-
-    .third-text{
-        width: 20em;
-    }
-
-    .under-line{
-        top: 52em;
-    }
-
-    .midlle-line{
-        display: none;
-    }
-
-    /*Eerste text*/
-    .left-text{
-        top: -20em;
-    }
-
-    .left-header{
-        font-size: 1.5em;
-        left: 0.5em;
-        width: 15em;
-    }
-
-    .header-text{
-        font-size: 1em;
-        top: 3em;
-        left: 0.9em;
-    }
-
-    .second-header{
-        font-size: 1.2em;
-        top: 4.5em;
-        left: 0.7em;
-    }
-
-    .second-text{
-        font-size: 1em;
-        top: 7.5em;
-        left: 0.9em;
-    }
-
-    .third-header{
-        font-size: 1.2em;
-        top: 8em;
-        left: 0.7em;
-    }
-
-    .third-text{
-        font-size: 1em;
-        top: 12em;
-        left: 0.9em;;
-    }
-
-    .fourth-header{
-        font-size: 1.2em;
-        top: 18em;
-        left: 0.7em;
-    }
-
-    li, .kleur{
-        font-size: 2em;
-        top: -6em;
-        left: 0em;
-        width: 70em;
-        color: black;
-        display: list-item;
-    }
-
-    /*    Form*/
-    .form-all{
-        position: relative;
-    }
-
-    .form-text-1{
-        top: 5.5em;
-        left: 0.6em;
-        width: 500px;
-        font-size: 30px;
-    }
-
-    .form-text-2{
-        top: 15.5em;
-        left: 1.4em;
-        width: 340px;
-        font-size: 15px;
-    }
-
-    .form-naam {
-        top: 19em;
-        left: 2em;
-        height: 50px;
-        width: 300px;
-    }
-
-    .form-email {
-        top: 23em;
-        left: 2em;
-        height: 50px;
-        width: 300px;
-    }
-
-    .form-onderwerp {
-        top: 27em;
-        left: 2em;
-        height: 50px;
-        width: 300px;
-    }
-
-    .form-vragen {
-        top: 31em;
-        left: 2em;
-        height: 80px;
-        width: 300px;
-    }
-
-    .submit{
-        top: 44.5em;
-        left: 2.5em;
-        height: 50px;
-        width: 300px;
-    }
-
-    /*Footer CSS*/
-    .contact-image{
-        position: relative;
-        top: 700px;
-        background-size: cover;
-        background-size: 100%;
-        width: 100%;
-        height: 600px;
-        background-image: url("https://i2.wp.com/www.creativesnapbacks.com/wp-content/uploads/2014/12/footer-background-01-noise.png?ssl=1");
-    }
-
-    .contact-title{
-        position: absolute;
-        top: 10px;
-        left: 1.5em;
-        font-weight: bold;
-        font-size: 32px;
-        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        color: white;
-        z-index: 1;
-        max-width: 100%;
-    }
-
-
-    .contact-info{
-        position: absolute;
-        top: 100px;
-        left: 5px;
-        font-weight: 100;
-        font-size: 22px;
-        max-width: 18em;
-        text-align: center;
-    }
-
-    .straatnaam{
-        position: absolute;
-        top: 350px;
-        left: 5px;
-        font-weight: 100;
-        font-size: 22px;
-        max-width: 18em;
-        text-align: center;
-    }
-
-    .bottom-text{
-        position: relative;
-        top: 700px;
-        color: black;
-        left: 25px;
-        max-width: 100%;
-        font-size: 15px;
-        letter-spacing: .2rem;
-    }
-}
-
-@media only screen and (min-width: 420px) and (max-width: 500px) {
-    body{
-        height: 100%;
-    }
-
-    img{
-        position: relative;
-        background-size: cover;
-        width: 420px;
-        height: 200px;
-    }
-
-    .text1{
-        font-size: 30px;
-        position: relative;
-        top: -480px;
-        left: -25px;
-    }
-
-    .text2{
-        font-size: 15px;
-        position: relative;
-        top: -455px;
-        left: -27px;
-    }
-
-    .under-line{
-        top: 52em;
-    }
-
-    .midlle-line{
-        display: none;
-    }
-
-    /*Eerste text*/
-    .left-text{
-        top: -20em;
-    }
-
-    .left-header{
-        font-size: 1.5em;
-        left: 0.5em;
-        width: 15em;
-    }
-
-    .header-text{
-        font-size: 1em;
-        top: 3em;
-        left: 0.9em;
-    }
-
-    .second-header{
-        font-size: 1.2em;
-        top: 4.5em;
-        left: 0.7em;
-    }
-
-    .second-text{
-        font-size: 1em;
-        top: 7.5em;
-        left: 0.9em;
-    }
-
-    .third-header{
-        font-size: 1.2em;
-        top: 8em;
-        left: 0.7em;
-    }
-
-    .third-text{
-        font-size: 1em;
-        top: 12em;
-        left: 0.9em;
-        width: 20em;
-    }
-
-    .fourth-header{
-        font-size: 1.2em;
-        top: 18em;
-        left: 0.7em;
-    }
-
-    li, .kleur{
-        font-size: 2em;
-        top: -6em;
-        left: 0em;
-        width: 70em;
-        color: black;
-        display: list-item;
-    }
-
-/*    Form*/
-    .form-all{
-        position: relative;
-    }
-
-    .form-text-1{
-        top: 5.5em;
-        left: 0.7em;
-        width: 500px;
-        font-size: 30px;
-    }
-
-    .form-text-2{
-        top: 15.5em;
-        left: 1.4em;
-        width: 340px;
-        font-size: 15px;
-    }
-
-    .form-naam {
-        top: 19em;
-        left: 1.5em;
-        height: 50px;
-        width: 300px;
-    }
-
-    .form-email {
-        top: 23em;
-        left: 1.5em;
-        height: 50px;
-        width: 300px;
-    }
-
-    .form-onderwerp {
-        top: 27em;
-        left: 1.5em;
-        height: 50px;
-        width: 300px;
-    }
-
-    .form-vragen {
-        top: 31em;
-        left: 1.5em;
-        height: 80px;
-        width: 300px;
-    }
-
-    .submit{
-        top: 44.5em;
-        left: 1.7em;
-        height: 50px;
-        width: 300px;
-    }
-
-    /*Footer CSS*/
-    .contact-image{
-        position: relative;
-        top: 700px;
-        background-size: cover;
-        background-size: 100%;
-        width: 100%;
-        height: 680px;
-        background-image: url("https://i2.wp.com/www.creativesnapbacks.com/wp-content/uploads/2014/12/footer-background-01-noise.png?ssl=1");
-    }
-
-    .contact-title{
-        position: absolute;
-        top: 10px;
-        left: 1.5em;
-        font-weight: bold;
-        font-size: 32px;
-        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        color: white;
-        z-index: 1;
-        max-width: 100%;
-    }
-
-
-    .contact-info{
-        position: absolute;
-        top: 100px;
-        left: 15px;
-        font-weight: 100;
-        font-size: 22px;
-        max-width: 15em;
-        text-align: center;
-    }
-
-    .straatnaam{
-        position: absolute;
-        top: 410px;
-        left: 15px;
-        font-weight: 100;
-        font-size: 22px;
-        max-width: 15em;
-        text-align: center;
-    }
-
-    .bottom-text{
-        position: relative;
-        top: 700px;
-        color: black;
-        left: 25px;
-        max-width: 100%;
-        font-size: 15px;
-        letter-spacing: .2rem;
-    }
-}
-
-@media only screen and (min-width: 760px) and (max-width: 800px) {
-    body{
-        height: 100%;
-    }
-
-    img{
-        position: relative;
-        background-size: cover;
-        width: 420px;
-        height: 200px;
-    }
-
-    .text1{
-        font-size: 30px;
-        position: relative;
-        top: -480px;
-        left: -200px;
-    }
-
-    .text2{
-        font-size: 15px;
-        position: relative;
-        top: -455px;
-        left: -200px;
-    }
-
-    .under-line{
-        top: 35em;
-    }
-
-    .midlle-line{
-        display: none;
-    }
-
-    /*Eerste text*/
-    .left-text{
-        top: -20em;
-    }
-
-    .left-header{
-        font-size: 1em;
-        left: 0.5em;
-        top: -25px;
-        width: 15em;
-    }
-
-    .header-text{
-        font-size: 0.6em;
-        top: 0.3em;
-        left: 0.9em;
-    }
-
-    .second-header{
-        font-size: 1em;
-        top: 1em;
-        left: 0.5em;
-    }
-
-    .second-text{
-        font-size: 0.6em;
-        top: 4.5em;
-        left: 0.9em;
-    }
-
-    .third-header{
-        font-size: 1em;
-        top: 3.5em;
-        left: 0.5em;
-    }
-
-    .third-text{
-        font-size: 0.6em;
-        top: 9em;
-        left: 0.9em;
-        width: 30em;
-    }
-
-    .fourth-header{
-        font-size: 1em;
-        top: 10em;
-        left: 0.5em;
-    }
-
-    li, .kleur{
-        font-size: 1em;
-        top: -36em;
-        left: -2.5em;
-        width: 70em;
-        color: black;
-        display: list-item;
-    }
-
-    /*    Form*/
-    .form-all{
-        position: relative;
-    }
-
-    .form-text-1{
-        top: -2.5em;
-        left: 0.3em;
-        width: 500px;
-        font-size: 25px;
-    }
-
-    .form-text-2{
-        top: -1em;
-        left: 1em;
-        width: 340px;
-        font-size: 10px;
-    }
-
-    .form-naam {
-        top: 4em;
-        left: 1.5em;
-        height: 30px;
-        width: 330px;
-        font-size: 10px;
-    }
-
-    .form-email {
-        top: 8em;
-        left: 1.5em;
-        height: 30px;
-        width: 330px;
-        font-size: 10px;
-    }
-
-    .form-onderwerp {
-        top: 12em;
-        left: 1.5em;
-        height: 30px;
-        width: 330px;
-        font-size: 10px;
-    }
-
-    .form-vragen {
-        top: 16em;
-        left: 1.5em;
-        height: 30px;
-        width: 330px;
-        font-size: 10px;
-    }
-
-    .submit{
-        top: 20em;
-        left: 10em;
-        height: 30px;
-        width: 150px;
-        font-size: 10px;
-    }
-
-    /*Footer CSS*/
-    .contact-image{
-        position: relative;
-        top: 260px;
-        background-size: cover;
-        background-size: 100%;
-        width: 100%;
-        height: 560px;
-        background-image: url("https://i2.wp.com/www.creativesnapbacks.com/wp-content/uploads/2014/12/footer-background-01-noise.png?ssl=1");
-    }
-
-    .contact-title{
-        position: absolute;
-        top: 10px;
-        left: 3em;
-        font-weight: bold;
-        font-size: 25px;
-        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        color: white;
-        z-index: 1;
-        max-width: 100%;
-    }
-
-
-    .contact-info{
-        position: absolute;
-        top: 70px;
-        left: 42px;
-        font-weight: 100;
-        font-size: 18px;
-        max-width: 15em;
-        text-align: center;
-    }
-
-    .straatnaam{
-        position: absolute;
-        top: 325px;
-        left: 40px;
-        font-weight: 100;
-        font-size: 18px;
-        max-width: 15em;
-        text-align: center;
-    }
-
-    .bottom-text{
-        position: relative;
-        top: 260px;
-        color: black;
-        left: 15px;
-        max-width: 100%;
-        font-size: 10px;
-        letter-spacing: .2rem;
-    }
+    top: 1200px;
 }
