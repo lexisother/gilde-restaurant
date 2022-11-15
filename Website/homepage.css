@@ -73,10 +73,10 @@ body{
 
 /*Fade animation*/
 @keyframes fade{
-    0%{background-image: url("https://c4.wallpaperflare.com/wallpaper/169/967/729/beef-steak-meat-food-wallpaper-preview.jpg");}
-    35%{background-image: url("https://c4.wallpaperflare.com/wallpaper/858/692/1013/meat-chorizo-appetizer-charcuterie-wallpaper-preview.jpg");}
-    75%{background-image: url("https://c4.wallpaperflare.com/wallpaper/763/540/956/steak-meat-roasting-roast-beef-wallpaper-preview.jpg");}
-    100%{background-image: url("https://c4.wallpaperflare.com/wallpaper/169/967/729/beef-steak-meat-food-wallpaper-preview.jpg");}
+    0%{background-image: url("https://c1.wallpaperflare.com/preview/851/781/256/bruschetta-bread-baguette-tomatoes.jpg");}
+    35%{background-image: url("https://c0.wallpaperflare.com/preview/785/312/13/squid-seafood-food-fish.jpg");}
+    75%{background-image: url("https://c4.wallpaperflare.com/wallpaper/698/297/238/vegetables-food-garlic-tomatoes-bell-peppers-hd-wallpaper-preview.jpg");}
+    100%{background-image: url("https://c1.wallpaperflare.com/preview/851/781/256/bruschetta-bread-baguette-tomatoes.jpg");}
 }
 
 /*responsiveness en positioning voor het algemene info blokje*/
@@ -122,7 +122,7 @@ h2{
 .container-mini{
     position: relative;
     top: 70%;
-    left: 55%;
+    left: 60%;
     border-radius: 20px;
     background-image: url("https://media.istockphoto.com/photos/blackboard-with-chalk-border-picture-id1132606352?k=20&m=1132606352&s=612x612&w=0&h=fCDUEg5MqYO8b9vAyPpThOREc9U7N1X2CsRLkTBHRO0=");
     background-size: cover;
@@ -596,14 +596,14 @@ h4{
         background-size: cover;
         background-size: 100%;
         width: 100%;
-        height: 45%;
+        height: 55%;
         background-image: url("https://images5.alphacoders.com/110/1107266.jpg");
     }
     
     /*button van het reserverings blokje*/
     .reservering{
         position: relative;
-        top: 150px;
+        top: 200px;
         color: white;
         font-size: 20px;
         font-weight: bold;

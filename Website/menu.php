@@ -23,7 +23,7 @@
 <p class="menu-title">Menukaart van Holly Guacamoley</p>
 <p class="menu-text">Geniet van pure, heerlijke gerechten die voor je ogen<br>
                      worden klaargemaakt met verse ingrediënten.</p>
-                     <a href="menu.php"><button class="menukaart">DOWNLOAD DE MENUKAART (PDF)</button></a>
+                     <a href="\gilde-restaurant\Website\images\2.png" download = 'Menukaart.png'><button class="menukaart">DOWNLOAD DE MENUKAART (PDF)</button></a>
 </div>
 
 

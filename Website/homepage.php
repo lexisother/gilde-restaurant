@@ -65,7 +65,7 @@
     <div class="reservering-position">
     <a href="reserveren.php"><button class="reservering">RESERVEREN</button></a>
         <p class="reservering-kop">RESERVEER SNEL EN GEMAKKELIJK!</p>
-        <p class="reservering-text">Reserveer snel en gemakkelijk.</p>
+        <p class="reservering-text">Reserveer snel en gemakkelijk voor een plekje in ons prachtig restaurant!</p>
     </div>
 </div>
 

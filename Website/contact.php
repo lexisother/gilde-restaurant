@@ -24,7 +24,7 @@
     <p class="straat">Henri Dunanstraat 40, 5807 ES Oostrum</p>
     <p class="telefoonnummer">Telefoonnummer</p>
     <a class="phone" href="tel:+31600000000"><u>31 6 00000000</u></a>
-    <p class="kleine-info">Wij zijn 7 dagen per week open!<br> Maandag t/m zondag vanaf 17:00 uur tot 00:00 uur<br>(Keuken is gesloten vanaf 22:00 uur behalve desserts en dranken).</p>
+    <p class="kleine-info">Wij zijn 7 dagen per week open!<br> Maandag t/m zondag vanaf 17:00 uur tot 00:00 uur.<br>(Keuken is gesloten vanaf 22:00 uur behalve desserts en dranken).</p>
     <p class="bij-holly">Bij Holly Guacamoley</p>
     <ul class="lists">
         <li class="list">Is pinnen mogelijk</li>

@@ -157,3 +157,130 @@ img{
     position: relative;
     top: 1200px;
 }
+
+@media screen and (max-width: 540px) {
+
+    .main-text{
+        color: white;
+        font-size: 30px;
+        height: 5em;
+        position: relative;
+        top: -240px;
+        filter: drop-shadow(1px 1px 10px #00000075);
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    
+    .text1{
+        color: white;
+        font-size: 40px;
+        position: relative;
+        top: -450px;
+        filter: drop-shadow(1px 1px 10px #00000075);
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    
+    .text2{
+        color: white;
+        font-size: 20px;
+        position: relative;
+        top: -350px;
+        filter: drop-shadow(1px 1px 10px #00000075);
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    
+.linker-text{
+    position: relative;
+    left: 0px;
+    bottom: 230px;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.openingstijden{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.straat{
+    font-size: 20px;
+}
+
+.telefoonnummer{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.kleine-info{
+    font-size: 16px;
+
+}
+
+.phone{
+    position: relative;
+    font-size: 20px;
+    color: rgb(0, 85, 255);
+}
+
+.bij-holly{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.list{
+    position: relative;
+    font-size: 14px;
+    color: black;
+}
+
+.rechter-text{
+    position: relative;
+    bottom: 140px;
+    left: 20px;
+    max-width: 300px;
+    margin: 0 auto;
+
+}
+
+.form-main{
+    position: relative;
+    
+}
+
+.form-naam, .form-datum, .form-leeftijd{
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+    height: 20px;
+    width: 250px;
+    font-size: 18px;
+}
+
+.form-leeftijd-11{
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+    height: 200px;
+    width: 250px;
+    font-size: 18px;
+}
+
+.submit{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: 40px;
+    width: 260px;
+    box-sizing: border-box;
+    border: 2px solid #fb9127;
+    background-color: #fb9127;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.footer{
+    position: relative;
+    top: 1600px;
+}
+
+
+}
