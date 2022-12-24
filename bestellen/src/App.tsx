@@ -1,8 +1,8 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import ProductList from './components/ProductList';
 
-export default function App() {
+export default function App(): JSX.Element {
   return (
     <div className="app-container">
       <ProductList />
