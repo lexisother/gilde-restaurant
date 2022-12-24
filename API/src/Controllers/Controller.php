@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use ReflectionClass;
+
 abstract class Controller
 {
     private function __name()

@@ -5,7 +5,6 @@ use Bramus\Router\Router;
 use Illuminate\Container\Container;
 use Illuminate\Database\Capsule\Manager as Capsule;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Database\Seeder;
 use Illuminate\Events\Dispatcher;
 use Whoops\Handler\JsonResponseHandler;
 use Whoops\Run;
@@ -27,13 +26,13 @@ $whoops->register();
 #region Illuminate setup {{{
 $capsule = new Capsule();
 $capsule->addConnection([
-    'driver'    => 'pgsql',
+    'driver' => 'pgsql',
     // 'host'      => getenv('CI') ? 'postgres' : 'localhost',
-    'host'      => 'localhost',
-    'database'  => getenv('CI') ? 'postgres' : 'GDOS_Restaurant',
-    'username'  => getenv('CI') ? 'postgres' : 'root',
-    'password'  => getenv('CI') ? ''         : 'root',
-    'charset'   => 'utf8',
+    'host' => 'localhost',
+    'database' => getenv('CI') ? 'postgres' : 'GDOS_Restaurant',
+    'username' => getenv('CI') ? 'postgres' : 'root',
+    'password' => getenv('CI') ? '' : 'root',
+    'charset' => 'utf8',
     'collation' => 'utf8_unicode_ci',
 ]);
 $capsule->setEventDispatcher(new Dispatcher(new Container()));
@@ -41,8 +40,8 @@ $capsule->setAsGlobal();
 $Schema = $capsule->schema();
 
 // Table creations {{{
-if (!$Schema->hasTable('producten')) {
-    $Schema->create('producten', function (Blueprint $table) {
+if (!$Schema->hasTable('products')) {
+    $Schema->create('products', function (Blueprint $table) {
         $table->id();
         $table->string('name', 50)->unique();
         $table->text('description');
@@ -54,8 +53,8 @@ if (!$Schema->hasTable('producten')) {
         $table->timestamps();
     });
 }
-if (!$Schema->hasTable('gebruikers')) {
-    $Schema->create('gebruikers', function (Blueprint $table) {
+if (!$Schema->hasTable('users')) {
+    $Schema->create('users', function (Blueprint $table) {
         $table->id();
         $table->string('name', 50);
         $table->text('email')->unique();

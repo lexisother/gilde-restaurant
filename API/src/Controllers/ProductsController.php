@@ -23,7 +23,8 @@ class ProductsController extends Controller
             // Name provided?
             if (isset($data->name)) {
                 // Find product(s) with provided name.
-                $products = Product::where('name', $data->name);
+//                $products = Product::where('name', $data->name);
+                $products = Product::query()->where('name', $data->name);
 
                 // Fail if there are no elements.
                 $products->firstOrFail();
@@ -62,6 +63,7 @@ class ProductsController extends Controller
         $item = Product::findOrFail($id);
         $data = json_decode(file_get_contents("php://input"));
         $item->update((array)$data);
+        echo json_encode($item);
     }
 
     public function deleteProduct($id)

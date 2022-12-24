@@ -42,6 +42,9 @@ class UserController extends Controller
         }
     }
 
+    /**
+     * @throws Exception
+     */
     private function checkRegData($data)
     {
         if (empty($data->email)) {

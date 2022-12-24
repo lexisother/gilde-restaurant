@@ -18,7 +18,7 @@ class User extends Model
      *
      * @var string
      */
-    protected $table = 'gebruikers';
+    protected $table = 'users';
 
     /**
      * The attributes that are mass assignable.
