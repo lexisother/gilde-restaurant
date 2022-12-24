@@ -1,6 +1,7 @@
 import styles from '../../styles/Product.module.scss';
 import MetaItem from './MetaItem';
 import { FaEuroSign, FaShoppingBasket } from 'react-icons/fa';
+import { Storage } from '../../lib/localStorage';
 
 export interface IProduct {
   id: number;
@@ -30,9 +31,14 @@ export default function Product({ data }: ProductProps): JSX.Element {
           <div className={styles.productTypes}>[icon list]</div>
         </div>
       </div>
-      <a className={styles.addButton}>
+      <a onClick={() => addToBasket(data)} className={styles.addButton}>
         <FaShoppingBasket /> <div>Toevoegen aan bestelling</div>
       </a>
     </div>
   );
+}
+
+function addToBasket(prod: IProduct): void {
+  let currBasket = Storage.get<IProduct[]>('basket') ?? [];
+  Storage.set('basket', [...currBasket, prod]);
 }
