@@ -34,7 +34,12 @@ export default function Product({ data }: ProductProps): JSX.Element {
           <div className={styles.productTypes}>[icon list]</div>
         </div>
       </div>
-      <a onClick={() => dispatch(add(data))} className={styles.addButton}>
+      <a
+        onClick={() => {
+          dispatch(add(data));
+          addToBasket(data);
+        }}
+        className={styles.addButton}>
         <FaShoppingBasket /> <div>Toevoegen aan bestelling</div>
       </a>
     </div>
