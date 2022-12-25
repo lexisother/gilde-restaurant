@@ -29,7 +29,7 @@ export default function ProductList(): JSX.Element {
       {error && <div>{`There was a problem fetching the products.\n${error}`}</div>}
       <ul>
         {data?.map((prod) => (
-          <Product data={prod} />
+          <Product key={prod.id} data={prod} />
         ))}
       </ul>
     </div>
