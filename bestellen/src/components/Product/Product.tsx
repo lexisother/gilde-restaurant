@@ -2,6 +2,8 @@ import styles from '../../styles/Product.module.scss';
 import MetaItem from './MetaItem';
 import { FaEuroSign, FaShoppingBasket } from 'react-icons/fa';
 import { Storage } from '../../lib/localStorage';
+import { useAppDispatch } from '../../app/hooks';
+import { add } from '../../features/cart/cartSlice';
 
 export interface IProduct {
   id: number;
@@ -18,6 +20,7 @@ interface ProductProps {
   data: IProduct;
 }
 export default function Product({ data }: ProductProps): JSX.Element {
+  const dispatch = useAppDispatch();
   return (
     <div className={styles.product}>
       <img src="https://placekitten.com/231/195" />
@@ -31,7 +34,7 @@ export default function Product({ data }: ProductProps): JSX.Element {
           <div className={styles.productTypes}>[icon list]</div>
         </div>
       </div>
-      <a onClick={() => addToBasket(data)} className={styles.addButton}>
+      <a onClick={() => dispatch(add(data))} className={styles.addButton}>
         <FaShoppingBasket /> <div>Toevoegen aan bestelling</div>
       </a>
     </div>
@@ -39,6 +42,6 @@ export default function Product({ data }: ProductProps): JSX.Element {
 }
 
 function addToBasket(prod: IProduct): void {
-  let currBasket = Storage.get<IProduct[]>('basket') ?? [];
-  Storage.set('basket', [...currBasket, prod]);
+  let currBasket = Storage.get<IProduct[]>('cart') ?? [];
+  Storage.set('cart', [...currBasket, prod]);
 }
