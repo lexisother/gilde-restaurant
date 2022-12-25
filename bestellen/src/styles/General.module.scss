@@ -1,0 +1,10 @@
+.button {
+  display: flex;
+  gap: 0.5rem;
+  align-self: flex-end;
+  cursor: pointer;
+
+  background-color: goldenrod;
+  border-radius: 1rem;
+  padding: 0.5rem;
+}

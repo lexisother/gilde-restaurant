@@ -1,0 +1,2 @@
+- componentize buttons
+- do a style cleanup of the PurchaseList

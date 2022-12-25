@@ -20,9 +20,22 @@ export const cartSlice = createSlice({
     add: (state, action: PayloadAction<IProduct>) => {
       state.items.push(action.payload);
     },
+    remove: (state, action: PayloadAction<number>) => {
+      state.items.splice(action.payload, 1);
+    },
   },
 });
 
-export const { add } = cartSlice.actions;
+export function addToCart(prod: IProduct): void {
+  let currBasket = Storage.get<IProduct[]>('cart') ?? [];
+  Storage.set('cart', [...currBasket, prod]);
+}
+export function removeFromCart(item: number): void {
+  let currBasket = Storage.get<IProduct[]>('cart');
+  currBasket.splice(item, 1);
+  Storage.set('cart', currBasket);
+}
+
+export const { add, remove } = cartSlice.actions;
 export const selectItems = (state: RootState): IProduct[] => state.cart.items;
 export default cartSlice.reducer;

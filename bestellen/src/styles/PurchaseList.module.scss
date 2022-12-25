@@ -1,6 +1,4 @@
 .purchaseContainer {
-  justify-self: flex-end;
-
   height: 40%;
   width: 30%;
   margin-top: 1rem;
@@ -9,4 +7,21 @@
 
   background-color: rgba(220, 220, 220, 0.8);
   border: 1px solid rgba(180, 180, 180, 1);
+
+  & > div {
+    padding: 1rem;
+    background-color: lightgrey;
+    border: 1px solid grey;
+    margin-bottom: 1rem;
+  }
+}
+
+.cartItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.cartItem:not(:last-child) {
+  margin-bottom: 0.5rem;
 }

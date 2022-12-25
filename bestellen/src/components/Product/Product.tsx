@@ -1,9 +1,9 @@
+import generalStyles from '../../styles/General.module.scss';
 import styles from '../../styles/Product.module.scss';
 import MetaItem from './MetaItem';
 import { FaEuroSign, FaShoppingBasket } from 'react-icons/fa';
-import { Storage } from '../../lib/localStorage';
 import { useAppDispatch } from '../../app/hooks';
-import { add } from '../../features/cart/cartSlice';
+import { add, addToCart } from '../../features/cart/cartSlice';
 
 export interface IProduct {
   id: number;
@@ -37,16 +37,15 @@ export default function Product({ data }: ProductProps): JSX.Element {
       <a
         onClick={() => {
           dispatch(add(data));
-          addToBasket(data);
+          addToCart(data);
         }}
-        className={styles.addButton}>
+        style={{
+          marginRight: '1rem',
+          marginBottom: '1rem',
+        }}
+        className={generalStyles.button}>
         <FaShoppingBasket /> <div>Toevoegen aan bestelling</div>
       </a>
     </div>
   );
-}
-
-function addToBasket(prod: IProduct): void {
-  let currBasket = Storage.get<IProduct[]>('cart') ?? [];
-  Storage.set('cart', [...currBasket, prod]);
 }
