@@ -4,6 +4,10 @@ import MetaItem from './MetaItem';
 import { FaEuroSign, FaShoppingBasket } from 'react-icons/fa';
 import { useAppDispatch } from '../../app/hooks';
 import { add, addToCart } from '../../features/cart/cartSlice';
+import warm from '../../res/img/warm.svg';
+import cold from '../../res/img/cold.svg';
+import spanish from '../../res/img/spain.png';
+import vega from '../../res/img/vega.png';
 
 export interface IProduct {
   id: number;
@@ -31,7 +35,12 @@ export default function Product({ data }: ProductProps): JSX.Element {
         </div>
         <div className={styles.productDataMeta}>
           <MetaItem Icon={FaEuroSign} text={data.price.toString()} />
-          <div className={styles.productTypes}>[icon list]</div>
+          <div className={styles.productTypes}>
+            {data.warm && <img className={styles.icon} src={warm} alt="warm" />}
+            {data.cold && <img className={styles.icon} src={cold} alt="cold" />}
+            {data.spanish && <img className={styles.icon} src={spanish} alt="spanish" />}
+            {data.vega && <img className={styles.icon} src={vega} alt="vega" />}
+          </div>
         </div>
       </div>
       <a
