@@ -62,6 +62,13 @@ if (!$Schema->hasTable('users')) {
         $table->boolean('clocked')->default('FALSE');
     });
 }
+if (!$Schema->hasTable('reservations')) {
+    $Schema->create('reservations', function (Blueprint $table) {
+        $table->id();
+        $table->integer('table');
+        $table->text('items');
+    });
+}
 // }}}
 
 $capsule->bootEloquent();
@@ -82,5 +89,7 @@ $router->delete("/products/(\d+)", 'ProductsController@deleteProduct');
 $router->post("/auth/register", "UserController@registerUser");
 $router->post("/auth/login", "UserController@loginUser");
 $router->post("/user/clock", "UserController@clockUser");
+
+$router->post("/reservations/create", "ReservationController@createReservation");
 
 $router->run();
