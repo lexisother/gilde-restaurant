@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { api } from '../lib/request';
 import Product, { IProduct } from './Product/Product';
 
 export default function ProductList(): JSX.Element {
@@ -7,11 +8,8 @@ export default function ProductList(): JSX.Element {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch('https://gdos-api.alyxia.dev/products')
-      .then((res) => {
-        if (!res.ok) throw new Error('something went wrong!');
-        return res.json();
-      })
+    api
+      .getProducts()
       .then((data) => {
         setData(data);
         setError(null);

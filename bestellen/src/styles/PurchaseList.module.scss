@@ -8,7 +8,10 @@
   background-color: rgba(220, 220, 220, 0.8);
   border: 1px solid rgba(180, 180, 180, 1);
 
-  & > div {
+  // Dirtily select the list div, since `:first-child` doesn't work for this.
+  // Would've expected it to just select the first div it encountered, but
+  // alas.
+  & > div:nth-child(2) {
     padding: 1rem;
     background-color: lightgrey;
     border: 1px solid grey;
