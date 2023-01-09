@@ -8,3 +8,24 @@
   border-radius: 1rem;
   padding: 0.5rem;
 }
+
+.inputField {
+  display: flex;
+  gap: 0.5rem;
+  align-self: flex-end;
+  border-radius: 1rem;
+  padding: 0.3rem;
+  text-align: center;
+}
+
+.noticeContainer {
+  align-self: center;
+  margin: 15px 0 15px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 22px;
+  background: rgba(237,66,69,.1);
+  border: 2px solid rgba(237,66,69,.5);
+}

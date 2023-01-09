@@ -4,6 +4,10 @@ import { useAppDispatch, useAppSelector } from '../app/hooks';
 import { remove, removeFromCart, selectItems } from '../features/cart/cartSlice';
 import { RxCross1 } from 'react-icons/rx';
 import { BiPurchaseTag } from 'react-icons/bi';
+import { order } from '../lib/order';
+import { Storage } from '../lib/localStorage';
+import { IProduct } from './Product/Product';
+import { setHidden, setMessage } from "../features/notice/noticeSlice";
 
 // TODO: STYLE CLEANUP!!!!
 export default function PurchaseList(): JSX.Element {
@@ -31,9 +35,30 @@ export default function PurchaseList(): JSX.Element {
           <i>Niks te zien hier...</i>
         )}
       </div>
-      <a style={{ justifyContent: 'center' }} className={generalStyles.button}>
-        <BiPurchaseTag /> Bestellen
-      </a>
+      <button onClick={() => {
+        dispatch(setMessage("cock"))
+        dispatch(setHidden(false))
+      }}>cock</button>
+      <div style={{ display: 'flex', gap: '1rem' }}>
+        <input
+          type="number"
+          min={1}
+          max={10}
+          defaultValue={1}
+          className={generalStyles.inputField}
+        />
+        <a
+          onClick={() =>
+            order(
+              document.querySelector('input')!.value as unknown as number,
+              Storage.get<IProduct[]>('cart'),
+            )
+          }
+          style={{ justifyContent: 'center' }}
+          className={generalStyles.button}>
+          <BiPurchaseTag /> Bestellen
+        </a>
+      </div>
     </div>
   );
 }
